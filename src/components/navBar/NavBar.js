@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-import Logo from "../../assets/icons/logo.png";
+import Logo from "../../assets/icons/logo1.png";
 import "./NavBar.css";
 
  const NavBar = () => {
@@ -17,12 +17,10 @@ import "./NavBar.css";
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ml-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#about">About</Nav.Link>
-                        <Nav.Link href="#skills">Skills</Nav.Link>
-                        <Nav.Link href="#projects">Projects</Nav.Link>
-                        <Nav.Link href="#blogs">Blogs</Nav.Link>
-                        <Nav.Link href="#contact">Contact</Nav.Link>
+                        <Nav.Link href="#home">The Help Company</Nav.Link>
+                        <Nav.Link href="#about">Ways we help</Nav.Link>
+                        <Nav.Link href="#skills">The Help company in action</Nav.Link>
+                        <Nav.Link href="#projects">The future of help</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

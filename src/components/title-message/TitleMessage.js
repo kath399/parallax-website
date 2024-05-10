@@ -1,6 +1,7 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
 import styled from "styled-components";
+import Button from "react-bootstrap/Button";
 
 const MyTitleMessage = styled.h1`
   position: absolute;
@@ -13,8 +14,8 @@ const MyTitleMessage = styled.h1`
     font-size: 1.25em;
   }
   div {
-    color: ${props => props.theme.titleColor};
-    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+    color: black;
+    
     font-weight: 100;
     .main {
       font-size: 50px;
@@ -31,22 +32,24 @@ const TitleMessage = () => (
       <div className="titleMessage">
         <div className="heading">
           <div className="main text-center mb-3">
-            Hi, I am
-            <br />
-            <span>
-              <strong>Adiba Abid👋</strong>
-
-            </span>
+            <span> 
+              <strong>NRMA Insurance 
+              <br />
+              is now A Help Company™.</strong>
+              </span>
           </div>
-          <div className="sub">
+          <div style={{width: '730px', margin: '48px auto', fontSize: '24px'}}>
             <Typewriter
               options={{
-                strings: ["Web Developer", "Tech Enthusiast", "Nature Lover"],
+                strings: ["Why? Well because everyone could use a bit more help. Help making the opaque world of insurance simpler. Help dealing with the rise in extreme weather events. Help doing all those important buy annoying jobs, like checking your roof or cleaning your gutters. More help with everything. Even navigating this website. If you’re in a rush and just want the highlights hit the simplify button. "],
                 autoStart: true,
-                loop: true,
+                loop: false,
                 delay: 50
               }}
             />
+            <Button variant='dark'>
+              Simplify
+            </Button>
           </div>
         </div>
       </div>

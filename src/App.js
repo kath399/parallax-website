@@ -4,6 +4,7 @@ import NavBar from "./components/navBar/NavBar";
 import CustomCarousel from "./components/carousel/Carousal";
 import TitleMessage from "./components/title-message/TitleMessage";
 import About from "./views/about/About";
+import DroneRoofCheck from "./views/droneRoofCheck/DroneRoofCheck";
 import { Parallax } from "react-parallax";
 import Fade from "react-reveal/Fade";
 import Bounce from "react-reveal/Bounce";
@@ -14,12 +15,15 @@ import Blog from "./views/blog-section/BlogSection";
 import Projects from "./views/projects/projects";
 import Contact from "./views/contact/Contact";
 import Footer from "./components/footer/Footer";
+import FullpageWrapper from "./components/fullpage-wrapper/FullpageWrapper";
 
 function App() {
   return (
     <div className="App" style={{ position: "relative" }}>
       <NavBar />
-      <CustomCarousel />
+      <div style={{height: '1024px', backgroundColor: 'white'}}>
+            
+      </div>
       <TitleMessage />
       <div>
         <Parallax
@@ -28,10 +32,10 @@ function App() {
           bgImageAlt=""
           strength={-200}
         >
-          <div>
+          <div style={{height: '1024px', paddingTop: '72px'}}>
             <Container className="container-box rounded">
               <Fade left duration={2000}>
-                <About />
+                <DroneRoofCheck />
               </Fade>
             </Container>
           </div>
