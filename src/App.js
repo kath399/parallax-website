@@ -16,30 +16,13 @@ import Projects from "./views/projects/projects";
 import Contact from "./views/contact/Contact";
 import Footer from "./components/footer/Footer";
 import FullpageWrapper from "./components/fullpage-wrapper/FullpageWrapper";
-
+import Arrow from "./assets/icons/Arrow3.png"
 function App() {
   return (
-    <div className="App" style={{ position: "relative" }}>
+    <div className="App">
       <NavBar />
-      <div style={{height: '1024px', backgroundColor: 'white'}}>
-            
-      </div>
+      <div style={{height: '100vh'}}>
       <TitleMessage />
-      <div>
-        <Parallax
-          blur={{ min: -30, max: 30 }}
-          bgImage={require("./assets/img/parallex/background.webp")}
-          bgImageAlt=""
-          strength={-200}
-        >
-          <div style={{height: '1024px', paddingTop: '72px'}}>
-            <Container className="container-box rounded">
-              <Fade left duration={2000}>
-                <DroneRoofCheck />
-              </Fade>
-            </Container>
-          </div>
-        </Parallax>
       </div>
       <div>
         <div>

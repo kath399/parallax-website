@@ -1,7 +1,20 @@
 .footer-style {
-    background-color: #101018f8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #010C66;
     color: #fff;
-    font-size: 1.5em;
-    border: 2px solid #101018f8;
-    border-top-left-radius: 3px;
-  }
+    font-size: 20px;
+    border: 2px solid #010C66;
+    height: 100px;
+    padding: 24px;
+}
+
+.footer-logo {
+  width: 122px;
+  height: 40px;
+}
+
+.footer-text {
+  font-size: 16px;
+}
