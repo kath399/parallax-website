@@ -29,13 +29,13 @@ const FullpageWrapper = () => {
               </Fade>
             </div>
             <div className="section">
-              <Fade right duration={2000}>
-                <PolicyTranslator />
+              <Fade left duration={2000}>
+                <HelpNation />
               </Fade>
             </div>
             <div className="section">
-              <Fade left duration={2000}>
-                <HelpNation />
+              <Fade right duration={2000}>
+                <PolicyTranslator />
               </Fade>
             </div>
             <div className="section">
