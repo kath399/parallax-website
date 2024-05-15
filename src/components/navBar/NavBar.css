@@ -1,21 +1,24 @@
 .logo {
-      width: 54%;
+      width: 184px;
+      height: 60px;
       margin-left: 34px;
   }
   
   .nav-theme {
-    background-color: rgba(16,16,24,.89);
+    background-color: #FFFFFF80;
     font-size: 20px;
-    height: 85px !important;
+    height: 101px !important;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 41px;
+    border-radius: 10px;
   }
   .navbar-dark .navbar-nav .nav-link{
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
-  .animate-navbar {
-    box-shadow: 1px 1px 1px #222;
-    animation: moveDown 0.5s ease-in-out;
-  }
+
   @media only screen and (max-width: 786px){
     .nav-theme{
       height: auto !important;
@@ -34,4 +37,12 @@
     to {
       transform: translateY(0rem);
     }
+  }
+
+  .iconbutton {
+    background-color: #010C66;
+    width: 46px;
+    height: 46px;
+    border: none;
+    border-radius: 100px;
   }
