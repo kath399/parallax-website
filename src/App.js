@@ -16,7 +16,8 @@ import Projects from "./views/projects/projects";
 import Contact from "./views/contact/Contact";
 import Footer from "./components/footer/Footer";
 import FullpageWrapper from "./components/fullpage-wrapper/FullpageWrapper";
-import Arrow from "./assets/icons/Arrow3.png"
+
+
 function App() {
   return (
     <div className="App">

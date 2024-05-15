@@ -25,4 +25,4 @@ const CustomCarousel = () => {
     )
 }
 
-export default CustomCarousel
+export default CustomCarousel;
