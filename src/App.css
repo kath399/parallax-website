@@ -58,3 +58,36 @@ hr {
   height: 100%;
   z-index: 1;
 }
+
+.titleMessage {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+  font-size: 64px;
+  color: #010C66;
+}
+
+.launchMessage {
+  width: 100%;
+  height: 635px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  color: #010C66;
+}
+
+.iconbutton {
+  position: absolute;
+  bottom: 48px;
+  margin: auto;
+  background-color: #010C66;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 100px;
+}

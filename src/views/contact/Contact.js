@@ -4,7 +4,7 @@ import ContactCard from "../../components/contact-card/ContactCard";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import "./Contact.css";
+import "./contact.css";
 
 const Contact = () => {
   return (
