@@ -15,13 +15,12 @@ import "./NavBar.css";
         <>
             <Navbar collapseOnSelect expand="md"
             fixed="top"
-            className="nav-theme justify-content-between"
-            variant="dark">
+            className="nav-theme">
                 <Navbar.Brand href="#home">
                     <img className="logo" src={Logo} alt='Logo'/>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <button className='iconbutton' onClick={toggleOverlay}>
+                <button className='menubutton' onClick={toggleOverlay}>
                     <img src={Menu} alt='Menu'/>
                 </button>
                 <Overlay isVisible={isOverlayVisible} onClose={toggleOverlay} />

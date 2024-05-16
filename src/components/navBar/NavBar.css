@@ -39,7 +39,9 @@
     }
   }
 
-  .iconbutton {
+  .menubutton {
+    position: absolute;
+    right: 48px;
     background-color: #010C66;
     width: 46px;
     height: 46px;

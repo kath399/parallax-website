@@ -2,9 +2,8 @@ import React from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
 import Fade from "react-reveal/Fade";
 import DroneRoofCheck from '../../views/droneRoofCheck/DroneRoofCheck';
-import PolicyTranslator from '../../views/policyTranslator/polictyTranslator';
 import HelpNation from '../../views/helpNation/HelpNation';
-import Lifeline from '../../views/lifeline/Lifeline';
+import LifelineCertified from '../../views/lifelineCertified/LifelineCertified';
 import Lifeline2 from '../../views/lineline2/Lineline2';
 
 const FullpageWrapper = () => {
@@ -35,12 +34,7 @@ const FullpageWrapper = () => {
             </div>
             <div className="section">
               <Fade right duration={2000}>
-                <PolicyTranslator />
-              </Fade>
-            </div>
-            <div className="section">
-              <Fade right duration={2000}>
-                <Lifeline />
+                <LifelineCertified />
               </Fade>
             </div>
             <div className="section">
