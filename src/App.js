@@ -5,6 +5,9 @@ import CustomCarousel from "./components/carousel/Carousal";
 import TitleMessage from "./components/title-message/TitleMessage";
 import About from "./views/about/About";
 import DroneRoofCheck from "./views/droneRoofCheck/DroneRoofCheck";
+import HelpNation from "./views/helpNation/HelpNation";
+import PolicyRecap from "./views/policyRecap/PolicyRecap";
+import LifelineCertified from "./views/lifelineCertified/LifelineCertified";
 import { Parallax } from "react-parallax";
 import Fade from "react-reveal/Fade";
 import Bounce from "react-reveal/Bounce";
@@ -48,8 +51,13 @@ function App() {
           </div>
         </Fade>
       </div>
+      <DroneRoofCheck />
+      <HelpNation />
+      <PolicyRecap />
+      <LifelineCertified />
+      
       <div>
-        <DroneRoofCheck />
+
         <div>
           <Container className="container-box rounded">
             
