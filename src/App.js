@@ -85,6 +85,17 @@ function App() {
         </div>
       </div>
 
+      <div className="titleMessage"> 
+        <Fade up duration={2000}>
+          <div>
+            A helpful break
+            <div style={{paddingTop: '36px', width:'800px', fontSize: '24px', textAlign: 'center'}}>
+              Reduce your fire risk by clearing up any dry leaves and debris around your home and in your gutters. 
+            </div>
+          </div>
+        </Fade>
+      </div>
+      
       <div>
         <Container className="container-box rounded">
           <Fade bottom duration={2000}>
