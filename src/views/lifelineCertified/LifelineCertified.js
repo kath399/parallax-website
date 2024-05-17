@@ -13,15 +13,17 @@ const LifelineCertified = () => {
     }
   });
   return (
-    <div id="lifelineCertified" className="lifelineCertified">
-      <Fade down duration={2000}>
-        <img src={TeacupSpoon} alt='Lifeline Certified' className='lifelineImg'/>
-      </Fade>
-      <div className="lifelineTitle">Lifeline Certified</div>
-      <div className="lifelineText">
-        We have had all our staff trained by Lifeline so they’re able to deal with any situation.
+    <Fade duration={1000}>
+      <div id="lifelineCertified" className="lifelineCertified">
+        <Fade down duration={2000}>
+          <img src={TeacupSpoon} alt='Lifeline Certified' className='lifelineImg'/>
+        </Fade>
+        <div className="lifelineTitle">Lifeline Certified</div>
+        <div className="lifelineText">
+          We have had all our staff trained by Lifeline so they’re able to deal with any situation.
+        </div>
       </div>
-    </div>
+    </Fade>
   );
 };
 

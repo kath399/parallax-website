@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
-import Fade from "react-reveal/Fade";
 import DroneRoofCheck from '../../views/droneRoofCheck/DroneRoofCheck';
 import HelpNation from '../../views/helpNation/HelpNation';
+import PolicyRecap from '../../views/policyRecap/PolicyRecap';
 import LifelineCertified from '../../views/lifelineCertified/LifelineCertified';
-import Lifeline2 from '../../views/lineline2/Lineline2';
+import HelpfulBreak from '../../views/helpfulBreak/HelpfulBreak';
 
 const FullpageWrapper = () => {
   return (
@@ -14,7 +14,7 @@ const FullpageWrapper = () => {
       navigationTooltips={['Section 1', 'Section 2', 'Section 3', 'Section 4', 'Section 5']}
 
       // Sections
-      sectionsColor={['#d3d3d3', '#d3d3d3', '#d3d3d3', '#d3d3d3', '#d3d3d3']}
+      
 
       // Anchors
       anchors={['section1', 'section2', 'section3', 'section4', 'section5']}
@@ -23,24 +23,16 @@ const FullpageWrapper = () => {
         return (
           <ReactFullpage.Wrapper>
             <div className="section">
-              <Fade left duration={2000}>
-                <DroneRoofCheck />
-              </Fade>
+              <DroneRoofCheck />
             </div>
             <div className="section">
-              <Fade left duration={2000}>
-                <HelpNation />
-              </Fade>
+              <HelpNation />
             </div>
             <div className="section">
-              <Fade right duration={2000}>
-                <LifelineCertified />
-              </Fade>
+              <PolicyRecap />
             </div>
             <div className="section">
-              <Fade right duration={2000}>
-                <Lifeline2 />
-              </Fade>
+              <LifelineCertified />
             </div>
           </ReactFullpage.Wrapper>
         );
