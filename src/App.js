@@ -60,14 +60,6 @@ function App() {
 
         <div>
           <Container className="container-box rounded">
-            
-              <Skills />
-            
-          </Container>
-        </div>
-
-        <div>
-          <Container className="container-box rounded">
             <Slide bottom duration={1000}>
               <hr />
               <Projects />
@@ -82,6 +74,10 @@ function App() {
               <Blog />
             </Slide>
           </Container>
+        </div>
+
+        <div>
+            <Skills />
         </div>
       </div>
 
