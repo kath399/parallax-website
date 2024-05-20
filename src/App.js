@@ -16,11 +16,11 @@ import Fade from "react-reveal/Fade";
 import Bounce from "react-reveal/Bounce";
 import Slide from "react-reveal/Slide";
 import Container from "react-bootstrap/Container";
-/*
+
 import Skills from "./views/skills/Skills";
 import Blog from "./views/blog-section/BlogSection";
 import Projects from "./views/projects/projects";
-*/
+
 import Contact from "./views/contact/Contact";
 import Footer from "./components/footer/Footer";
 import FullpageWrapper from "./components/fullpage-wrapper/FullpageWrapper";
@@ -100,7 +100,7 @@ function App() {
             <Skills />
         </div>
       </div>
-    </Router>
+    </div>
   );
 }
 
