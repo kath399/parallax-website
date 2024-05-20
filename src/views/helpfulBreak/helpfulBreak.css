@@ -1,0 +1,52 @@
+.helpfulBreak {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  text-align: center;
+  font-size: 64px;
+  color: #010C66;
+}
+
+.leafTopImg {
+  position: absolute;
+  width: 475px;
+  top: 0;
+  z-index: 2;
+}
+
+.leafLeftImg {
+  position: absolute;
+  height: 475px;
+  left: 0;
+  z-index: 2;
+}
+
+.leafRightImg {
+  position: absolute;
+  height: 475px;
+  right: 0;
+  z-index: 2;
+}
+
+.leafBottomImg {
+  position: absolute;
+  width: 475px;
+  bottom: 0;
+  z-index: 2;
+}
+
+  @media only screen and (max-width: 786px){
+  .font-details{
+    font-size: 2rem !important;
+  }
+  .my-details{
+    margin-right: 0;
+  }
+  .profile{
+    max-width: 15em;
+  }
+}

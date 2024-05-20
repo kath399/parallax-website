@@ -81,6 +81,9 @@ hr {
 }
 
 .iconbutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   bottom: 48px;
   margin: auto;
@@ -89,4 +92,9 @@ hr {
   height: 46px;
   border: none;
   border-radius: 100px;
+}
+
+.chevronDown {
+  max-width: 100%; 
+  max-height: 100%; 
 }

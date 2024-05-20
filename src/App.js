@@ -1,24 +1,31 @@
 import React, { useRef } from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import "./App.css";
 import NavBar from "./components/navBar/NavBar";
 import CustomCarousel from "./components/carousel/Carousal";
 import TitleMessage from "./components/title-message/TitleMessage";
 import About from "./views/about/About";
 import DroneRoofCheck from "./views/droneRoofCheck/DroneRoofCheck";
+import Form from "./views/form/Form";
 import HelpNation from "./views/helpNation/HelpNation";
 import PolicyRecap from "./views/policyRecap/PolicyRecap";
 import LifelineCertified from "./views/lifelineCertified/LifelineCertified";
+import HelpfulBreak from "./views/helpfulBreak/HelpfulBreak";
 import { Parallax } from "react-parallax";
 import Fade from "react-reveal/Fade";
 import Bounce from "react-reveal/Bounce";
 import Slide from "react-reveal/Slide";
 import Container from "react-bootstrap/Container";
+/*
 import Skills from "./views/skills/Skills";
 import Blog from "./views/blog-section/BlogSection";
 import Projects from "./views/projects/projects";
+*/
 import Contact from "./views/contact/Contact";
 import Footer from "./components/footer/Footer";
 import FullpageWrapper from "./components/fullpage-wrapper/FullpageWrapper";
+import ChevronDown from "./assets/icons/Chevron_down.svg";
+import Carousel from "react-bootstrap/esm/Carousel";
 
 
 function App() {
@@ -67,12 +74,25 @@ function App() {
           </Container>
         </div>
 
+        <DroneRoofCheck />
+        <HelpNation />
+        <PolicyRecap />
+        <LifelineCertified />
+        <div className="titleMessage">
+          <div style={{width: '619px', fontSize: '40px'}}>
+            It would also make its insurance products more helpful.
+          </div>
+          <Carousel />
+        </div>
+        
+        
+        <HelpfulBreak />
+        
         <div>
           <Container className="container-box rounded">
-            <Slide left duration={2000}>
-              <hr />
-              <Blog />
-            </Slide>
+            <Fade bottom duration={2000}>
+              <Contact />
+            </Fade>
           </Container>
         </div>
 
@@ -80,29 +100,7 @@ function App() {
             <Skills />
         </div>
       </div>
-
-      <div className="titleMessage"> 
-        <Fade up duration={2000}>
-          <div>
-            A helpful break
-            <div style={{paddingTop: '36px', width:'800px', fontSize: '24px', textAlign: 'center'}}>
-              Reduce your fire risk by clearing up any dry leaves and debris around your home and in your gutters. 
-            </div>
-          </div>
-        </Fade>
-      </div>
-      
-      <div>
-        <Container className="container-box rounded">
-          <Fade bottom duration={2000}>
-            <hr />
-            <Contact />
-          </Fade>
-        </Container>
-      </div>
-      <hr />
-      <Footer />
-    </div>
+    </Router>
   );
 }
 
