@@ -1,10 +1,12 @@
 import React, { useRef } from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import "./App.css";
 import NavBar from "./components/navBar/NavBar";
 import CustomCarousel from "./components/carousel/Carousal";
 import TitleMessage from "./components/title-message/TitleMessage";
 import About from "./views/about/About";
 import DroneRoofCheck from "./views/droneRoofCheck/DroneRoofCheck";
+import Form from "./views/form/Form";
 import HelpNation from "./views/helpNation/HelpNation";
 import PolicyRecap from "./views/policyRecap/PolicyRecap";
 import LifelineCertified from "./views/lifelineCertified/LifelineCertified";
@@ -14,9 +16,11 @@ import Fade from "react-reveal/Fade";
 import Bounce from "react-reveal/Bounce";
 import Slide from "react-reveal/Slide";
 import Container from "react-bootstrap/Container";
+/*
 import Skills from "./views/skills/Skills";
 import Blog from "./views/blog-section/BlogSection";
 import Projects from "./views/projects/projects";
+*/
 import Contact from "./views/contact/Contact";
 import Footer from "./components/footer/Footer";
 import FullpageWrapper from "./components/fullpage-wrapper/FullpageWrapper";
@@ -34,52 +38,61 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <NavBar />
-      <div className="titleMessage"> 
-        <Fade up duration={2000}>
-          <div>
-            What would A Help Company™ do?
-          </div>
-        </Fade>
-        <button className="iconbutton" onClick={() => scrollDown(section1Ref)}>
-          <img src={ChevronDown} alt='Go Down' className="chevronDown"/>
-        </button>
-      </div>
-      <div ref={section1Ref} className="launchMessage">
-        <Fade right duration={2000}>
-          <div>
-            It would launch four helpful
-            <br/>
-            tools and services.
-          </div>
-        </Fade>
-      </div>
-
-      <DroneRoofCheck />
-      <HelpNation />
-      <PolicyRecap />
-      <LifelineCertified />
-      <div className="titleMessage">
-        <div style={{width: '619px', fontSize: '40px'}}>
-          It would also make its insurance products more helpful.
-        </div>
-        <Carousel />
-      </div>
-      
-      
-      <HelpfulBreak />
-      
-      <div>
-        <Container className="container-box rounded">
-          <Fade bottom duration={2000}>
-            <Contact />
+    <Router>
+      <div className="App">
+        <NavBar />
+        <Routes>
+          <Route path="/" element={
+            <>
+        <div className="titleMessage"> 
+          <Fade up duration={2000}>
+            <div>
+              What would A Help Company™ do?
+            </div>
           </Fade>
-        </Container>
+          <button className="iconbutton" onClick={() => scrollDown(section1Ref)}>
+            <img src={ChevronDown} alt='Go Down' className="chevronDown"/>
+          </button>
+        </div>
+        <div ref={section1Ref} className="launchMessage">
+          <Fade right duration={2000}>
+            <div>
+              It would launch four helpful
+              <br/>
+              tools and services.
+            </div>
+          </Fade>
+        </div>
+
+        <DroneRoofCheck />
+        <HelpNation />
+        <PolicyRecap />
+        <LifelineCertified />
+        <div className="titleMessage">
+          <div style={{width: '619px', fontSize: '40px'}}>
+            It would also make its insurance products more helpful.
+          </div>
+          <Carousel />
+        </div>
+        
+        
+        <HelpfulBreak />
+        
+        <div>
+          <Container className="container-box rounded">
+            <Fade bottom duration={2000}>
+              <Contact />
+            </Fade>
+          </Container>
+        </div>
+        <hr />
+        <Footer />
+        </>
+          }/>
+          <Route path="/form" element={<Form />} />
+        </Routes>
       </div>
-      <hr />
-      <Footer />
-    </div>
+    </Router>
   );
 }
 

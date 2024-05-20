@@ -1,9 +1,9 @@
 import React from "react";
 import "./nrmaButton.css";
 
-const NrmaButton = ({Label}) => {
+const NrmaButton = ({Label, OnClick}) => {
     return (
-        <button className="nrmaBtn">
+        <button className="nrmaBtn" onclick={() => OnClick}>
             {Label}
         </button>
     );
