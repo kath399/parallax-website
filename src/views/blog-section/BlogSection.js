@@ -1,72 +1,48 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
-import Card from "react-bootstrap/Card";
-import CardDeck from "react-bootstrap/CardDeck";
-import Tilt from 'react-parallax-tilt';
+// import Card from "react-bootstrap/Card";
+// import CardDeck from "react-bootstrap/CardDeck";
+// import Tilt from 'react-parallax-tilt';
+import BlogCard from "../blog-card/BlogCard";
 import "./BlogSection.css";
+import ExampleCardImage from "./../../assets/img/carousal/example-carousel.png";
+import ExampleCardImage2 from "./../../assets/img/carousal/moneypig.png";
+import ExampleCardImage3 from "./../../assets/img/carousal/keychain.png";
+import ChevronArrow from "./../../assets/icons/chevron-left.svg";
+
+
+const cardval = [{
+    title: "Open door policy",
+    content: "You’re covered even if you forgot to lock your front door.",
+
+},
+{
+    title: "Flexible Payment",
+    subtitle: "You're covered evn if you forgot to lock your front door."
+}];
 
 const BlogSection = () => {
     return (
-        <div id="blogs">
+        <div className="blogs ">
             <Container>
-            <h1 className="text-center font-details-b pb-4">Medium Blogs</h1>
-                <CardDeck>
-                    <Tilt >
-                        <Card className="card-resize">
-                            <Card.Img className="image-resize" variant="top" src="https://miro.medium.com/max/1000/0*DPnItWaXWVDA8qGJ" alt="Blog 1" />
-                            <Card.Body>
-                                <a className="text-dark text-decoration-none" href="https://medium.com/javascript-in-plain-english/what-are-the-differences-between-state-and-props-in-react-74f21e39b172" target="_blank">
-                                    <Card.Title >What are the differences between State and Props in React?</Card.Title>
-                                    <Card.Text>
-                                        How you use props and state, and what each of them is?
-                                    </Card.Text>
-                                </a>
-                            </Card.Body>
-                        </Card>
-                    </Tilt>
-                    <Tilt >
-                        <Card className="card-resize">
-                            <Card.Img className="image-resize" variant="top" src="https://miro.medium.com/max/700/0*g61HreCnSrR1JDUf" alt="Blog 2" />
-                            <Card.Body>
-                                <a className="text-dark text-decoration-none" href="https://medium.com/better-programming/why-i-find-javascripts-destructuring-so-useful-7be41d9ba609" target="_blank">
-                                    <Card.Title >Why I JavaScript’s Destructuring So Useful</Card.Title>
-                                    <Card.Text>
-                                    Array and object destructuring
-                                    </Card.Text>
-                                </a>
-                            </Card.Body>
-                        </Card>
-                    </Tilt>
-                    <Tilt>
-                        <Card className="card-resize">
-                            <Card.Img className="image-resize" variant="top" src="https://miro.medium.com/max/1000/0*3yUaO3J7RU6vTMSH" alt="Blog 3" />
-                            <Card.Body>
-                                <a className="text-dark text-decoration-none" href="https://medium.com/javascript-in-plain-english/why-i-love-the-spread-operator-58f396dbbb78" target="_blank">
-                                    <Card.Title>Why I Love The Spread Operator</Card.Title>
-                                    <Card.Text >
-                                    The Most Useful JavaScript Feature of ES6
-                                    </Card.Text>
-                                </a>
-                            </Card.Body>
-                        </Card>
-                    </Tilt>
-                    <Tilt>
-                        <Card className="card-resize">
-                            <Card.Img className="image-resize" variant="top" src="https://miro.medium.com/max/700/0*ofb-IyC65q82aIgq" alt="Blog 4" />
-                            <Card.Body>
-                                <a className="text-dark text-decoration-none" href="https://medium.com/javascript-in-plain-english/make-eye-catching-javascript-popups-with-sweet-alert-470e05ed026d" target="_blank">
-                                    <Card.Title >Make Eye-Catching JavaScript Popups with ‘Sweet Alert’</Card.Title>
-                                    <Card.Text>
-                                    An Attractive UI You can better alerts with
-                                    </Card.Text>
-                                </a>
-                            </Card.Body>
-                        </Card>
-                    </Tilt>
-                </CardDeck>
+            <h1 className="text-center pb-5">It would also make its insurance products more helpful</h1>
+                <div className="card-group d-flex flex-nowrap">
+                    <BlogCard title="Open Door Policy" content="You’re covered even if you forgot to lock your front door." image={ExampleCardImage} colour="#E0DF6B"/>
+                    <BlogCard title="Flexible Payment" content="You’re covered even if you forgot to lock your front door." image={ExampleCardImage2} colour="#F9AE97"/>
+                    <BlogCard title="Car share cover" content="You’re covered even if you forgot to lock your front door." image={ExampleCardImage3} colour="#91BF9E"/>
+                    <BlogCard title="Car share cover" content="You’re covered even if you forgot to lock your front door." image={ExampleCardImage3} colour="#91BF9E"/>
+                </div>
 
+                <div className="controls">
+                    <button>
+                        <img src={ChevronArrow} />
+                    </button>
+                    <button>
+                        <img className="chevron-right" src={ChevronArrow} />
+                    </button>
+                </div>
             </Container>
         </div>
     )
 }
-export default BlogSection
+export default BlogSection;

@@ -38,30 +38,40 @@ function App() {
   };
 
   return (
-    <Router>
-      <div className="App">
-        <NavBar />
-        <Routes>
-          <Route path="/" element={
-            <>
-        <div className="titleMessage"> 
-          <Fade up duration={2000}>
-            <div>
-              What would A Help Company™ do?
-            </div>
-          </Fade>
-          <button className="iconbutton" onClick={() => scrollDown(section1Ref)}>
-            <img src={ChevronDown} alt='Go Down' className="chevronDown"/>
-          </button>
-        </div>
-        <div ref={section1Ref} className="launchMessage">
-          <Fade right duration={2000}>
-            <div>
-              It would launch four helpful
-              <br/>
-              tools and services.
-            </div>
-          </Fade>
+    <div className="App">
+      <NavBar />
+      <div className="titleMessage"> 
+        <Fade up duration={2000}>
+          <div>
+            What would A Help Company™ do?
+          </div>
+        </Fade>
+        <button className="iconbutton" onClick={() => scrollDown(section1Ref)}>
+        </button>
+      </div>
+      <div ref={section1Ref} className="launchMessage">
+        <Fade right duration={2000}>
+          <div>
+            It would launch four helpful
+            <br/>
+            tools and services.
+          </div>
+        </Fade>
+      </div>
+      <DroneRoofCheck />
+      <HelpNation />
+      <PolicyRecap />
+      <LifelineCertified />
+      
+      <div>
+
+        <div>
+          <Container className="container-box rounded">
+            <Slide bottom duration={1000}>
+              <hr />
+              <Projects />
+            </Slide>
+          </Container>
         </div>
 
         <DroneRoofCheck />
@@ -85,12 +95,10 @@ function App() {
             </Fade>
           </Container>
         </div>
-        <hr />
-        <Footer />
-        </>
-          }/>
-          <Route path="/form" element={<Form />} />
-        </Routes>
+
+        <div>
+            <Skills />
+        </div>
       </div>
     </Router>
   );

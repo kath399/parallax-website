@@ -1,31 +1,52 @@
+/* @keyframes example {
+  from {width:240px;}
+  to {width: 400px;}
+} */
 
-  .image-resize{
-      height: 160px;
-      width: 100%;
-  }
-  .card-resize{
-      height: 340px;
-      width: 240px;
-  }
- 
-  @media only screen and (max-width: 786px){
-  .card-deck{
+@media only screen and (max-width: 786px) {
+  .card-deck {
     flex-direction: row;
     flex-flow: wrap;
   }
-  .card-deck .card-resize{
+  .card-deck .card-resize {
     margin-bottom: 10px;
   }
-  .container-box{
+  .container-box {
     display: contents;
   }
 }
-  
-  .style {
-    font-size: 16px;
-    color: black;
-  }
-  .card-title{
-      font-size: 1em;
-  }
-  
+
+.style {
+  font-size: 16px;
+  color: black;
+}
+.card-title {
+  font-size: 1em;
+}
+
+/* Styling for card carousel */
+
+
+ /* Buttons for control styling */
+
+.controls {
+  text-align: right;
+}
+
+.controls button {
+  height: 36px;
+  width: 36px;
+  border-radius:80px;
+  border:none;
+  background-color: #D9D9D9;
+  margin-left: 20px;
+}
+
+.controls button img {
+  height: 24px;
+  width: 24px;
+}
+
+.chevron-right {
+  transform: rotate(180deg);
+}
