@@ -14,8 +14,6 @@ const BlogCard = (props) => {
     const image = props.image;
     const colour = props.colour;
 
-    console.log(colour);
-
     return (
         <div className={showCard ? "card-resize" : "card-normal"}>
             <div className="card blog-card" style={{backgroundColor: colour}}>

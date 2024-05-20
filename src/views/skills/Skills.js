@@ -12,9 +12,22 @@ import "./skills.css";
 
 const Skills = () => {
     return (
-        <div className="pt-3 pb-3" id="skills">
-            <h1 className="text-center font-details-b pb-4">TECH SKILLS</h1>
-            <CardDeck>
+        <div className="questions pt-3 pb-3" id="skills">
+            <h1 className="text-center font-details-b pb-4">What else would a Help Company™ do?</h1>
+
+            <div className="pill-section">
+                
+            </div>
+        </div>
+    );
+};
+
+export default Skills;
+
+
+
+
+{/* <CardDeck>
                 <div>
                     <Card className="focus mb-2">
                         <Card.Body>
@@ -97,9 +110,4 @@ const Skills = () => {
                         </Card.Body>
                     </Card>
                 </div>
-            </CardDeck>
-        </div>
-    );
-};
-
-export default Skills;
+            </CardDeck> */}
