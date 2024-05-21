@@ -6,7 +6,7 @@ import Drone from "../../assets/img/Drone.svg";
 import "./droneRoofCheck.css";
 
 const DroneRoofCheck = () => {
-  const navigate = useNavigate();
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +35,7 @@ const DroneRoofCheck = () => {
       <div className="droneTitle">Drone Roof Check</div>
       <div className="droneText">
         Checking your roof is important, but it’s also a pain, that’s why we’re introducing a service that uses drones to check your roof for you. 
-        <button onClick={() => navigate('/form')}>Register your interest</button>
+        <button>Register your interest</button>
       </div>
     </div>
   );

@@ -1,12 +1,10 @@
 import React, { useRef } from "react";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import "./App.css";
 import NavBar from "./components/navBar/NavBar";
 import CustomCarousel from "./components/carousel/Carousal";
 import TitleMessage from "./components/title-message/TitleMessage";
 import About from "./views/about/About";
 import DroneRoofCheck from "./views/droneRoofCheck/DroneRoofCheck";
-import Form from "./views/form/Form";
 import HelpNation from "./views/helpNation/HelpNation";
 import PolicyRecap from "./views/policyRecap/PolicyRecap";
 import LifelineCertified from "./views/lifelineCertified/LifelineCertified";
@@ -16,16 +14,16 @@ import Fade from "react-reveal/Fade";
 import Bounce from "react-reveal/Bounce";
 import Slide from "react-reveal/Slide";
 import Container from "react-bootstrap/Container";
-
 import Skills from "./views/skills/Skills";
 import Blog from "./views/blog-section/BlogSection";
 import Projects from "./views/projects/projects";
-
 import Contact from "./views/contact/Contact";
 import Footer from "./components/footer/Footer";
 import FullpageWrapper from "./components/fullpage-wrapper/FullpageWrapper";
+
 import ChevronDown from "./assets/icons/Chevron_down.svg";
-import Carousel from "react-bootstrap/esm/Carousel";
+
+import Form from "./views/form/Form";
 
 
 function App() {
@@ -47,6 +45,7 @@ function App() {
           </div>
         </Fade>
         <button className="iconbutton" onClick={() => scrollDown(section1Ref)}>
+          <img src={ChevronDown} alt='Go down'/>
         </button>
       </div>
       <div ref={section1Ref} className="launchMessage">
@@ -74,25 +73,12 @@ function App() {
           </Container>
         </div>
 
-        <DroneRoofCheck />
-        <HelpNation />
-        <PolicyRecap />
-        <LifelineCertified />
-        <div className="titleMessage">
-          <div style={{width: '619px', fontSize: '40px'}}>
-            It would also make its insurance products more helpful.
-          </div>
-          <Carousel />
-        </div>
-        
-        
-        <HelpfulBreak />
-        
         <div>
           <Container className="container-box rounded">
-            <Fade bottom duration={2000}>
-              <Contact />
-            </Fade>
+            <Slide left duration={2000}>
+              <hr />
+              <Blog />
+            </Slide>
           </Container>
         </div>
 
@@ -105,6 +91,19 @@ function App() {
             <Skills />
         </div>
       </div>
+
+      <HelpfulBreak />
+      
+      <div>
+        <Container className="container-box rounded">
+          <Fade bottom duration={2000}>
+            <hr />
+            <Contact />
+          </Fade>
+        </Container>
+      </div>
+      <hr />
+      <Footer />
     </div>
   );
 }
