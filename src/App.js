@@ -77,25 +77,19 @@ function App() {
         <HelpNation />
         <PolicyRecap />
         <LifelineCertified />
-        <div className="titleMessage">
-          <div style={{width: '619px', fontSize: '40px'}}>
-            It would also make its insurance products more helpful.
-          </div>
-          <Carousel />
-        </div>
-        
-        
+
         <HelpfulBreak />
-        
+
         <div>
           <Container className="container-box rounded">
             <Slide left duration={2000}>
               <hr />
-              <Blog />
+              <Carousel />
             </Slide>
           </Container>
         </div>
       </div>
+      <Skills />
 
       <HelpfulBreak />
       
