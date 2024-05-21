@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import "./App.css";
 import NavBar from "./components/navBar/NavBar";
-import CustomCarousel from "./components/carousel/Carousal";
+import Carousel from "./views/carousel/Carousel";
 import TitleMessage from "./components/title-message/TitleMessage";
 import About from "./views/about/About";
 import DroneRoofCheck from "./views/droneRoofCheck/DroneRoofCheck";
@@ -18,14 +18,13 @@ import Slide from "react-reveal/Slide";
 import Container from "react-bootstrap/Container";
 
 import Skills from "./views/skills/Skills";
-import Blog from "./views/blog-section/BlogSection";
+import Blog from "./views/carousel/Carousel";
 import Projects from "./views/projects/projects";
 
 import Contact from "./views/contact/Contact";
 import Footer from "./components/footer/Footer";
 import FullpageWrapper from "./components/fullpage-wrapper/FullpageWrapper";
 import ChevronDown from "./assets/icons/Chevron_down.svg";
-import Carousel from "react-bootstrap/esm/Carousel";
 
 
 function App() {
@@ -64,45 +63,21 @@ function App() {
       <LifelineCertified />
       
       <div>
-
-        <div>
-          <Container className="container-box rounded">
-            <Slide bottom duration={1000}>
-              <hr />
-              <Projects />
-            </Slide>
-          </Container>
-        </div>
-
         <DroneRoofCheck />
         <HelpNation />
         <PolicyRecap />
         <LifelineCertified />
-        <div className="titleMessage">
-          <div style={{width: '619px', fontSize: '40px'}}>
-            It would also make its insurance products more helpful.
-          </div>
-          <Carousel />
-        </div>
-        
-        
+        <Blog />
+        <Skills />
         <HelpfulBreak />
-        
+
+
         <div>
           <Container className="container-box rounded">
             <Fade bottom duration={2000}>
               <Contact />
             </Fade>
           </Container>
-        </div>
-
-
-        <div>
-            <Blog />
-        </div>
-
-        <div>
-            <Skills />
         </div>
       </div>
     </div>

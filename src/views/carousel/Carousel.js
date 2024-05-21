@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 // import CardDeck from "react-bootstrap/CardDeck";
 // import Tilt from 'react-parallax-tilt';
 import BlogCard from "../blog-card/BlogCard";
-import "./BlogSection.css";
+import "./Carousel.css";
 import ExampleCardImage from "./../../assets/img/carousal/example-carousel.png";
 import ExampleCardImage2 from "./../../assets/img/carousal/moneypig.png";
 import ExampleCardImage3 from "./../../assets/img/carousal/keychain.png";
@@ -21,7 +21,7 @@ const cardval = [{
     subtitle: "You're covered evn if you forgot to lock your front door."
 }];
 
-const BlogSection = () => {
+const Carousel = () => {
     return (
         <div className="blogs ">
             <Container>
@@ -45,4 +45,4 @@ const BlogSection = () => {
         </div>
     )
 }
-export default BlogSection;
+export default Carousel;
