@@ -9,14 +9,72 @@ import Col from "react-bootstrap/Col";
 import { skills } from "./db-skills";
 
 import "./skills.css";
+import PillButton from "../../components/pill/pillButton";
+
+const change = arr => [...arr].sort(() => Math.random() - 0.5);
+
+const ogList = [
+    {label:"Helping Guide At-Risk Youth"},
+    {label:"Helping to restore a local cricket club "},
+    {label:"Helping Ensure Home Safety"},
+    {label:"Helping Guide At-Risk Youth"},
+    {label:"Helping to restore a local cricket club "},
+    {label:"Helping Ensure Home Safety"},
+    {label:"Helping to restore a local cricket club "},
+    {label: "Lorem ipsum dolor sit amet" },
+    {label: "consectetur adipiscing elit" },
+    {label: "sed do eiusmod tempor incididunt" },
+    {label: "ut labore et dolore magna aliqua" },
+    {label: "Ut enim ad minim veniam" },
+    {label: "quis nostrud exercitation ullamco" },
+    {label: "laboris nisi ut aliquip ex ea commodo consequat"},
+    {label: "Lorem ipsum dolor sit amet" },
+    {label: "consectetur adipiscing elit" },
+    {label: "sed do eiusmod tempor incididunt" },
+    {label: "ut labore et dolore magna aliqua" },
+    {label: "Ut enim ad minim veniam" },
+    {label: "quis nostrud exercitation ullamco" },
+    {label: "laboris nisi ut aliquip ex ea commodo consequat"},
+    {label: "Lorem ipsum dolor sit amet" },
+    {label: "consectetur adipiscing elit" },
+    {label: "sed do eiusmod tempor incididunt" },
+    {label: "ut labore et dolore magna aliqua" },
+    {label: "Ut enim ad minim veniam" },
+    {label: "quis nostrud exercitation ullamco" },
+    {label: "laboris nisi ut aliquip ex ea commodo consequat"},
+    {label: "Lorem ipsum dolor sit amet" },
+    {label: "consectetur adipiscing elit" },
+    {label: "sed do eiusmod tempor incididunt" },
+    {label: "ut labore et dolore magna aliqua" },
+    {label: "Ut enim ad minim veniam" },
+    {label: "quis nostrud exercitation ullamco" },
+    {label: "laboris nisi ut aliquip ex ea commodo consequat"},
+    {label: "Lorem ipsum dolor sit amet" },
+    {label: "consectetur adipiscing elit" },
+    {label: "sed do eiusmod tempor incididunt" },
+    {label: "ut labore et dolore magna aliqua" },
+    {label: "Ut enim ad minim veniam" },
+    {label: "quis nostrud exercitation ullamco" },
+    {label: "laboris nisi ut aliquip ex ea commodo consequat"}
+];
+
+const newList = change(ogList);
+
+console.log(newList);
+
+function randColour() {
+    let colourNRMA = ["#E0DF6B", "#91BF9E", "#F9AE97", "#FFFFFF"];
+    return colourNRMA[Math.floor(Math.random() * colourNRMA.length)];
+}
 
 const Skills = () => {
     return (
         <div className="questions pt-3 pb-3" id="skills">
             <h1 className="text-center font-details-b pb-4">What else would a Help Company™ do?</h1>
-
             <div className="pill-section">
-                
+                {newList.map(item => (
+                    <PillButton Label={item.label} colour={randColour()} />
+                ))}
             </div>
         </div>
     );
