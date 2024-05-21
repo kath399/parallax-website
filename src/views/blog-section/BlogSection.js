@@ -25,7 +25,7 @@ const BlogSection = () => {
     return (
         <div className="blogs ">
             <Container>
-            <h1 className="text-center pb-5">It would also make its insurance products more helpful</h1>
+            <h1 className="text-center">It would also make its insurance products more helpful</h1>
                 <div className="card-group d-flex flex-nowrap">
                     <BlogCard title="Open Door Policy" content="You’re covered even if you forgot to lock your front door." image={ExampleCardImage} colour="#E0DF6B"/>
                     <BlogCard title="Flexible Payment" content="You’re covered even if you forgot to lock your front door." image={ExampleCardImage2} colour="#F9AE97"/>

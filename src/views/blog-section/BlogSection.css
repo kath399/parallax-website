@@ -29,6 +29,12 @@
 
  /* Buttons for control styling */
 
+ .blogs .text-center {
+  font-weight: 400;
+  color:#010C66;
+  padding: 150px;
+ }
+
 .controls {
   text-align: right;
 }

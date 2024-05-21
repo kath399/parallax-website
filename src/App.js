@@ -82,6 +82,11 @@ function App() {
           </Container>
         </div>
 
+
+        <div>
+            <Blog />
+        </div>
+
         <div>
             <Skills />
         </div>
