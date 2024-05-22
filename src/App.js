@@ -85,12 +85,10 @@ function App() {
       <HelpfulBreak />
       
       <div>
-        <Container className="container-box rounded">
           <Fade bottom duration={2000}>
             <hr />
             <Contact />
           </Fade>
-        </Container>
       </div>
       <hr />
       <Footer />
