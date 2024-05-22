@@ -64,15 +64,6 @@ function App() {
       
       <div>
 
-        <div>
-          <Container className="container-box rounded">
-            <Slide bottom duration={1000}>
-              <hr />
-              <Projects />
-            </Slide>
-          </Container>
-        </div>
-
         <DroneRoofCheck />
         <HelpNation />
         <PolicyRecap />
