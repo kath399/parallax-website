@@ -8,20 +8,22 @@ const Overlay = ({isVisible, onClose}) => {
 
   return (
     <div className="overlay">
+      <div className="overlayNav">
         <img src={Logo} alt="Logo" className="logoOverlay"/>
         <button className="closeButton" onClick={onClose}>
             <img src={Cross} alt='Close' />
         </button>
-        <div className="menuOverlay">
-            A Help Company™
-            <br />
-            Helpful tools and services
-            <br />
-            Ways we help
-            <br />
-            Help Lab
-            <br />
-        </div>
+      </div>
+      <div className="menuOverlay">
+          A Help Company™
+          <br />
+          Helpful tools and services
+          <br />
+          Ways we help
+          <br />
+          Help Lab
+          <br />
+      </div>
     </div>
   );
 };

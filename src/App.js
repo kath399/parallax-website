@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import "./App.css";
 import NavBar from "./components/navBar/NavBar";
 import CustomCarousel from "./components/carousel/Carousal";
@@ -36,75 +37,84 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <NavBar />
-      <div className="titleMessage"> 
-        <Fade up duration={2000}>
-          <div>
-            What would A Help Company™ do?
-          </div>
-        </Fade>
-        <button className="iconbutton" onClick={() => scrollDown(section1Ref)}>
-          <img src={ChevronDown} alt='Go down'/>
-        </button>
-      </div>
-      <div ref={section1Ref} className="launchMessage">
-        <Fade right duration={2000}>
-          <div>
-            It would launch four helpful
-            <br/>
-            tools and services.
-          </div>
-        </Fade>
-      </div>
-      <DroneRoofCheck />
-      <HelpNation />
-      <PolicyRecap />
-      <LifelineCertified />
-      
-      <div>
+    <Router>
+      <div className="App">
+        <NavBar />
+        <Routes>
+          <Route path="/" element={
+            <>
+            <div className="titleMessage"> 
+              <Fade up duration={2000}>
+                <div>
+                  What would A Help Company™ do?
+                </div>
+              </Fade>
+              <button className="iconbutton" onClick={() => scrollDown(section1Ref)}>
+                <img src={ChevronDown} alt='Go down'/>
+              </button>
+            </div>
+            <div ref={section1Ref} className="launchMessage">
+              <Fade right duration={2000}>
+                <div>
+                  It would launch four helpful
+                  <br/>
+                  tools and services.
+                </div>
+              </Fade>
+            </div>
+            <DroneRoofCheck />
+            <HelpNation />
+            <PolicyRecap />
+            <LifelineCertified />
+            
+            <div>
 
-        <div>
-          <Container className="container-box rounded">
-            <Slide bottom duration={1000}>
-              <hr />
-              <Projects />
-            </Slide>
-          </Container>
-        </div>
+              <div>
+                <Container className="container-box rounded">
+                  <Slide bottom duration={1000}>
+                    <hr />
+                    <Projects />
+                  </Slide>
+                </Container>
+              </div>
 
-        <div>
-          <Container className="container-box rounded">
-            <Slide left duration={2000}>
-              <hr />
-              <Blog />
-            </Slide>
-          </Container>
-        </div>
+              <div>
+                <Container className="container-box rounded">
+                  <Slide left duration={2000}>
+                    <hr />
+                    <Blog />
+                  </Slide>
+                </Container>
+              </div>
 
 
-        <div>
-            <Blog />
-        </div>
+              <div>
+                  <Blog />
+              </div>
 
-        <div>
-            <Skills />
-        </div>
-      </div>
+              <div>
+                  <Skills />
+              </div>
+            </div>
 
-      <HelpfulBreak />
-      
-      <div>
-        <Container className="container-box rounded">
-          <Fade bottom duration={2000}>
+            <HelpfulBreak />
+            
+            <div>
+              <Container className="container-box rounded">
+                <Fade bottom duration={2000}>
+                  <hr />
+                  <Contact />
+                </Fade>
+              </Container>
+            </div>
             <hr />
-            <Contact />
-          </Fade>
-        </Container>
+            <Footer />
+            </>
+          }/>
+          <Route path="/form" element={<Form Title={'Drone Roof Check'}/>} />
+          </Routes>
       </div>
-      <hr />
-      <Footer />
-    </div>
+    </Router>
   );
 }
 

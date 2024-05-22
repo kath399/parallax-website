@@ -11,22 +11,25 @@
     z-index: 1000;
 }
 
+.overlayNav {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 41px;
+    height: 101px !important;
+    width: 1200px;
+    padding-left: 34px;
+}
+
 .menuOverlay {
     text-align: center;
     color: white;
     font-size: 64px;
 }
 
-.logoOverlay {
-    position: absolute;
-    top: 36px;
-    left: 48px;
-}
-
 .closeButton {
     position: absolute;
-    top: 36px;
-    right: 48px;
+    right: 34px;
     height: 46px;
     width: 46px;
     border: 1px solid white;

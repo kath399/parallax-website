@@ -41,6 +41,17 @@
   z-index: 1;
 }
 
+.droneBtn {
+  background-color: #010C66;
+  padding: 7px 21px 7px 21px;
+  margin-top: 46px;
+  border: none;
+  border-radius: 80px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
 @media only screen and (max-width: 786px){
   .font-details{
     font-size: 2rem !important;
