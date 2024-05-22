@@ -28,6 +28,9 @@
 
 
  /* Buttons for control styling */
+ .blogs .card-group {
+  overflow: auto;
+ }
 
  .blogs .text-center {
   font-weight: 400;

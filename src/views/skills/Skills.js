@@ -84,12 +84,13 @@ const Skills = () => {
                     </button>
                 </div>
             }
-            {/* <div>{currNumber}</div> */}
             <h1 className="text-center font-details-b pb-4">What else would a Help Company™ do?</h1>
-            <div className="pill-section">
-                {newList.map((item, index) => (
-                    <PillButton Label={item.label}  number={index} setNumber={() => setCurrNumber(index)} />
-                ))}
+            <div className="section-pill">
+                <div className="pill-section">
+                    {newList.map((item, index) => (
+                        <PillButton Label={item.label}  number={index} setNumber={() => setCurrNumber(index)} />
+                    ))}
+                </div>
             </div>
         </div>
     );

@@ -1,4 +1,5 @@
 import React from "react";
+import { useRef } from "react";
 import Container from "react-bootstrap/Container";
 // import Card from "react-bootstrap/Card";
 // import CardDeck from "react-bootstrap/CardDeck";
@@ -22,6 +23,9 @@ const cardval = [{
 }];
 
 const Carousel = () => {
+    const carouselGroup = document.getElementsByClassName("blogs");
+    const distance = 400;
+
     return (
         <div className="blogs ">
             <Container>
