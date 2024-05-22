@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import "./App.css";
 import NavBar from "./components/navBar/NavBar";
 import Carousel from "./views/carousel/Carousel";
@@ -36,63 +37,63 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <NavBar />
-      <div className="titleMessage"> 
-        <Fade up duration={2000}>
-          <div>
-            What would A Help Company™ do?
-          </div>
-        </Fade>
-        <button className="iconbutton" onClick={() => scrollDown(section1Ref)}>
-          <img src={ChevronDown} alt='Go down'/>
-        </button>
-      </div>
-      <div ref={section1Ref} className="launchMessage">
-        <Fade right duration={2000}>
-          <div>
-            It would launch four helpful
-            <br/>
-            tools and services.
-          </div>
-        </Fade>
-      </div>
-      <DroneRoofCheck />
-      <HelpNation />
-      <PolicyRecap />
-      <LifelineCertified />
+    <Router>
+      <div className="App">
+        <NavBar />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <div className="titleMessage"> 
+                <Fade up duration={2000}>
+                  <div>
+                    What would A Help Company™ do?
+                  </div>
+                </Fade>
+                <button className="iconbutton" onClick={() => scrollDown(section1Ref)}>
+                  <img src={ChevronDown} alt='Go down'/>
+                </button>
+              </div>
+              <div ref={section1Ref} className="launchMessage">
+                <Fade right duration={2000}>
+                  <div>
+                    It would launch four helpful
+                    <br/>
+                    tools and services.
+                  </div>
+                </Fade>
+              </div>
+              <DroneRoofCheck />
+              <HelpNation />
+              <PolicyRecap />
+              <LifelineCertified />
+
+              <div>
+                <Container className="container-box rounded">
+                  <Slide left duration={2000}>
+                    <hr />
+                    <Carousel />
+                  </Slide>
+                </Container>
+              </div>
       
-      <div>
+              <Skills />
 
-        <DroneRoofCheck />
-        <HelpNation />
-        <PolicyRecap />
-        <LifelineCertified />
+              <HelpfulBreak />
 
-        <HelpfulBreak />
-
-        <div>
-          <Container className="container-box rounded">
-            <Slide left duration={2000}>
+              <div>
+                  <Fade bottom duration={2000}>
+                    <hr />
+                    <Contact />
+                  </Fade>
+              </div>
               <hr />
-              <Carousel />
-            </Slide>
-          </Container>
-        </div>
+              <Footer />
+            </>
+          }/>
+          <Route path="/form" element={<Form Title={'Drone Roof Check'}/>} />
+         </Routes>
       </div>
-      <Skills />
-
-      <HelpfulBreak />
-      
-      <div>
-          <Fade bottom duration={2000}>
-            <hr />
-            <Contact />
-          </Fade>
-      </div>
-      <hr />
-      <Footer />
-    </div>
+    </Router>
   );
 }
 

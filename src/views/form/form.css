@@ -1,9 +1,11 @@
 .form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #E0DF6B;
     color: #010C66;
-    padding: 20%;
-    border-radius: 20px;
-    transition: all 2s ease
+    height: 100vh;
 }
 
 .formTitle {

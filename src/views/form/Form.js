@@ -30,7 +30,6 @@ const Form = ({Title, ButtonLabel}) => {
   return (
     <div id="form" className="form">
       <NavBar />
-        
         <Row>
           <Col>
             <h1 className="formTitle">{Title}</h1>
@@ -75,7 +74,9 @@ const Form = ({Title, ButtonLabel}) => {
             </div>
           </Col>
         </Row>
-        <Footer/>
+        <div style={{position: 'absolute', bottom: 0}}>
+          <Footer/>
+        </div>
     </div>
   );
 };
