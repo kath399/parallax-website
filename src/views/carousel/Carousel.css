@@ -30,6 +30,11 @@
  /* Buttons for control styling */
  .blogs .card-group {
   overflow: auto;
+  scroll-snap-type: x mandatory;
+ }
+
+ .blogs .card-group {
+  scroll-snap-align: center;
  }
 
  .blogs .text-center {
