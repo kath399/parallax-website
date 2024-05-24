@@ -75,8 +75,12 @@ function App() {
                   </Slide>
                 </Container>
               </div>
+
+              <div className="divider2"></div>
       
               <PillSection />
+
+              <div className="divider"></div>
 
               <HelpfulBreak />
 
