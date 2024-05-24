@@ -1,17 +1,18 @@
 import React, { useRef } from "react";
+import { useNavigate } from 'react-router-dom';
 import "./Landing.css";
 import NavBar from "../../components/navBar/NavBar";
+import HeroCard from "../../components/hero-card/HeroCard";
 import Carousel from "../carousel/Carousel";
+import Skills from "../skills/Skills";
 import HelpfulBreak from "../helpfulBreak/HelpfulBreak";
+import Contact from "../contact/Contact";
+import Footer from "../../components/footer/Footer";
 import { Parallax } from "react-parallax";
 import Fade from "react-reveal/Fade";
 import Bounce from "react-reveal/Bounce";
 import Slide from "react-reveal/Slide";
 import Container from "react-bootstrap/Container";
-import Skills from "../skills/Skills";
-import Contact from "../contact/Contact";
-import Footer from "../../components/footer/Footer";
-import HeroCard from "../../components/hero-card/HeroCard";
 
 import Drone from "../../assets/img/Drone.svg";
 import CloudBR from "../../assets/img/CloudBR.svg";
@@ -28,6 +29,11 @@ const Landing = () => {
       top: sectionRef.current.offsetTop,
       behavior: 'smooth' // For smooth scrolling
     });
+  };
+
+  const navigate = useNavigate();
+  const goTo = () => {
+    navigate('/form');
   };
 
   return (
@@ -60,11 +66,12 @@ const Landing = () => {
         Title='Drone Roof Check' 
         Animations={
           <Fade down duration={2000}>
-            <img id='droneImg' src={Drone} alt='Drone' className='droneImg'/>
+            <img id='droneImg' src={Drone} alt='Drone' className='cardImg' style={{top: '-296px', left: '296px'}}/>
           </Fade>
         }
         BGColor='#E0DF6B'
         Text='Checking your roof is important, but it’s also a pain, that’s why we’re introducing a service that uses drones to check your roof for you.'
+        ButtonOnclick={goTo}
         ButtonLabel='Register your interest'
       />
 
@@ -74,9 +81,9 @@ const Landing = () => {
         Title='Help Nation' 
         Animations={
           <Fade duration={2000}>
-            <img src={CloudTL} alt='Cloud' className='helpImgTL' />
-            <img src={CloudTR} alt='Cloud' className='helpImgTR' />
-            <img src={CloudBR} alt='Cloud' className='helpImgBR' />
+            <img src={CloudTL} alt='Cloud' className='cardImg' style={{top: '100px', left: '0'}} />
+            <img src={CloudTR} alt='Cloud' className='cardImg' style={{top: '0', right: '0'}} />
+            <img src={CloudBR} alt='Cloud' className='cardImg' style={{bottom: '0', right: '0'}} />
           </Fade>
         }
         BGColor='#F9AE97'
@@ -100,7 +107,7 @@ const Landing = () => {
         Title='Lifeline Certified' 
         Animations={
           <Fade down duration={2000}>
-            <img src={TeacupSpoon} alt='Lifeline Certified' className='lifelineImg'/>
+            <img src={TeacupSpoon} alt='Lifeline Certified' className='cardImg' style={{top: '36px'}}/>
           </Fade>
         }
         BGColor='#E0DF6B'
