@@ -4,7 +4,7 @@ import "./Landing.css";
 import NavBar from "../../components/navBar/NavBar";
 import HeroCard from "../../components/hero-card/HeroCard";
 import Carousel from "../carousel/Carousel";
-import Skills from "../skills/Skills";
+import PillSection from "../pillSection/PillSection";
 import HelpfulBreak from "../helpfulBreak/HelpfulBreak";
 import Contact from "../contact/Contact";
 import Footer from "../../components/footer/Footer";
@@ -124,7 +124,11 @@ const Landing = () => {
         </Container>
       </div>
 
-      <Skills />
+      <div className="divider2"></div>
+      
+      <PillSection />
+
+      <div className="divider"></div>
 
       <HelpfulBreak />
 

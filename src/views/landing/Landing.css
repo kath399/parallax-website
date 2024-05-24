@@ -94,6 +94,14 @@
     border-radius: 100px;
   }
   
+  .divider {
+    height: 104.5vh; /* for animation testing purposes */
+  }
+  
+  .divider2 {
+    height: 20vh; /* for animation testing purposes */
+  }
+
   .cardImg {
     position: absolute;
     z-index: 2;
