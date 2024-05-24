@@ -9,11 +9,11 @@ const DroneRoofCheck = () => {
   const navigate = useNavigate();
   const goTo = () => {
     navigate('/form');
-};
+  };
 
   useEffect(() => {
     const handleScroll = () => {
-      const div = document.querySelector('.droneRoofCheck');
+      const div = document.getElementById('droneRoofCheck');
       if (div) {
         if (window.scrollY > 0) { // Check if the page is scrolled
           div.classList.add('scrolled');
@@ -37,7 +37,7 @@ const DroneRoofCheck = () => {
       </Fade>
       <div className="droneTitle">Drone Roof Check</div>
       <div className="droneText">
-        Checking your roof is important, but it’s also a pain, that’s why we’re introducing a service that uses drones to check your roof for you. 
+        Checking your roof is important, but it’s also a pain, that’s why we’re introducing a service that uses drones to check your roof for you. 
         <button className='droneBtn' onClick={() => navigate('/form')}>Register your interest</button>
       </div>
     </div>
