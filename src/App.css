@@ -111,3 +111,11 @@ hr {
   max-width: 100%; 
   max-height: 100%; 
 }
+
+.divider {
+  height: 104.5vh; /* for animation testing purposes */
+}
+
+.divider2 {
+  height: 20vh; /* for animation testing purposes */
+}

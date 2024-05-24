@@ -2,8 +2,6 @@ import React from "react";
 import "./pillButton.css";
 
 const PillButton = ({Label, colour, number, setNumber}) => {
-    console.log(colour);
-
     const pillColour = randColour();
 
     function randColour() {
