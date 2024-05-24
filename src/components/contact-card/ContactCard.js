@@ -7,7 +7,7 @@ const ContactCard = () => {
     <div className={"contact-card py-2"} >
         <h1>Help define the future, become part of the Help Lab.</h1>
         <p>Get early access to all the latest Help Products and have a say on what helpful things a Help Compnay develops next.</p>
-        <button class="white-contrast">Join the Help Lab</button>
+        <button className="white-contrast">Join the Help Lab</button>
     </div>
   );
 };

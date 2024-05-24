@@ -15,7 +15,7 @@ import Fade from "react-reveal/Fade";
 import Bounce from "react-reveal/Bounce";
 import Slide from "react-reveal/Slide";
 import Container from "react-bootstrap/Container";
-import Skills from "./views/skills/Skills";
+import PillSection from "./views/pillSection/PillSection";
 import Blog from "./views/carousel/Carousel";
 import Projects from "./views/projects/projects";
 import Contact from "./views/contact/Contact";
@@ -76,7 +76,7 @@ function App() {
                 </Container>
               </div>
       
-              <Skills />
+              <PillSection />
 
               <HelpfulBreak />
 
