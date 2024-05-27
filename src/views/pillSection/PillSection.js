@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Cross from "../../assets/icons/Cross.svg";
 
 import "./pillSection.css";
+import "../../assets/styles/button.css";
 import PillButton from "../../components/pill/pillButton";
 
 const PillSection = () => {
@@ -77,7 +78,7 @@ const PillSection = () => {
               </p>
 
               <button
-                className="pill-close-button"
+                className="close-button"
                 onClick={() => setPillNumber(-1)}
               >
                 <img src={Cross} alt="Close" />
