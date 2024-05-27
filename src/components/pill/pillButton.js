@@ -2,6 +2,7 @@ import React from "react";
 import "./pillButton.css";
 
 const PillButton = ({Label, colour, number, setNumber}) => {
+
     const pillColour = randColour();
 
     function randColour() {
@@ -9,8 +10,18 @@ const PillButton = ({Label, colour, number, setNumber}) => {
         return colourNRMA[Math.floor(Math.random() * colourNRMA.length)];
     }
 
+    // Changing background for the button
+    function hoverState(){
+        document.documentElement.style.setProperty(`--hoverColor`, `${pillColour}`);
+
+        const style = document.createElement('style');
+        document.head.appendChild(style);
+        style.sheet.insertRule("a:hover { color:var(--hoverColor);}");
+    }
+
     return (
-        <button className="pillBtn" onClick={() => setNumber()} style={{backgroundColor:pillColour}}>
+        <button className="pillBtn" onClick={() => setNumber()} style={{borderColor:pillColour, backgroundColor: "transparent"}}
+        onMouseEnter={() => hoverState()}>
             {Label}
         </button>
     );
