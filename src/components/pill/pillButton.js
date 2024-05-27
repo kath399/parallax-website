@@ -16,7 +16,7 @@ const PillButton = ({Label, colour, number, setNumber}) => {
 
         const style = document.createElement('style');
         document.head.appendChild(style);
-        style.sheet.insertRule("a:hover { color:var(--hoverColor);}");
+        style.sheet.insertRule(".pillBtn a:hover { color:var(--hoverColor);}");
     }
 
     return (
