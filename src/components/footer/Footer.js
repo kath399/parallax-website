@@ -24,8 +24,11 @@ const Footer = () => {
         the “my nrma app” and other services.
       </div>
       <div className="footer-links">
-        Sitemap | Online terms | Privacy and security | General Insurance Code
-        of Practice | Moneysmart
+        <a href="">Sitemap </a>
+        <a href="">Online terms</a>
+        <a href="">Privacy and security</a>
+        <a href="">General Insurance Code of Practice</a>
+        <a href="">Moneysmart</a>
       </div>
     </div>
   );

@@ -1,10 +1,26 @@
 /* Common area for button styles */
+:root {
+  /* Colours */
+  --primary-white: white;
+  --primary-blue: #010C66;
+  /* Sizing */
+  --circle-button: 46px;
+}
 
 .close-button {
   text-align: center;
-  height: 46px;
-  width: 46px;
-  border: 1px solid white;
+  height: var(--circle-button);
+  width: var(--circle-button);
+  border: 1px solid var(--primary-white);
   border-radius: 100%;
   background-color: transparent;
+}
+
+.close-button:hover {
+    background-color: var(--primary-white);
+
+    > img {
+        /* will need to change future implementation!! - instead to actually change svg colour */
+        filter:invert(1); 
+    }
 }

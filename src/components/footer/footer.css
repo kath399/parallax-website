@@ -1,3 +1,5 @@
+@import url('../../assets/styles/links.css');
+
 .footer-style {
     background-color: #010C66;
     color: #fff;
@@ -18,4 +20,18 @@
 
 .footer-text {
   width: 95%;
+}
+
+.footer-links a {
+  display: inline-block;
+  color: white;
+}
+
+.footer-links a::after {
+  content: '|';
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.footer-links a:last-child::after {
+  content: '';
 }

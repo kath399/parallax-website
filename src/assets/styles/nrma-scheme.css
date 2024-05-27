@@ -1,6 +1,8 @@
 :root {
+    --primary-white: #ffffff;
+    --primary-warm-white: #F7F1EA;
     --primary-blue: #010C66;
-    --primary-yellow: #E0DF6B;
-    --primary-pink: #F9AE97;
-    --primary-green: #91BF9E;
+    --primary-spinifex: #D7D667;
+    --primary-sunset: #F9AE97;
+    --primary-river-gum: #91BF9E;
 }
