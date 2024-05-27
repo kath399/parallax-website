@@ -1,27 +1,21 @@
 .footer-style {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     background-color: #010C66;
     color: #fff;
     font-size: 16px;
-    height: 120px;
-    width: 100vw;
+    padding-left:5vw;
+    padding-right: 5vw;
+    text-align: left;
+    
+    > * {
+      margin: 30px 0;
+  }
 }
 
 .footer-logo {
-  margin-left: 72px;
   width: 122px;
   height: 40px;
 }
 
 .footer-text {
-  margin-right: 122px;
-  width: 900px;
-  text-align: left;
-}
-
-.footer-privacy {
-  margin-right: 72px;
-  text-align: center;
+  width: 95%;
 }
