@@ -1,0 +1,10 @@
+/* Common area for button styles */
+
+.close-button {
+  text-align: center;
+  height: 46px;
+  width: 46px;
+  border: 1px solid white;
+  border-radius: 100%;
+  background-color: transparent;
+}
