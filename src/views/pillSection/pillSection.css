@@ -62,15 +62,6 @@
   margin: 50px;
 }
 
-.pill-close-button {
-  text-align: center;
-  height: 46px;
-  width: 46px;
-  border: 1px solid white;
-  border-radius: 100%;
-  background-color: transparent;
-}
-
 /* --------------------------------------------------- */
 /* Draft Animations - work in Chrome and Edge BUT NOT SAFARI OR FIREFOX */
 /* Animation tests - previous code for the pill resizing */
