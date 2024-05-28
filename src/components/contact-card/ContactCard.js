@@ -1,6 +1,6 @@
 import React from "react";
 import "./ContactCard.css";
-import Logo from "../../assets/icons/logo1.png";
+import Logo from "../../assets/icons/NRMALogo.svg";
 
 const ContactCard = () => {
   const handleClick = () => {

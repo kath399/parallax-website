@@ -1,5 +1,5 @@
 .App {
-    background-color: #F7F1EA;
+    background-color: var(--primary-warm-white);
     text-align: center;
   }
   
@@ -66,7 +66,7 @@
     justify-content: center;
     margin: auto;
     text-align: center;
-    font-size: 64px;
+    font-size: 4em;
     color: #010C66;
   }
   

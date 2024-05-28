@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { useNavigate } from 'react-router-dom';
 import "./Landing.css";
+import "../../assets/styles/nrma-scheme.css";
 import NavBar from "../../components/navBar/NavBar";
 import HeroCard from "../../components/hero-card/HeroCard";
 import Carousel from "../carousel/Carousel";
@@ -20,7 +21,7 @@ import CloudTL from "../../assets/img/CloudTL.svg";
 import CloudTR from "../../assets/img/CloudTR.svg"
 import TeacupSpoon from "../../assets/img/TeacupSpoon.svg"
 
-import ChevronDown from "../../assets/icons/Chevron_down.svg";
+import ChevronDown from "../../assets/icons/chevron-down-white.svg";
 
 const Landing = () => {
   const section1Ref = useRef(null);
@@ -43,7 +44,7 @@ const Landing = () => {
       <div className="titleMessage"> 
         <Fade up duration={2000}>
           <div>
-            What would A Help Company™ do?
+            So what would A Help Company™ do?
           </div>
         </Fade>
         <button className="iconbutton" onClick={() => scrollDown(section1Ref)}>
