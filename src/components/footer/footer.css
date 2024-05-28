@@ -1,11 +1,11 @@
 @import url('../../assets/styles/links.css');
 
 .footer-style {
-    background-color: #010C66;
-    color: #fff;
+    background-color: #FFFFFF;
+    color: #010C66;
     font-size: 16px;
-    padding-left:5vw;
-    padding-right: 5vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
     text-align: left;
     
     > * {
@@ -18,13 +18,15 @@
   height: 40px;
 }
 
-.footer-text {
-  width: 95%;
+.footer-text a {
+  color: #010C66;
+  text-decoration: underline;
 }
 
 .footer-links a {
   display: inline-block;
-  color: white;
+  color: #010C66;
+  text-decoration: underline;
 }
 
 .footer-links a::after {
@@ -34,4 +36,16 @@
 }
 .footer-links a:last-child::after {
   content: '';
+}
+
+@media screen and (max-width: 394px) {
+  .footer-style {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 395px) and (max-width: 1024px) {
+  .footer-style {
+    font-size: 14px;
+  }
 }

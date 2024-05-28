@@ -1,18 +1,20 @@
 .logo {
-      width: 184px;
-      height: 60px;
+      width: 123px;
+      height: 40px;
       margin-left: 34px;
   }
   
   .nav-theme {
-    background-color: #FFFFFF80;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    background-color: #010C66;
     font-size: 20px;
-    height: 101px !important;
-    width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 41px;
-    border-radius: 10px;
+    height: 120px !important;
+    width: fill;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    z-index: 1000;
   }
   .navbar-dark .navbar-nav .nav-link{
     padding-left: 1.5rem;
@@ -29,19 +31,10 @@
     margin-left: 22px;
     }
   }
-  
-  @keyframes moveDown {
-    from {
-      transform: translateY(-5rem);
-    }
-    to {
-      transform: translateY(0rem);
-    }
-  }
 
   .menubutton {
     position: absolute;
-    right: 48px;
+    right: 10vw;
     background-color: #010C66;
     width: 46px;
     height: 46px;
