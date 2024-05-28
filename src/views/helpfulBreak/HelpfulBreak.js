@@ -14,6 +14,7 @@ const HelpfulBreak = () => {
   const leafSetting = {
     maxLeaves : 30,
     blowerIntensity: 1000,
+    blowerRange: 300,
   };
 
   return (

@@ -27,6 +27,7 @@ const Leaves = (props) => {
   const ref = useRef();
   const maxLeaves = props.maxLeaves;
   const blowerIntensity = props.blowerIntensity;
+  const blowerRange = props.blowerRange;
 
   //
 
@@ -68,7 +69,6 @@ const Leaves = (props) => {
     console.log("====================");
 
 
-    /*
         // //init mouse track
         let mousePos = {x:window.innerWidth * 0.5, y:window.innerHeight * 0.5};
         let isMouseIn = false;
@@ -78,7 +78,7 @@ const Leaves = (props) => {
         // push : element(s) to add to the end of the array.
         // shift: removes the first element from an array and returns that removed element.
 
-*/
+
     let centre = { x: canvas.width * 0.5, y: canvas.height * 0.5 };
     let step = { x: 0, y: 0 };
 
@@ -142,13 +142,10 @@ const Leaves = (props) => {
 
       const onLeafOver = (e) => {
         let leaf = e.target;
-        if (!leaf.isBlowingAway) {
+        if (!leaf.isBlowingAway && !leaf.isDead) {
           leaf.isBlowingAway = true;
         }
       };
-
-      const onLeafOut = (e) => {};
-      const blowAway = (leaf, area, intensity) => {};
 
       leaves.forEach((leaf, i) => {
         let leafScale = randRange(8, 12) * 0.1;
@@ -199,11 +196,29 @@ const Leaves = (props) => {
 
         // Make the leaf interactive : 
         // Mouse & touch events
-        leaf.eventMode = "static";
-        // leaf.cursor = 'pointer';
-        leaf.on("pointerover", onLeafOver);
-        // .on('pointerout', onLeafOut);
+        // leaf.eventMode = "static";
+        // leaf.on("pointerover", onLeafOver);
       });
+
+
+      const onContainerOver = (e) => {
+        mousePos.x = e.clientX;  // Horizontal
+        mousePos.y = e.clientY;  // Vertical
+
+        leaves.forEach((leaf, i) => {
+        if (!leaf.isBlowingAway && !leaf.isDead) {
+            if (Math.abs(mousePos.x - leaf.x) < blowerRange && Math.abs(mousePos.y - leaf.y) < blowerRange) {
+                leaf.isBlowingAway = true;
+            }
+        }
+    });
+
+
+      };
+      _container.eventMode = "static";
+      _container.on("globalmousemove", onContainerOver);
+
+
 
     });
 
