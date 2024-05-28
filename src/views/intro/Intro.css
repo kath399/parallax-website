@@ -7,6 +7,9 @@
   align-items: center;
   justify-content: center;
 }
+.nrma-logo-intro > img {
+  width: 419px;
+}
 
 .titleMessage {
   width: 100%;
@@ -23,6 +26,9 @@
   letter-spacing: -0.96px;
   color: var(--primary-white);
   background-color: var(--primary-blue);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .launchMessage {

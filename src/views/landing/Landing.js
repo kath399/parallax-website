@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { useNavigate } from 'react-router-dom';
+import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Landing.css";
 import "../../assets/styles/nrma-scheme.css";
 import NavBar from "../../components/navBar/NavBar";
@@ -15,15 +15,18 @@ import Bounce from "react-reveal/Bounce";
 import Slide from "react-reveal/Slide";
 import Container from "react-bootstrap/Container";
 
+import Intro from "../intro/Intro";
+
 import Drone from "../../assets/img/Drone.svg";
 import CloudBR from "../../assets/img/CloudBR.svg";
 import CloudTL from "../../assets/img/CloudTL.svg";
-import CloudTR from "../../assets/img/CloudTR.svg"
-import TeacupSpoon from "../../assets/img/TeacupSpoon.svg"
+import CloudTR from "../../assets/img/CloudTR.svg";
+import TeacupSpoon from "../../assets/img/TeacupSpoon.svg";
 
 import ChevronDown from "../../assets/icons/chevron-down-white.svg";
 
 const Landing = () => {
+  const [slideComplete, setSlideComplete] = useState(false);
   const section1Ref = useRef(null);
   const scrollDown = (sectionRef) => {
     window.scrollTo({
@@ -40,27 +43,10 @@ const Landing = () => {
   return (
     <div className="App">
       <NavBar />
+      
+      <Intro setSlideComplete={setSlideComplete} />
 
-      <div className="titleMessage"> 
-        <Fade up duration={2000}>
-          <div>
-            So what would A Help Company™ do?
-          </div>
-        </Fade>
-        <button className="iconbutton" onClick={() => scrollDown(section1Ref)}>
-          <img src={ChevronDown} alt='Go down'/>
-        </button>
-      </div>
-      <div ref={section1Ref} className="launchMessage">
-        <Fade right duration={2000}>
-          <div>
-            It would launch four helpful
-            <br/>
-            tools and services.
-          </div>
-        </Fade>
-      </div>
-
+      { slideComplete ? <>
       <HeroCard 
         Id='droneRoofCheck' 
         Number='1'
@@ -140,7 +126,7 @@ const Landing = () => {
         </Fade>
       </div>
       <hr />
-      <Footer />
+      <Footer /></> : ""}
     </div>
   );
 }
