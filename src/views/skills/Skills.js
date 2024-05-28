@@ -74,7 +74,7 @@ const Skills = () => {
 
                     <p>No. {currNumber}</p>
 
-                    <PillButton Label={newList[currNumber].label}  number={currNumber} /> 
+                    <PillButton Label={newList[currNumber].label} key={currNumber} number={currNumber} /> 
 
                     <p className="pill-overlay-text">Helping to restore a local cricket club to its former glory: The 300-word application that secured an NRMA Insurance grant to bring new life to Goolwa Cricket Club.</p>
                     
@@ -88,7 +88,7 @@ const Skills = () => {
             <div className="section-pill">
                 <div className="pill-section">
                     {newList.map((item, index) => (
-                        <PillButton Label={item.label}  number={index} setNumber={() => setCurrNumber(index)} />
+                        <PillButton Label={item.label} key={index} number={index} setNumber={() => setCurrNumber(index)} />
                     ))}
                 </div>
             </div>
