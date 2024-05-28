@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import Navbar from 'react-bootstrap/Navbar'
-import Logo from "../../assets/icons/NRMALogo.svg";
+import Logo from "../../assets/icons/NRMALogoWhite.svg";
 import Menu from "../../assets/icons/Menu.svg"
 import Overlay from '../../views/overlay/Overlay';
 import "./NavBar.css"; 
@@ -13,18 +12,13 @@ import "./NavBar.css";
     };
     return (
         <>
-            <Navbar collapseOnSelect expand="md"
-            fixed="top"
-            className="nav-theme">
-                <Navbar.Brand href="#home">
-                    <img className="logo" src={Logo} alt='Logo'/>
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <div className='nav-theme'>
+                <img className="logo" src={Logo} alt='Logo'/>
                 <button className='menubutton' onClick={toggleOverlay}>
                     <img src={Menu} alt='Menu'/>
                 </button>
                 <Overlay isVisible={isOverlayVisible} onClose={toggleOverlay} />
-            </Navbar>
+            </div>
         </>
     )
 }
