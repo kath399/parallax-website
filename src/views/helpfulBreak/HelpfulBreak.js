@@ -12,7 +12,7 @@ const HelpfulBreak = () => {
 
 
   const leafSetting = {
-    maxLeaves : 30,
+    maxLeaves : 100,
     blowerIntensity: 1000,
     blowerRange: 300,
   };
@@ -20,10 +20,6 @@ const HelpfulBreak = () => {
   return (
     <div className="helpfulBreak"> 
       <Fade down duration={2000}>
-        {/* <img src={LeafTop} alt='' className="leafTopImg"/>
-        <img src={LeafLeft} alt='' className="leafLeftImg"/>
-        <img src={LeafRight} alt='' className="leafRightImg"/>
-        <img src={LeafBottom} alt='' className="leafBottomImg"/> */}
       </Fade>
       <Fade up duration={2000}>
         <div>
@@ -34,6 +30,7 @@ const HelpfulBreak = () => {
         </div>
       </Fade>
       {!isMobile && <Leaves {...leafSetting}></Leaves>}
+
     </div>
   );
 };

@@ -13,14 +13,7 @@ await app.init({
   backgroundAlpha: 0,
   // backgroundColor: '#1099bb',
   antialias: true,
-
-  // width: window.innerWidth, height: window.innerWidth * (vw / 100),
-  // view: this.canvas,
   // resolution: 1,
-  // width: window.innerWidth,
-  // height: window.innerWidth * (vw / 100), //height
-  // clearBeforeRender: true,
-  // preserveDrawingBuffer: false
 });
 
 const Leaves = (props) => {
@@ -28,8 +21,6 @@ const Leaves = (props) => {
   const maxLeaves = props.maxLeaves;
   const blowerIntensity = props.blowerIntensity;
   const blowerRange = props.blowerRange;
-
-  //
 
   const initialState = { count: 0 };
   const INCREMENT = "increment";
@@ -218,8 +209,6 @@ const Leaves = (props) => {
       _container.eventMode = "static";
       _container.on("globalmousemove", onContainerOver);
 
-
-
     });
 
     app.ticker.add((ticker) => {
@@ -266,8 +255,14 @@ const Leaves = (props) => {
   ////
 
   return (
-    <div>
-      {/* <p>Count: {state.count}</p> */}
+    <div className="leaves_canvas_wrapper"
+        style={{
+            zIndex: 1999,
+            mixBlendMode: "none",
+            pointerEvents: "none",
+
+        }}
+    >
       {state.count <= 0.999 && (
         <div
           ref={ref}
