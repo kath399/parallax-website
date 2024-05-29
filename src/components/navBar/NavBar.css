@@ -8,18 +8,22 @@
     position: fixed;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     background-color: #010C66;
-    font-size: 20px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
     height: 120px !important;
     width: fill;
     padding-left: 10vw;
     padding-right: 10vw;
     z-index: 1000;
   }
-  .navbar-dark .navbar-nav .nav-link{
+
+  /*.navbar-dark .navbar-nav .nav-link{
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-  }
+  }*/
 
   @media only screen and (max-width: 786px){
     .nav-theme{
