@@ -1,9 +1,15 @@
 import React from "react";
 import "./nrmaButton.css";
 
-const NrmaButton = ({ Label, OnClick }) => {
+const NrmaButton = ({ Type, Label, OnClick }) => {
     return (
-        <button className="nrmaBtn" onClick={OnClick}>
+        <button 
+            className={[
+                `nrmaBtn`,
+                `nrmaBtn--${Type}`,
+            ].join(' ')} 
+            onClick={OnClick}
+        >
             {Label}
         </button>
     );

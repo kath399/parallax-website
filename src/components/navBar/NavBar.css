@@ -1,47 +1,64 @@
 .logo {
-      width: 123px;
-      height: 40px;
-      margin-left: 34px;
-  }
+  width: 123px;
+  height: 40px;
+}
   
+.navBar {
+  position: fixed;
+  height: 120px;
+  width: fill;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #010C66;
+  color: white;
+  font-size: 14px;
+  font-weight: bold; 
+  z-index: 1000;
+  transition: 1s ease;
+}
+
+.nav-theme--scrolled {
+  background-color: white;
+  color: #010C66
+}
+
+/*.navbar-dark .navbar-nav .nav-link{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}*/
+
+.menubutton {
+  display: block;
+  background-color: #010C66;
+  width: 32px;
+  height: 32px;
+  border: 1px solid white;
+  border-radius: 100px;
+}
+
+.navHeading {
+  display: none;
+}
+
+@media only screen and (min-width: 1440px){
   .nav-theme {
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: #010C66;
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
-    height: 120px !important;
-    width: fill;
+    height: 80px;
     padding-left: 10vw;
     padding-right: 10vw;
-    z-index: 1000;
+    justify-content: flex-start;
   }
 
-  /*.navbar-dark .navbar-nav .nav-link{
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }*/
-
-  @media only screen and (max-width: 786px){
-    .nav-theme{
-      height: auto !important;
-      width: 100%;
-    }
-    .logo{
-    margin-bottom:-32px;
-    margin-left: 22px;
-    }
+  .logo {
+    margin-left: 0px;
   }
 
   .menubutton {
-    position: absolute;
-    right: 10vw;
-    background-color: #010C66;
-    width: 46px;
-    height: 46px;
-    border: none;
-    border-radius: 100px;
+    display: none;
   }
+
+  .navHeading {
+    display: block
+  }
+}
+
