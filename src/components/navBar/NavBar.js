@@ -14,6 +14,8 @@ import "./NavBar.css";
         <>
             <div className='nav-theme'>
                 <img className="logo" src={Logo} alt='Logo'/>
+                &nbsp;&nbsp;&nbsp; A Help Company™ &nbsp;&nbsp;&nbsp; Helpful tools and services  
+                &nbsp;&nbsp;&nbsp; Ways we help &nbsp;&nbsp;&nbsp; Help Lab
                 <button className='menubutton' onClick={toggleOverlay}>
                     <img src={Menu} alt='Menu'/>
                 </button>
