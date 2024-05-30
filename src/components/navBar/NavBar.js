@@ -27,11 +27,6 @@ import "./NavBar.css";
           window.removeEventListener('scroll', handleScroll);
         };
     }, [scrolled]);
-
-    const style = {
-        position: 'absolute',
-        right: '10vw'
-    }
     
     return (
         <div 
