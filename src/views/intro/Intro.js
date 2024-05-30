@@ -16,7 +16,7 @@ const Intro = () => {
 
   const section1Ref = useRef(null);
   const scrollDown = (sectionRef) => {
-    window.scrollTo({
+    sectionRef.current.scrollIntoView({
       top: sectionRef.current.offsetTop,
       behavior: "smooth", // For smooth scrolling
     });

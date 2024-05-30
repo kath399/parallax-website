@@ -1,16 +1,13 @@
 .App {
   background-color: #f7f1ea;
   text-align: center;
-}
-
-html {
-  overflow: scroll;
+  overflow-x: hidden;
 }
 
 html,
 body {
   max-width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .App-logo {
