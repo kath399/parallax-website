@@ -2,9 +2,24 @@
 :root {
   /* Colours */
   --primary-white: white;
-  --primary-blue: #010C66;
+  --primary-blue: #010c66;
   /* Sizing */
   --circle-button: 46px;
+}
+
+.primary-button-white {
+  background-color: transparent;
+  color: var(--primary-white);
+  border: 1px solid var(--primary-white);
+  padding: 7px 21px 7px 21px;
+  border-radius: 80px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.primary-button-white:hover {
+  background-color: white;
+  color: var(--primary-blue);
 }
 
 .close-button {
@@ -17,10 +32,52 @@
 }
 
 .close-button:hover {
-    background-color: var(--primary-white);
+  background-color: var(--primary-white);
 
-    > img {
-        /* will need to change future implementation!! - instead to actually change svg colour */
-        filter:invert(1); 
-    }
+  > img {
+    /* will need to change future implementation!! - instead to actually change svg colour */
+    filter: invert(1);
+  }
+}
+
+.skip-content-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 48px;
+  margin: auto;
+  width: 46px;
+  height: 46px;
+  border: 1px solid white;
+  border-radius: 100px;
+  transition: display 2s linear;
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.skip-content-button-hidden {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* check if accessibility */
+/* .skip-content-button:focus {
+  outline: none;
+} */
+
+.skip-content-button:hover {
+  background-color: white;
+  transition: background-color 0.2s ease;
+}
+
+.skip-content-button:hover img {
+  content: url("../icons/chevron-down-blue.svg");
+}
+
+.skip-content-button img {
+  width: 24px;
+  height: 24px;
 }
