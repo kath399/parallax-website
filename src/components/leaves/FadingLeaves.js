@@ -76,6 +76,15 @@ const FadingLeaves = (props) => {
 
         let _container = new PIXI.Container();
         app.stage.addChild(_container);
+
+        // Transparent background that works as a hitbox
+        let bg = new PIXI.Graphics();
+        bg.rect(0, 0, app.canvas.width, app.canvas.height);
+        bg.fill(0x1099bb);
+        bg.alpha = 0;
+        _container.addChild(bg);
+
+
         let leaves = [];
         let shadows = [];
 
@@ -89,6 +98,24 @@ const FadingLeaves = (props) => {
             { alias: "leaf01", src: "/images/Leaf01.png" },
             { alias: "leaf02", src: "/images/Leaf02.png" },
             { alias: "leaf03", src: "/images/Leaf03.png" },
+
+            // { alias: "leaf01", src: "/images/Leaf_01.png" },
+            // { alias: "leaf02", src: "/images/Leaf_02.png" },
+            // { alias: "leaf03", src: "/images/Leaf_03.png" },
+            // { alias: "leaf04", src: "/images/Leaf_04.png" },
+            // { alias: "leaf05", src: "/images/Leaf_05.png" },
+            // { alias: "leaf06", src: "/images/Leaf_06.png" },
+            // { alias: "leaf07", src: "/images/Leaf_07.png" },
+            // { alias: "leaf08", src: "/images/Leaf_08.png" },
+            // { alias: "leaf09", src: "/images/Leaf_09.png" },
+            // { alias: "leaf10", src: "/images/Leaf_10.png" },
+            // { alias: "leaf11", src: "/images/Nut_01.png" },
+            // { alias: "leaf12", src: "/images/Nut_02.png" },
+            // { alias: "leaf13", src: "/images/Nut_03.png" },
+            // { alias: "leaf14", src: "/images/Stick_01.png" },
+            // { alias: "leaf15", src: "/images/Stick_02.png" },
+
+
         ];
         let leafAssetAliasList = [...Array(leafAssetList.length).keys()].map(
             (x) => leafAssetList[x].alias
@@ -256,8 +283,6 @@ const FadingLeaves = (props) => {
         <div
             className="leaves_canvas_wrapper"
             style={{
-                zIndex: 1999,
-                mixBlendMode: "none",
                 pointerEvents: "none",
             }}
         >

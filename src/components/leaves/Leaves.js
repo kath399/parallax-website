@@ -9,9 +9,9 @@ await app.init({
     resizeTo: window,
     sharedTicker: true,
     backgroundAlpha: 0,
-    // backgroundColor: '#1099bb',
+    // backgroundColor: "#1099bb",
     antialias: true,
-    // resolution: 1,
+    resolution: 1,
 });
 const Leaves = (props) => {
     /*--------------------------
@@ -65,24 +65,37 @@ const Leaves = (props) => {
     useEffect(() => {
         // Matter, Setup Walls
         // boundaries
+        let wallThickness = 200;
         World.add(engine.current.world, [
-            Bodies.rectangle(canvasWidth / 2, -10, canvasWidth, 20, {
-                isStatic: true,
-            }),
-            Bodies.rectangle(-10, canvasHeight / 2, 20, canvasHeight, {
-                isStatic: true,
-            }),
             Bodies.rectangle(
                 canvasWidth / 2,
-                canvasHeight + 10,
+                -wallThickness / 2,
                 canvasWidth,
-                20,
+                wallThickness,
+                {
+                    isStatic: true,
+                }
+            ),
+            Bodies.rectangle(
+                -wallThickness / 2,
+                canvasHeight / 2,
+                wallThickness,
+                canvasHeight,
+                {
+                    isStatic: true,
+                }
+            ),
+            Bodies.rectangle(
+                canvasWidth / 2,
+                canvasHeight + wallThickness / 2,
+                canvasWidth,
+                wallThickness,
                 { isStatic: true }
             ),
             Bodies.rectangle(
-                canvasWidth + 10,
+                canvasWidth + wallThickness / 2,
                 canvasHeight / 2,
-                20,
+                wallThickness,
                 canvasHeight,
                 { isStatic: true }
             ),
@@ -104,17 +117,24 @@ const Leaves = (props) => {
         console.log("====================");
         console.log("CANVAS LAUNCHED : ");
         console.log("app.canvas : ", canvas.width, canvas.height);
-        console.log("window : ", window.innerWidth, window.innerHeight);
-        console.log("app.screen : ", app.screen.width, app.screen.height);
-        console.log("scene.offset", scene.offsetWidth, scene.offsetHeight);
+        // console.log("window : ", window.innerWidth, window.innerHeight);
+        // console.log("app.screen : ", app.screen.width, app.screen.height);
+        // console.log("scene.offset", scene.offsetWidth, scene.offsetHeight);
         console.log("====================");
 
         let centre = { x: canvas.width * 0.5, y: canvas.height * 0.5 };
-        let cursorPixi;
+        let cursorPixi, cursorMatter;
 
         // Container
         let _container = new PIXI.Container();
         app.stage.addChild(_container);
+
+        // Transparent background that works as a hitbox
+        let bg = new PIXI.Graphics();
+        bg.rect(0, 0, app.canvas.width, app.canvas.height);
+        bg.fill(0x1099bb);
+        bg.alpha = 0;
+        _container.addChild(bg);
 
         const randRange = (min, max) => {
             min = Math.ceil(min);
@@ -123,33 +143,33 @@ const Leaves = (props) => {
         };
 
         let leafAssetList = [
-            { alias: "leaf01", src: "/images/circ100.png" },
-            { alias: "leaf02", src: "/images/circ100.png" },
-            { alias: "leaf03", src: "/images/circ100.png" },
+            // { alias: "leaf01", src: "/images/circ100.png" },
+
+            { alias: "leaf01", src: "/images/Leaf_01.png" },
+            { alias: "leaf02", src: "/images/Leaf_02.png" },
+            { alias: "leaf03", src: "/images/Leaf_03.png" },
+            { alias: "leaf04", src: "/images/Leaf_04.png" },
+            { alias: "leaf05", src: "/images/Leaf_05.png" },
+            { alias: "leaf06", src: "/images/Leaf_06.png" },
+            { alias: "leaf07", src: "/images/Leaf_07.png" },
+            { alias: "leaf08", src: "/images/Leaf_08.png" },
+            { alias: "leaf09", src: "/images/Leaf_09.png" },
+            { alias: "leaf10", src: "/images/Leaf_10.png" },
+            { alias: "leaf11", src: "/images/Nut_01.png" },
+            { alias: "leaf12", src: "/images/Nut_02.png" },
+            { alias: "leaf13", src: "/images/Nut_03.png" },
+            { alias: "leaf14", src: "/images/Stick_01.png" },
+            { alias: "leaf15", src: "/images/Stick_02.png" },
         ];
         let leafAssetAliasList = [...Array(leafAssetList.length).keys()].map(
             (x) => leafAssetList[x].alias
         );
 
-        let shadowAssetList = [
-            { alias: "shadow01", src: "/images/Shadow01.png" },
-            { alias: "shadow02", src: "/images/Shadow02.png" },
-            { alias: "shadow03", src: "/images/Shadow03.png" },
-        ];
-        let shadowAssetAliasList = [
-            ...Array(shadowAssetList.length).keys(),
-        ].map((x) => shadowAssetList[x].alias);
-
         // Add the assets to load
         PIXI.Assets.addBundle("leaves", leafAssetList);
-        PIXI.Assets.addBundle("shadows", shadowAssetList);
 
         // Load the assets and get a resolved promise once both are loaded
-        const texturesPromise = PIXI.Assets.loadBundle([
-            "leaves",
-            "shadows",
-            "curs",
-        ]);
+        const texturesPromise = PIXI.Assets.loadBundle(["leaves"]);
         texturesPromise.then((resolvedTextures) => {
             console.log("Texture loaded:", texturesPromise);
             console.log("Texture loaded:", resolvedTextures);
@@ -162,22 +182,12 @@ const Leaves = (props) => {
                         ]
                     )
             );
-            shadows = [...Array(maxLeaves).keys()].map(
-                (x) =>
-                    new PIXI.Sprite(
-                        resolvedTextures.shadows[
-                            shadowAssetAliasList[
-                                x % shadowAssetAliasList.length
-                            ]
-                        ]
-                    )
-            );
 
             leaves.forEach((leaf, i) => {
-                // let leafScale = randRange(8, 12) * 0.1;
-                let leafScale = 1;
-                // let leafRotation = randRange(-20, 20);
-                let leafRotation = 0;
+                let leafScale = randRange(8, 12) * 0.1;
+                // let leafScale = 1;
+                let leafRotation = randRange(-220, 220) * 0.01; // radian
+                // let leafRotation = 0;
                 let leafInitPos = {
                     x: randRange(140, canvas.width - 140),
                     y: randRange(140, canvas.height - 140),
@@ -189,6 +199,7 @@ const Leaves = (props) => {
                 leaf.y = leafInitPos.y;
                 leaf.landedPos = { x: leafInitPos.x, y: leafInitPos.y };
                 leaf.scale.set(leafScale, leafScale);
+
                 leaf.rotation = leafRotation;
                 leaf.isBlowingAway = false;
                 leaf.isDead = false;
@@ -201,70 +212,54 @@ const Leaves = (props) => {
                     // (leaf.width + leaf.height) * 0.5,
                     {
                         //OPTIONS
-                        restitution: 0.2,
+                        mass: 2,
+                        restitution: 0.8,
+                        friction: 0.1,
+                        frictionAir: 0.1,
+                        frictionStatic: 0,
+                        angle: leafRotation,
+                        // chamfer: 0.5
                     },
-                    3 //MASS
+                    10 // max sides
                 );
                 leafBody.i = i;
                 World.addBody(engine.current.world, leafBody);
                 leafBodies.push(leafBody);
 
-                //
-
-                let shadow = shadows[i];
-
-                shadow.anchor.set(0.5);
-                shadow.alpha = 0.01;
-                shadow.i = i; //index
-                shadow.shadowOffset = { x: 20, y: 20 };
-                shadow.x = leafInitPos.x + shadow.shadowOffset.x;
-                shadow.y = leafInitPos.y + shadow.shadowOffset.y;
-                shadow.landedPos = { x: leafInitPos.x, y: leafInitPos.y };
-                shadow.scale.set(leafScale, leafScale);
-                shadow.rotation = leafRotation;
-
                 // cascading attachment : leaf-shadow-leaf-shadow
-                _container.addChild(shadow);
                 _container.addChild(leaf);
             });
 
-            cursorPixi = new PIXI.Sprite("aaa");
+            cursorPixi = new PIXI.Sprite("AAA");
+            // cursorPixi = new PIXI.Sprite(leaves[0].texture);
             cursorPixi.x = 100;
             cursorPixi.y = 100;
             cursorPixi.anchor.set(0.5);
 
             _container.addChild(cursorPixi);
-            console.log(cursorPixi);
 
-            let cursorMatter = Bodies.circle(
+            cursorMatter = Bodies.circle(
                 centre.x,
                 centre.y,
                 blowerRange, //radius
                 {
                     mass: 200,
-                    restitution: 0.9,
-                    friction: 0.005,
-                    render: {
-                        fillStyle: "#0000ff",
-                    },
-                }
+                    restitution: 0,
+                    slop: 0.1,
+                    // friction: 0.005,
+                },
+                5
             );
             World.add(engine.current.world, cursorMatter);
 
             const handleCursor = (e) => {
+                // console.log(e.clientX);
                 cursorPixi.position.copyFrom(e.global);
-
-                // cursorPixi.x = e.clientX;
-                // cursorPixi.y = e.clientY;
-
-                // cursorMatter.position.x = e.clientX;
-                // cursorMatter.position.y = e.clientY;
-
                 cursorMatter.position.x = cursorPixi.position.x;
                 cursorMatter.position.y = cursorPixi.position.y;
             };
-            _container.eventMode = "static";
-            _container.on("mousemove", handleCursor);
+            bg.eventMode = "static";
+            bg.on("mousemove", handleCursor);
         }); //Asset Load promise
 
         app.ticker.add((ticker) => {
@@ -272,10 +267,7 @@ const Leaves = (props) => {
                 let leafBody = leafBodies[leaf.i];
                 leaf.position = leafBody.position;
                 leaf.rotation = leafBody.angle;
-
-                let shadow = shadows[leaf.i];
-                shadow.position = leaf.position;
-                shadow.rotation = leaf.rotation;
+                // console.log(cursorMatter.position.x - cursorPixi.x)
             });
         });
 
@@ -298,6 +290,7 @@ const Leaves = (props) => {
                 height: "100vw",
                 top: 0,
                 right: 0,
+                pointerEvents: "none",
             }}
         >
             <div

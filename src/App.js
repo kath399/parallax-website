@@ -62,7 +62,7 @@ function App() {
                   </div>
                 </Fade>
               </div>
-              {/* <DroneRoofCheck />
+              <DroneRoofCheck />
               <HelpNation />
               <PolicyRecap />
               <LifelineCertified />
@@ -74,11 +74,11 @@ function App() {
                     <Carousel />
                   </Slide>
                 </Container>
-              </div> */}
+              </div>
       
               <Skills />
 
-              <HelpfulBreak />
+              <HelpfulBreak fading = {false} />
 
               <div>
                   <Fade bottom duration={2000}>

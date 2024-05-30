@@ -6,11 +6,12 @@ import Leaves from "../../components/leaves/Leaves";
 import FadingLeaves from "../../components/leaves/FadingLeaves";
 import { isMobile, MobileView } from 'react-device-detect';
 
-const HelpfulBreak = () => {
+const HelpfulBreak = (prop) => {
 
-
+  const fading = prop.fading;
+  console.log(fading)
   const leafSetting = {
-    maxLeaves : 200,
+    maxLeaves : 120,
     blowerIntensity: 1000,
     blowerRange: 200,
   };
@@ -28,7 +29,11 @@ const HelpfulBreak = () => {
           </div>
         </div>
       </Fade>
-          {!isMobile && <Leaves {...leafSetting}></Leaves>}
+          {!isMobile && (
+              fading ? <FadingLeaves {...leafSetting}></FadingLeaves>
+              : <Leaves {...leafSetting}></Leaves>
+            )
+          }
 
     </div>
   );
