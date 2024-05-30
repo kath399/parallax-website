@@ -10,7 +10,7 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact">
+    <section id="contact">
       <Fade bottom duration={2000}>
         <div className={"contact-card py-2"}>
           <h1>Help define the future, become part of the Help Lab.</h1>
@@ -23,7 +23,7 @@ const Contact = () => {
           </button>
         </div>
       </Fade>
-    </div>
+    </section>
   );
 };
 

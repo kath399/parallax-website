@@ -1,6 +1,18 @@
 .App {
   background-color: var(--primary-warm-white);
   text-align: center;
+
+  /* To enable scroll snap */
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+/* To enable scroll snap */
+section {
+  height: 100%;
+  scroll-snap-align: start;
 }
 
 .App-logo {

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Landing.css";
 import "../../assets/styles/nrma-scheme.css";
@@ -22,12 +22,25 @@ import CloudBR from "../../assets/img/CloudBR.svg";
 import CloudTL from "../../assets/img/CloudTL.svg";
 import CloudTR from "../../assets/img/CloudTR.svg";
 import TeacupSpoon from "../../assets/img/TeacupSpoon.svg";
+import Loader from "../../loader/Loader";
 
 const Landing = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
   const goTo = () => {
     navigate("/form");
   };
+
+  useEffect(() => {
+    // Simulate an API call
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  }, []);
+
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <div className="App">
@@ -120,9 +133,9 @@ const Landing = () => {
         <Carousel />
       </Slide>
 
-      <div className="divider2"></div>
+      {/* <div className="divider2"></div> */}
 
-      <PillSection />
+      {/* <PillSection /> */}
 
       <div className="divider"></div>
 

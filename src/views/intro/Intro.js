@@ -24,10 +24,10 @@ const Intro = () => {
 
   function logit() {
     setScrollY(window.scrollY);
-    changeCircles();
     if (
+      scrollY === 0 ||
       scrollY >=
-      finalIntro.current.offsetTop + finalIntro.current.offsetHeight / 2 - 40
+        finalIntro.current.offsetTop + finalIntro.current.offsetHeight / 2 - 40
     ) {
       console.log("Hi");
       document.getElementsByClassName("circles")[0].style.display = "none";
@@ -58,6 +58,7 @@ const Intro = () => {
       window.addEventListener("scroll", logit);
     }
     watchScroll();
+    changeCircles();
 
     return () => {
       window.removeEventListener("scroll", logit);
@@ -66,7 +67,7 @@ const Intro = () => {
 
   return (
     <>
-      <div className="titleMessage first">
+      <section className="titleMessage first">
         {/* Slide section */}
         <Fade duration={2000}>
           <div className="text">
@@ -77,23 +78,23 @@ const Intro = () => {
             everything.
           </div>
         </Fade>
-      </div>
+      </section>
 
-      <div className="titleMessage" ref={secondSlide}>
+      <section className="titleMessage" ref={secondSlide}>
         {/* Slide section */}
         <Fade duration={2000}>
           <div className="text">
             Which is why NRMA Insurance is becoming A Help Company™.
           </div>
         </Fade>
-      </div>
+      </section>
 
-      <div className="titleMessage" ref={finalIntro}>
+      <section className="titleMessage" ref={finalIntro}>
         {/* Slide section */}
         <Fade duration={2000}>
           <div className="text">So what would A Help Company™ do?</div>
         </Fade>
-      </div>
+      </section>
 
       {/* Circles to show positioning */}
       <div className="circles">
@@ -111,11 +112,11 @@ const Intro = () => {
       </button>
 
       {/* Show launch message if intro complete */}
-      <div ref={section1Ref} className="launchMessage">
+      <section ref={section1Ref} className="launchMessage">
         <Fade up duration={2000}>
           It would launch four helpful tools and services.
         </Fade>
-      </div>
+      </section>
     </>
   );
 };

@@ -60,7 +60,7 @@ const PillSection = () => {
   const newList = changeOrder(ogList);
 
   return (
-    <div className="pill-container">
+    <section className="pill-container">
       <div className="pill-card" id="pill-container">
         {/* Overlay Section */}
         {pillNumber >= 0 && (
@@ -109,7 +109,7 @@ const PillSection = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
