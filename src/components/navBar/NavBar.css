@@ -1,5 +1,5 @@
 .logo {
-  width: 123px;
+  width: 121px;
   height: 40px;
 }
   
@@ -13,8 +13,11 @@
   background-color: #010C66;
   color: white;
   font-size: 14px;
-  font-weight: bold; 
-  z-index: 1000;
+  font-weight: 600; 
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  text-align: center;
+  z-index: 1001;
   transition: 1s ease;
 }
 
