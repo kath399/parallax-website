@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Cross from "../../assets/icons/Cross.svg";
+import Cross from "../../assets/icons/cross-white.svg";
 
 import "./pillSection.css";
 import "../../assets/styles/button.css";
@@ -8,6 +8,9 @@ import PillButton from "../../components/pill/pillButton";
 
 const PillSection = () => {
   const [pillNumber, setPillNumber] = useState(-1);
+
+  // There are five rows in the first part, seven in mobile view
+  let pillRows = [];
 
   const changeOrder = (arr) => [...arr].sort(() => Math.random() - 0.5);
   const ogList = [
@@ -81,7 +84,7 @@ const PillSection = () => {
                 className="close-button"
                 onClick={() => setPillNumber(-1)}
               >
-                <img src={Cross} alt="Close" />
+                <img className="close-button-icon" src={Cross} alt="Close" />
               </button>
             </div>
           </div>

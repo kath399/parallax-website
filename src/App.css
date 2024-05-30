@@ -3,6 +3,10 @@
   text-align: center;
 }
 
+html {
+  overflow: scroll;
+}
+
 html,
 body {
   max-width: 100%;

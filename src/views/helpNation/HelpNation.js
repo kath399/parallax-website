@@ -10,9 +10,9 @@ const HelpNation = () => {
   window.addEventListener('scroll', function() {
     const div = document.querySelector('.helpNation');
     if (window.scrollY > 0) { // Check if the page is scrolled
-        div.classList.add('scroll');
+        div?.classList.add('scroll');
     } else {
-        div.classList.remove('scroll');
+        div?.classList.remove('scroll');
     }
   });
   return (

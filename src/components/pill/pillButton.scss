@@ -1,0 +1,29 @@
+:root {
+  --hoverColor: white;
+}
+
+.pillBtn {
+  flex: 0 0 auto;
+  font-family: Graphik, sans-serif;
+  color: white;
+  border: var(--hoverColor) 0.1em solid;
+  background-color: none;
+  padding: 22.5px;
+  margin: 0;
+  border-radius: 50px;
+  font-size: 30px;
+  display: inline-flex;
+  text-wrap: nowrap;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover{ 
+    background-color: var(--hoverColor) !important;
+    color: #010C66;
+    transition: background-color 0.3s ease-in-out;
+  }
+}
+
+.font-details-b {
+  margin-top: 100px;
+  font-size: 40px;
+}

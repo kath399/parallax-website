@@ -70,9 +70,6 @@ const Intro = (params) => {
 
   return (
     <div className="intro">
-      {/* <div className="nrma-logo-intro">
-        <img src={NRMAWhiteLogo} alt="NRMA Logo" />
-      </div> */}
       <div
         className="titleMessage"
         onClick={slide <= 3 ? () => changeSlide() : ""}
@@ -80,12 +77,12 @@ const Intro = (params) => {
         {/* Slide section */}
         <Fade duration={2000}>
           <div className="text">{slideContent[slide]}</div>
-          <div className={slide ? "circles" : ""}>
-            <span className={slide === 1 ? "circle-filled" : "circle"}></span>
-            <span className={slide === 2 ? "circle-filled" : "circle"}></span>
-            <span className={slide === 3 ? "circle-filled" : "circle"}></span>
-          </div>
         </Fade>
+        <div className={slide ? "circles" : ""}>
+          <span className={slide === 1 ? "circle-filled" : "circle"}></span>
+          <span className={slide === 2 ? "circle-filled" : "circle"}></span>
+          <span className={slide === 3 ? "circle-filled" : "circle"}></span>
+        </div>
 
         {/* Show button if intro complete */}
         <button
@@ -104,12 +101,12 @@ const Intro = (params) => {
       {isIntroComplete ? (
         <>
           <div ref={section1Ref} className="launchMessage">
-            <Fade right duration={2000}>
-              <div>
+            <Fade up duration={2000}>
+              <h1>
                 It would launch four helpful
                 <br />
                 tools and services.
-              </div>
+              </h1>
             </Fade>
           </div>
         </>

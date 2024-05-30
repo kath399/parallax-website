@@ -7,9 +7,9 @@ const PolicyRecap = () => {
   window.addEventListener('scroll', function() {
     const div = document.querySelector('.policyRecap');
     if (window.scrollY > 0) { // Check if the page is scrolled
-        div.classList.add('scrolled');
+        div?.classList.add('scrolled');
     } else {
-        div.classList.remove('scrolled');
+        div?.classList.remove('scrolled');
     }
   });
   return (

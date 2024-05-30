@@ -1,8 +1,39 @@
 :root {
-    --primary-white: #ffffff;
-    --primary-warm-white: #F7F1EA;
-    --primary-blue: #010C66;
-    --primary-spinifex: #D7D667;
-    --primary-sunset: #F9AE97;
-    --primary-river-gum: #91BF9E;
+  --primary-white: #ffffff;
+  --primary-warm-white: #f7f1ea;
+  --primary-blue: #010c66;
+  --primary-spinifex: #d7d667;
+  --primary-sunset: #f9ae97;
+  --primary-river-gum: #91bf9e;
+
+  /* Font Sizes */
+
+  /* Padding for Cards */
+  --card-margin: 120px;
 }
+
+h1 {
+  font-size: 4em;
+  font-weight: 400;
+}
+
+p {
+  font-size: 1.5em;
+  line-height: normal;
+}
+
+/* Mobile */
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 2em;
+  }
+}
+
+/* Tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  h1 {
+    font-size: 2.125em;
+  }
+}
+
+/* Desktop */

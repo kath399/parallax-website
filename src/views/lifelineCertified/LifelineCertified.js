@@ -7,9 +7,9 @@ const LifelineCertified = () => {
   window.addEventListener('scroll', function() {
     const div = document.querySelector('.lifelineCertified');
     if (window.scrollY > 0) { // Check if the page is scrolled
-        div.classList.add('scrolled');
+        div?.classList.add('scrolled');
     } else {
-        div.classList.remove('scrolled');
+        div?.classList.remove('scrolled');
     }
   });
   return (
