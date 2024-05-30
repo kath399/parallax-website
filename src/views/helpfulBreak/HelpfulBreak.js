@@ -1,24 +1,23 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
-import LeafBottom from "../../assets/img/LeafBottom.png";
-import LeafLeft from "../../assets/img/LeafLeft.png";
-import LeafRight from "../../assets/img/LeafRight.png";
-import LeafTop from "../../assets/img/LeafTop.png";
+
 import "./helpfulBreak.css";
 import Leaves from "../../components/leaves/Leaves";
+import FadingLeaves from "../../components/leaves/FadingLeaves";
 import { isMobile, MobileView } from 'react-device-detect';
 
 const HelpfulBreak = () => {
 
 
   const leafSetting = {
-    maxLeaves : 100,
+    maxLeaves : 200,
     blowerIntensity: 1000,
-    blowerRange: 300,
+    blowerRange: 200,
   };
 
   return (
     <div className="helpfulBreak"> 
+
       <Fade down duration={2000}>
       </Fade>
       <Fade up duration={2000}>
@@ -29,7 +28,7 @@ const HelpfulBreak = () => {
           </div>
         </div>
       </Fade>
-      {!isMobile && <Leaves {...leafSetting}></Leaves>}
+          {!isMobile && <Leaves {...leafSetting}></Leaves>}
 
     </div>
   );
