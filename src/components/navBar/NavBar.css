@@ -5,7 +5,7 @@
   
 .navBar {
   position: fixed;
-  height: 120px;
+  height: 80px;
   width: fill;
   display: flex;
   align-items: center;
@@ -16,6 +16,10 @@
   font-weight: bold; 
   z-index: 1000;
   transition: 1s ease;
+}
+
+.navBtn {
+  display: block
 }
 
 .nav-theme--scrolled {
@@ -42,11 +46,16 @@
 }
 
 @media only screen and (min-width: 1440px){
-  .nav-theme {
-    height: 80px;
+  .navBar {
+    height: 120px;
     padding-left: 10vw;
     padding-right: 10vw;
-    justify-content: flex-start;
+    justify-content: start;
+  }
+
+  .navBtn {
+    position: absolute;
+    right: 10vw;
   }
 
   .logo {
@@ -58,7 +67,9 @@
   }
 
   .navHeading {
-    display: block
+    width: 800px;
+    display: flex;
+    justify-content: space-evenly;
   }
 }
 
