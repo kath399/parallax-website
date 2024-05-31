@@ -39,10 +39,14 @@ import "./NavBar.css";
         >
             <img className="logo" src={scrolled ? Logo : LogoWhite} alt='Logo'/>
             <div className='navHeading'>
-                A Help Company™ &nbsp;&nbsp;&nbsp; Helpful tools and services  
-                &nbsp;&nbsp;&nbsp; Ways we help &nbsp;&nbsp;&nbsp; Help Lab &nbsp;&nbsp;&nbsp;
+                <a>A Help Company™</a> 
+                <a>Helpful tools and services</a>  
+                <a>Ways we help</a>
+                <a>Help Lab</a>
             </div>
-            <NrmaButton Type={scrolled ? '' : 'Primary'} Label={'Visit NRMA Insurace'}/>
+            <div className='navBtn'>
+                <NrmaButton Type={scrolled ? '' : 'Primary'} Label={'Visit NRMA Insurace'}/>
+            </div>
             <button className='menubutton' onClick={toggleOverlay}>
                 <img src={Menu} alt='Menu'/>
             </button>
