@@ -1,50 +1,78 @@
 .logo {
-      width: 184px;
-      height: 60px;
-      margin-left: 34px;
-  }
+  width: 121px;
+  height: 40px;
+}
   
-  .nav-theme {
-    background-color: #FFFFFF80;
-    font-size: 20px;
-    height: 101px !important;
-    width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 41px;
-    border-radius: 10px;
-  }
-  .navbar-dark .navbar-nav .nav-link{
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+.navBar {
+  position: fixed;
+  height: 80px;
+  width: fill;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #010C66;
+  color: white;
+  font-size: 14px;
+  font-weight: 600; 
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  text-align: center;
+  z-index: 1001;
+  transition: 1s ease;
+}
+
+.navBtn {
+  display: block
+}
+
+.nav-theme--scrolled {
+  background-color: white;
+  color: #010C66
+}
+
+/*.navbar-dark .navbar-nav .nav-link{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}*/
+
+.menubutton {
+  display: block;
+  background-color: #010C66;
+  width: 32px;
+  height: 32px;
+  border: 1px solid white;
+  border-radius: 100px;
+}
+
+.navHeading {
+  display: none;
+}
+
+@media only screen and (min-width: 1440px){
+  .navBar {
+    height: 120px;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    justify-content: start;
   }
 
-  @media only screen and (max-width: 786px){
-    .nav-theme{
-      height: auto !important;
-      width: 100%;
-    }
-    .logo{
-    margin-bottom:-32px;
-    margin-left: 22px;
-    }
+  .navBtn {
+    position: absolute;
+    right: 10vw;
   }
-  
-  @keyframes moveDown {
-    from {
-      transform: translateY(-5rem);
-    }
-    to {
-      transform: translateY(0rem);
-    }
+
+  .logo {
+    margin-left: 0px;
   }
 
   .menubutton {
-    position: absolute;
-    right: 48px;
-    background-color: #010C66;
-    width: 46px;
-    height: 46px;
-    border: none;
-    border-radius: 100px;
+    display: none;
   }
+
+  .navHeading {
+    width: 800px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+

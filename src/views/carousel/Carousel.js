@@ -20,7 +20,16 @@ const cardval = [{
 {
     title: "Flexible Payment",
     subtitle: "You're covered evn if you forgot to lock your front door."
-}];
+},
+{
+    title: "Car share cover",
+    subtitle: "You're covered evn if you forgot to lock your front door."
+},
+{
+    title: "Testing 123",
+    subtitle: "You're covered evn if you forgot to lock your front door."
+}
+];
 
 const Carousel = () => {
     const carouselGroup = document.getElementsByClassName("blogs");

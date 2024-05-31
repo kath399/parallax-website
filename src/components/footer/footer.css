@@ -1,27 +1,51 @@
+@import url('../../assets/styles/links.css');
+
 .footer-style {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #010C66;
-    color: #fff;
+    background-color: #FFFFFF;
+    color: #010C66;
     font-size: 16px;
-    height: 120px;
-    width: 100vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    text-align: left;
+    
+    > * {
+      margin: 30px 0;
+  }
 }
 
 .footer-logo {
-  margin-left: 72px;
   width: 122px;
   height: 40px;
 }
 
-.footer-text {
-  margin-right: 122px;
-  width: 900px;
-  text-align: left;
+.footer-text a {
+  color: #010C66;
+  text-decoration: underline;
 }
 
-.footer-privacy {
-  margin-right: 72px;
-  text-align: center;
+.footer-links a {
+  display: inline-block;
+  color: #010C66;
+  text-decoration: underline;
+}
+
+.footer-links a::after {
+  content: '|';
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.footer-links a:last-child::after {
+  content: '';
+}
+
+@media screen and (max-width: 394px) {
+  .footer-style {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 395px) and (max-width: 1024px) {
+  .footer-style {
+    font-size: 14px;
+  }
 }

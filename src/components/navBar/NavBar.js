@@ -1,31 +1,57 @@
-import React, { useState } from 'react'
-import Navbar from 'react-bootstrap/Navbar'
+import React, { useState, useEffect } from 'react'
+import LogoWhite from "../../assets/icons/NRMALogoWhite.svg";
 import Logo from "../../assets/icons/NRMALogo.svg";
-import Menu from "../../assets/icons/Menu.svg"
+import Menu from "../../assets/icons/Menu.svg";
+import NrmaButton from '../button/NrmaButton';
 import Overlay from '../../views/overlay/Overlay';
 import "./NavBar.css"; 
 
  const NavBar = () => {
     const [isOverlayVisible, setOverlayVisible] = useState(false);
-
     const toggleOverlay = () => {
         setOverlayVisible(!isOverlayVisible);
     };
+
+    const [scrolled, setScrolled] = useState(false);
+    useEffect(() => {
+        const handleScroll = () => {
+          const isScrolled = window.scrollY > 50;
+          if (isScrolled !== scrolled) {
+            setScrolled(isScrolled);
+          }
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+    }, [scrolled]);
+    
     return (
-        <>
-            <Navbar collapseOnSelect expand="md"
-            fixed="top"
-            className="nav-theme">
-                <Navbar.Brand href="#home">
-                    <img className="logo" src={Logo} alt='Logo'/>
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <button className='menubutton' onClick={toggleOverlay}>
-                    <img src={Menu} alt='Menu'/>
-                </button>
-                <Overlay isVisible={isOverlayVisible} onClose={toggleOverlay} />
-            </Navbar>
-        </>
+        <div 
+            className='navBar' 
+            style={{
+                backgroundColor: scrolled && 'white',
+                color: scrolled && '#010C66',
+                height: scrolled && '80px'
+            }}
+        >
+            <img className="logo" src={scrolled ? Logo : LogoWhite} alt='Logo'/>
+            <div className='navHeading'>
+                <a>A Help Company™</a> 
+                <a>Helpful tools and services</a>  
+                <a>Ways we help</a>
+                <a>Help Lab</a>
+            </div>
+            <div className='navBtn'>
+                <NrmaButton Type={scrolled ? '' : 'Primary'} Label={'Visit NRMA Insurace'}/>
+            </div>
+            <button className='menubutton' onClick={toggleOverlay}>
+                <img src={Menu} alt='Menu'/>
+            </button>
+            <Overlay isVisible={isOverlayVisible} onClose={toggleOverlay} />
+        </div>
     )
 }
 

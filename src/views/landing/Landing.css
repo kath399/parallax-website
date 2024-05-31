@@ -1,12 +1,6 @@
 .App {
-  background-color: #f7f1ea;
+  background-color: var(--primary-warm-white);
   text-align: center;
-}
-
-html,
-body {
-  max-width: 100%;
-  overflow-x: hidden;
 }
 
 .App-logo {
@@ -33,14 +27,6 @@ body {
 
 .App-link {
   color: #61dafb;
-}
-
-#herocard {
-  scroll-snap-type: y mandatory;
-}
-
-.droneRoofCheckCard {
-  scroll-snap-align: center;
 }
 
 @keyframes App-logo-spin {
@@ -72,29 +58,15 @@ hr {
   z-index: 1;
 }
 
-.iconbutton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  bottom: 48px;
-  margin: auto;
-  background-color: #010c66;
-  width: 46px;
-  height: 46px;
-  border: none;
-  border-radius: 100px;
-}
-
-.chevronDown {
-  max-width: 100%;
-  max-height: 100%;
-}
-
 .divider {
   height: 104.5vh; /* for animation testing purposes */
 }
 
 .divider2 {
   height: 20vh; /* for animation testing purposes */
+}
+
+.cardImg {
+  position: absolute;
+  z-index: 2;
 }
