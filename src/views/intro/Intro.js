@@ -69,7 +69,7 @@ const Intro = (params) => {
   ];
 
   return (
-    <div className="intro">
+    <div id='A_Help_Company' className="intro">
       {/* <div className="nrma-logo-intro">
         <img src={NRMAWhiteLogo} alt="NRMA Logo" />
       </div> */}
@@ -103,7 +103,7 @@ const Intro = (params) => {
       {/* Show launch message if intro complete */}
       {isIntroComplete ? (
         <>
-          <div ref={section1Ref} className="launchMessage">
+          <div id='Helpful_Tools_And_Services' ref={section1Ref} className="launchMessage">
             <Fade right duration={2000}>
               <div>
                 It would launch four helpful
