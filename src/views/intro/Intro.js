@@ -69,54 +69,50 @@ const Intro = (params) => {
   ];
 
   return (
-    <div className="intro">
-      {/* <div className="nrma-logo-intro">
+    <>
+      <section className="intro">
+        {/* <div className="nrma-logo-intro">
         <img src={NRMAWhiteLogo} alt="NRMA Logo" />
       </div> */}
-      <div
-        className="titleMessage"
-        onClick={slide <= 3 ? () => changeSlide() : ""}
-      >
-        {/* Slide section */}
-        <Fade duration={2000}>
-          <div className="text">{slideContent[slide]}</div>
-          <div className={slide ? "circles" : ""}>
-            <span className={slide === 1 ? "circle-filled" : "circle"}></span>
-            <span className={slide === 2 ? "circle-filled" : "circle"}></span>
-            <span className={slide === 3 ? "circle-filled" : "circle"}></span>
-          </div>
-        </Fade>
-
-        {/* Show button if intro complete */}
-        <button
-          className={
-            isIntroComplete
-              ? "skip-content-button"
-              : "skip-content-button-hidden"
-          }
-          onClick={() => scrollDown(section1Ref)}
+        <div
+          className="titleMessage"
+          onClick={slide <= 3 ? () => changeSlide() : ""}
         >
-          <img src={ChevronDown} alt="Skip to content button" />
-        </button>
-      </div>
+          {/* Slide section */}
+          <Fade duration={2000}>
+            <div className="text">{slideContent[slide]}</div>
+            <div className={slide ? "circles" : ""}>
+              <span className={slide === 1 ? "circle-filled" : "circle"}></span>
+              <span className={slide === 2 ? "circle-filled" : "circle"}></span>
+              <span className={slide === 3 ? "circle-filled" : "circle"}></span>
+            </div>
+          </Fade>
+
+          {/* Show button if intro complete */}
+          <button
+            className={
+              isIntroComplete
+                ? "skip-content-button"
+                : "skip-content-button-hidden"
+            }
+            onClick={() => scrollDown(section1Ref)}
+          >
+            <img src={ChevronDown} alt="Skip to content button" />
+          </button>
+        </div>
+      </section>
 
       {/* Show launch message if intro complete */}
-      {isIntroComplete ? (
-        <>
-          <div ref={section1Ref} className="launchMessage">
-            <Fade right duration={2000}>
-              <div>
-                It would launch four helpful
-                <br />
-                tools and services.
-              </div>
-            </Fade>
+      <section ref={section1Ref} className="launchMessage">
+        <Fade right duration={2000}>
+          <div>
+            It would launch four helpful
+            <br />
+            tools and services.
           </div>
-        </>
-      ) : (
-        ""
-      )}
-    </div>
+        </Fade>
+      </section>
+    </>
   );
 };
 

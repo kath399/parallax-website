@@ -9,7 +9,7 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact">
+    <section id="contact">
       <div className={"contact-card py-2"}>
         <h1>Help define the future, become part of the Help Lab.</h1>
         <p>
@@ -20,7 +20,7 @@ const Contact = () => {
           Join the Help Lab
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 

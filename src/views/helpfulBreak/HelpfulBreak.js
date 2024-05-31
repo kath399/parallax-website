@@ -8,22 +8,30 @@ import "./helpfulBreak.css";
 
 const HelpfulBreak = () => {
   return (
-    <div className="helpfulBreak"> 
+    <section className="helpfulBreak">
       <Fade down duration={2000}>
-        <img src={LeafTop} alt='' className="leafTopImg"/>
-        <img src={LeafLeft} alt='' className="leafLeftImg"/>
-        <img src={LeafRight} alt='' className="leafRightImg"/>
-        <img src={LeafBottom} alt='' className="leafBottomImg"/>
+        <img src={LeafTop} alt="" className="leafTopImg" />
+        <img src={LeafLeft} alt="" className="leafLeftImg" />
+        <img src={LeafRight} alt="" className="leafRightImg" />
+        <img src={LeafBottom} alt="" className="leafBottomImg" />
       </Fade>
       <Fade up duration={2000}>
         <div>
           A helpful break
-          <div style={{paddingTop: '36px', width:'800px', fontSize: '24px', textAlign: 'center'}}>
-            Reduce your fire risk by clearing up any dry leaves and debris around your home and in your gutters. 
+          <div
+            style={{
+              paddingTop: "36px",
+              width: "800px",
+              fontSize: "24px",
+              textAlign: "center",
+            }}
+          >
+            Reduce your fire risk by clearing up any dry leaves and debris
+            around your home and in your gutters. 
           </div>
         </div>
       </Fade>
-    </div>
+    </section>
   );
 };
 
