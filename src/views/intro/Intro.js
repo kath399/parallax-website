@@ -9,11 +9,19 @@ import "../../assets/styles/button.css";
 
 const Intro = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [completedIntro, setCompletedIntro] = useState(false);
+  const [slideNumber, setSlideNumber] = useState(0);
+
+  console.log("completedIntro", completedIntro);
+
+  console.log("Slide number now ", slideNumber);
 
   // Refs for slides
+  const firstSlide = useRef(null);
   const secondSlide = useRef(null);
-  const finalIntro = useRef(null);
+  const thirdSlide = useRef(null);
 
+  // Action to scroll to the second landing
   const section1Ref = useRef(null);
   const scrollDown = (sectionRef) => {
     sectionRef.current.scrollIntoView({
@@ -22,52 +30,79 @@ const Intro = () => {
     });
   };
 
-  function logit() {
-    setScrollY(window.scrollY);
-    if (
-      scrollY === 0 ||
-      scrollY >=
-        finalIntro.current.offsetTop + finalIntro.current.offsetHeight / 2 - 40
-    ) {
-      console.log("Hi");
-      document.getElementsByClassName("circles")[0].style.display = "none";
-    } else {
-      document.getElementsByClassName("circles")[0].style.display = "block";
-    }
-  }
-
-  function changeCircles() {
-    console.log(finalIntro.current.offsetTop + " and we are at " + scrollY);
-    if (scrollY <= secondSlide.current.offsetTop) {
-      document.getElementById("circle1").className = "circle-filled";
-      document.getElementById("circle2").className = "circle";
-      document.getElementById("circle3").className = "circle";
-    } else if (scrollY <= finalIntro.current.offsetTop) {
-      document.getElementById("circle2").className = "circle-filled";
-      document.getElementById("circle1").className = "circle";
-      document.getElementById("circle3").className = "circle";
-    } else {
-      document.getElementById("circle3").className = "circle-filled";
-      document.getElementById("circle1").className = "circle";
-      document.getElementById("circle2").className = "circle";
-    }
-  }
-
+  // Access after DOM renders ref points
   useEffect(() => {
-    function watchScroll() {
-      window.addEventListener("scroll", logit);
-    }
-    watchScroll();
-    changeCircles();
+    // Second slide
+    const observer3 = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting) {
+          const list = document.querySelectorAll(".circle");
+          list.forEach((circle, i) => {
+            list[i].classList.remove("filled");
+          });
+          document.querySelectorAll(".circle")[0].classList.toggle("filled");
+        }
+      },
+      {
+        threshold: 0.9,
+      }
+    );
+    observer3.observe(firstSlide.current);
 
-    return () => {
-      window.removeEventListener("scroll", logit);
-    };
-  });
+    // Second slide
+    const observer1 = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting) {
+          const list = document.querySelectorAll(".circle");
+          list.forEach((circle, i) => {
+            list[i].classList.remove("filled");
+          });
+          document.querySelectorAll(".circle")[1].classList.toggle("filled");
+        }
+      },
+      {
+        threshold: 0.9,
+      }
+    );
+    observer1.observe(secondSlide.current);
+
+    // Final slide observer
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setCompletedIntro(entry.isIntersecting);
+
+        // Remove once met & hide everything above
+        if (entry.isIntersecting) {
+          // observer.unobserve(entry.target);
+          const list = document.querySelectorAll(".circle");
+          list.forEach((circle, i) => {
+            list[i].classList.remove("filled");
+          });
+          document.querySelectorAll(".circle")[2].classList.toggle("filled");
+        }
+      },
+      {
+        threshold: 0.9,
+      }
+    );
+    observer.observe(thirdSlide.current);
+
+    // function hideEverything() {
+    //   // Hide
+    // }
+  }, []);
+
+  // Hide cirlces if introduction finished
+  // if (completedIntro) {
+  //   document.getElementsByClassName("circles")[0].style.display = "none";
+  // }
 
   return (
     <>
-      <section className="titleMessage first">
+      <section className="titleMessage" ref={firstSlide}>
         {/* Slide section */}
         <Fade duration={2000}>
           <div className="text">
@@ -89,7 +124,7 @@ const Intro = () => {
         </Fade>
       </section>
 
-      <section className="titleMessage" ref={finalIntro}>
+      <section className="titleMessage" ref={thirdSlide}>
         {/* Slide section */}
         <Fade duration={2000}>
           <div className="text">So what would A Help Company™ do?</div>
@@ -98,12 +133,12 @@ const Intro = () => {
 
       {/* Circles to show positioning */}
       <div className="circles">
-        <span className="circle" id="circle1"></span>
+        <span className="circle filled" id="circle1"></span>
         <span className="circle" id="circle2"></span>
         <span className="circle" id="circle3"></span>
       </div>
 
-      {/* Show button if intro complete */}
+      {/* Show skip navigation button if intro complete */}
       <button
         className="skip-content-button"
         onClick={() => scrollDown(section1Ref)}

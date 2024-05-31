@@ -13,8 +13,8 @@
   color: var(--primary-white);
   background-color: var(--primary-blue);
   -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .launchMessage {
@@ -29,7 +29,7 @@
 .circles {
   width: 12px;
   position: fixed;
-  top: calc(50vh - 60px);
+  top: 50vh;
   right: 50px;
 }
 .circles > * {
@@ -47,7 +47,7 @@
   position: sticky;
 }
 
-.circle-filled {
+.circle.filled {
   background-color: rgba(255, 255, 255, 0.5);
   transition: background-color 0.3s ease;
 }
@@ -90,4 +90,4 @@
   .launchMessage {
     padding: 72px 16px;
   }
-} /*# sourceMappingURL=Intro.css.map */
+}/*# sourceMappingURL=Intro.css.map */
