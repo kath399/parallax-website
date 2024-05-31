@@ -36,12 +36,14 @@
 }*/
 
 .menubutton {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #010C66;
   width: 32px;
   height: 32px;
   border: 1px solid white;
-  border-radius: 100px;
+  border-radius: 100%;
 }
 
 .navHeading {

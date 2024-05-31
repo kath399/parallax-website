@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import LogoWhite from "../../assets/icons/NRMALogoWhite.svg";
 import Logo from "../../assets/icons/NRMALogo.svg";
-import Menu from "../../assets/icons/Menu.svg";
+import Menu from "../../assets/icons/Menu2.svg";
+import Menu3 from "../../assets/icons/Menu3.svg";
 import NrmaButton from '../button/NrmaButton';
 import Overlay from '../../views/overlay/Overlay';
 import "./NavBar.css"; 
@@ -45,10 +46,17 @@ import "./NavBar.css";
                 <a>Help Lab</a>
             </div>
             <div className='navBtn'>
-                <NrmaButton Type={scrolled ? '' : 'Primary'} Label={'Visit NRMA Insurace'}/>
+                <NrmaButton Type={scrolled ? 'Secondary' : 'Primary'} Label={'Visit NRMA Insurance'}/>
             </div>
-            <button className='menubutton' onClick={toggleOverlay}>
-                <img src={Menu} alt='Menu'/>
+            <button 
+                className='menubutton' 
+                style={{
+                    backgroundColor: scrolled && 'white',
+                    color: scrolled && '#010C66',
+                    border: scrolled && '1px solid #010C66'
+                }}
+                onClick={toggleOverlay}>
+                <img src={scrolled ? Menu3 : Menu} alt='Menu'/>
             </button>
             <Overlay isVisible={isOverlayVisible} onClose={toggleOverlay} />
         </div>

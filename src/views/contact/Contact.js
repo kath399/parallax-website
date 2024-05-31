@@ -1,6 +1,6 @@
 import React from "react";
 import "../../assets/styles/button.css";
-import "./Contact.css";
+import "./contact.css";
 
 const Contact = () => {
   const handleClick = () => {
