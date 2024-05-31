@@ -43,9 +43,8 @@ const Landing = () => {
   return (
     <div className="App">
       <NavBar />
-      
-      <Intro setSlideComplete={setSlideComplete} />
 
+      <Intro setSlideComplete={setSlideComplete} />
       { slideComplete ? <>
       <HeroCard 
         Id='droneRoofCheck' 

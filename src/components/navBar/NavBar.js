@@ -21,9 +21,7 @@ import "./NavBar.css";
             setScrolled(isScrolled);
           }
         };
-    
         window.addEventListener('scroll', handleScroll);
-    
         return () => {
           window.removeEventListener('scroll', handleScroll);
         };
@@ -40,10 +38,10 @@ import "./NavBar.css";
         >
             <img className="logo" src={scrolled ? Logo : LogoWhite} alt='Logo'/>
             <div className='navHeading'>
-                <a>A Help Company™</a> 
-                <a>Helpful tools and services</a>  
-                <a>Ways we help</a>
-                <a>Help Lab</a>
+                <a href='#A_Help_Company' className={scrolled ? 'navs-link' : 'nav-link'}>A Help Company™</a> 
+                <a href='#Helpful_Tools_And_Services' className={scrolled ? 'navs-link' : 'nav-link'}>Helpful tools and services</a>  
+                <a href='#contact' className={scrolled ? 'navs-link' : 'nav-link'}>Ways we help</a>
+                <a href='' className={scrolled ? 'navs-link' : 'nav-link'}>Help Lab</a>
             </div>
             <div className='navBtn'>
                 <NrmaButton Type={scrolled ? 'Secondary' : 'Primary'} Label={'Visit NRMA Insurance'}/>
