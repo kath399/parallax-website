@@ -1,5 +1,5 @@
 import React from "react";
-import Fade from "react-reveal/Fade";
+import Fade from "react-awesome-reveal";
 import LeafBottom from "../../assets/img/LeafBottom.png";
 import LeafLeft from "../../assets/img/LeafLeft.png";
 import LeafRight from "../../assets/img/LeafRight.png";

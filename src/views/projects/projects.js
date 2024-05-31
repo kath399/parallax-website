@@ -19,7 +19,7 @@ import L_HTML5 from "../../assets/img/skills/html-5.svg";
 import L_CSS3 from "../../assets/img/skills/css3.svg";
 import L_BOOTSTRAP from "../../assets/img/skills/bootstrap-4.svg";
 import L_REACT from "../../assets/img/skills/react.svg";
-import L_MATERIALUI from "../../assets/img/skills/material-ui-1.svg";
+// import L_MATERIALUI from "../../assets/img/skills/material-ui-1.svg";
 import L_REACT_BOOTSTRAP from "../../assets/img/skills/react-bootstrap.svg";
 import L_JAVASCRIPT from "../../assets/img/skills/javascript.svg";
 import L_FIREBASE from "../../assets/img/skills/firebase-icon.svg"

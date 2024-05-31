@@ -1,5 +1,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Installing dependency
+
+`npm i --legacy-peer-deps`
+
+
+## Modules to Be Fixed
+
+`react-reveal`
+to be replaced with `react-awesome-reveal`
+
 ## Available Scripts
 
 In the project directory, you can run:
