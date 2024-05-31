@@ -29,11 +29,8 @@ const cardval = [
 ];
 
 const Carousel = () => {
-  const carouselGroup = document.getElementsByClassName("blogs");
-  const distance = 400;
-
   return (
-    <div className="blogs ">
+    <div className="blogs">
       <h2 className="text-center">
         It would also make its insurance products more helpful
       </h2>

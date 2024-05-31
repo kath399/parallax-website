@@ -40,6 +40,14 @@
   scroll-snap-align: center;
 }
 
+.card-group {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.card-group::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
 .blogs .text-center {
   font-weight: 400;
   color: #010c66;
