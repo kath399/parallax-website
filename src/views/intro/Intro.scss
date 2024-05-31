@@ -47,13 +47,12 @@
   position: sticky;
 }
 
-.circle-filled {
+.circle.filled {
   background-color: rgb(255, 255, 255, 0.5);
   transition: background-color 0.3s ease;
 }
 
 .skip-content-button {
-  background-color: green;
   position: relative;
   bottom: 150px;
 }
