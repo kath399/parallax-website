@@ -2,7 +2,7 @@ import React from "react";
 import "../../assets/styles/button.css";
 import "./contact.css";
 import "../../assets/styles/nrma-scheme.css";
-import { Fade } from "react-reveal";
+import { Fade } from "react-awesome-reveal";
 const Contact = () => {
   const handleClick = () => {
     window.location.href =

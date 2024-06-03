@@ -16,7 +16,7 @@ const HelpfulBreak = (prop) => {
   };
 
   return (
-    <div className="helpfulBreak">
+    <section className="helpfulBreak">
       <Fade down duration={2000}></Fade>
       <Fade up duration={2000}>
         <div>
@@ -40,7 +40,7 @@ const HelpfulBreak = (prop) => {
         ) : (
           <Leaves {...leafSetting}></Leaves>
         ))}
-    </div>
+    </section>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Fade } from "react-reveal";
+import { Fade } from "react-awesome-reveal";
 import "./Loader.css";
 import NRMAWhiteLogo from "../assets/icons/NRMALogoWhite.svg";
 

@@ -106,7 +106,7 @@ const Intro = () => {
         {/* <div className="nrma-logo-intro">
         <img src={NRMAWhiteLogo} alt="NRMA Logo" />
       </div> */}
-        <div className="titleMessage" ref={firstSlide}>
+        <section className="titleMessage" ref={firstSlide}>
           {/* Slide section */}
           <Fade duration={2000}>
             <div className="text">
@@ -117,7 +117,7 @@ const Intro = () => {
               with everything.
             </div>
           </Fade>
-        </div>
+        </section>
 
         <section className="titleMessage" ref={secondSlide}>
           {/* Slide section */}
