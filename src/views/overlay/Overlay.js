@@ -13,18 +13,18 @@ const Overlay = ({isVisible, onClose}) => {
         <img src={Logo} alt="Logo" className="logoOverlay"/>
         <NrmaButton Type='Primary' Label='Visit NRMA Insurance' />
         <button className="closeButton" onClick={onClose}>
-            <img src={Cross} alt='Close' />
+          <img src={Cross} alt='Close' />
         </button>
       </div>
       <div className="menuOverlay">
-          A Help Company™
-          <br />
-          Helpful tools and services
-          <br />
-          Ways we help
-          <br />
-          Help Lab
-          <br />
+        <a href='#A_Help_Company' onClick={onClose}>A Help Company™</a>
+        <br />
+        <a href='#Helpful_Tools_And_Services' onClick={onClose}>Helpful tools and services</a>
+        <br />
+        <a href='#Ways_We_Help' onClick={onClose}>Ways we help</a>
+        <br />
+        <a href='#contact' onClick={onClose}>Help Lab</a>
+        <br />
       </div>
     </div>
   );

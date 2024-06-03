@@ -60,7 +60,7 @@ const Landing = () => {
         ButtonOnclick={goTo}
         ButtonLabel='Register your interest'
       />
-
+    
       <HeroCard 
         Id='helpNation' 
         Number='2'
