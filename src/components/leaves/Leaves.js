@@ -268,48 +268,11 @@ const Leaves = (props) => {
 
             //// Resize
 //
-let walls = [
-    // TOP
-    Bodies.rectangle(
-        canvasWidth / 2,
-        -wallThickness / 2,
-        canvasWidth,
-        wallThickness,
-        {
-            isStatic: true,
-        }
-    ),
-    // LEFT
-    Bodies.rectangle(
-        -wallThickness / 2,
-        canvasHeight / 2,
-        wallThickness,
-        canvasHeight,
-        {
-            isStatic: true,
-        }
-    ),
-    // BOTTOM
-    Bodies.rectangle(
-        canvasWidth / 2,
-        canvasHeight + wallThickness / 2,
-        canvasWidth,
-        wallThickness,
-        { isStatic: true }
-    ),
-    // RIGHT
-    Bodies.rectangle(
-        canvasWidth + wallThickness / 2,
-        canvasHeight / 2,
-        wallThickness,
-        canvasHeight,
-        { isStatic: true }
-    ),
-];
 
 
 
-//
+// Resize Listener
+/*
             window.addEventListener("resize", function (event) {
                 // Save the new canvas width
                 const canvasWidth = canvas.width;
@@ -344,6 +307,7 @@ let walls = [
                 canvasPrevWidth = canvasWidth;
                 canvasPrevHeight = canvasHeight;
               });
+*/
               ////
 
 
