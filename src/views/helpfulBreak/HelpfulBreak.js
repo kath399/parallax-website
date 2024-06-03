@@ -3,8 +3,6 @@ import Fade from "react-awesome-reveal";
 
 import "./helpfulBreak.css";
 import Leaves from "../../components/leaves/Leaves";
-import FadingLeaves from "../../components/leaves/FadingLeaves";
-import { isMobile, MobileView } from 'react-device-detect';
 
 const HelpfulBreak = (prop) => {
 
@@ -29,11 +27,7 @@ const HelpfulBreak = (prop) => {
           </div>
         </div>
       </Fade>
-          {!isMobile && (
-              fading ? <FadingLeaves {...leafSetting}></FadingLeaves>
-              : <Leaves {...leafSetting}></Leaves>
-            )
-          }
+      <Leaves {...leafSetting}></Leaves>
 
     </div>
   );

@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { isMobile} from 'react-device-detect';
+
 import "./Landing.css";
 import "../../assets/styles/nrma-scheme.css";
 import NavBar from "../../components/navBar/NavBar";
@@ -117,6 +119,7 @@ const Landing = () => {
 
       <div className="divider"></div>
 
+      {!isMobile && <HelpfulBreak fading = {false} />}
       <HelpfulBreak fading = {false} />
 
       <div>
