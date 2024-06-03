@@ -120,7 +120,6 @@ const Landing = () => {
       <div className="divider"></div>
 
       {!isMobile && <HelpfulBreak fading = {false} />}
-      <HelpfulBreak fading = {false} />
 
       <div>
         <Fade bottom duration={2000}>
