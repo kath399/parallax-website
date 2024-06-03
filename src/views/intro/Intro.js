@@ -18,18 +18,6 @@ const Intro = (params) => {
     });
   };
 
-  useEffect(() => {
-    const handleScroll = (event) => {
-      console.log("Page scrolled:", window.scrollY);
-    };
-
-    window.addEventListener("wheel", handleScroll);
-
-    return () => {
-      window.removeEventListener("wheel", handleScroll);
-    };
-  }, []);
-
   return (
     <div id="A_Help_Company" className="intro">
       <div className="titleMessage">
