@@ -1,7 +1,7 @@
 import React from "react";
 import NrmaButton from "../../components/button/NrmaButton";
 import "./helpNation.css";
-import Fade from "react-reveal/Fade";
+import Fade from "react-awesome-reveal";
 import CloudBR from "../../assets/img/CloudBR.svg";
 import CloudTL from "../../assets/img/CloudTL.svg";
 import CloudTR from "../../assets/img/CloudTR.svg";

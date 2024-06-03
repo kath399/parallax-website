@@ -1,6 +1,6 @@
 import React from "react";
 import NrmaButton from "../../components/button/NrmaButton";
-import Cross from "../../assets/icons/Cross.svg"
+import Cross from "../../assets/icons/cross-white2.svg";
 import Logo from '../../assets/icons/NRMALogoWhite.svg'
 import './overlay.css'
 

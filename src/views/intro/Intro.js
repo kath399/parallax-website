@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import Fade from "react-reveal/Fade";
+import Fade from "react-awesome-reveal";
 
 import ChevronDown from "../../assets/icons/chevron-down-white.svg";
 
@@ -102,56 +102,61 @@ const Intro = () => {
 
   return (
     <>
-      <section className="titleMessage" ref={firstSlide}>
-        {/* Slide section */}
-        <Fade duration={2000}>
-          <div className="text">
-            We could all use a bit more help these days. Help dealing with the
-            rise in extreme weather events. Help doing all those annoying but
-            important jobs, like checking your roof or cleaning your gutters.
-            Help navigating the not so simple world of insurance. More help with
-            everything.
-          </div>
-        </Fade>
-      </section>
+      <div id="A_Help_Company" className="intro">
+        {/* <div className="nrma-logo-intro">
+        <img src={NRMAWhiteLogo} alt="NRMA Logo" />
+      </div> */}
+        <div className="titleMessage" ref={firstSlide}>
+          {/* Slide section */}
+          <Fade duration={2000}>
+            <div className="text">
+              We could all use a bit more help these days. Help dealing with the
+              rise in extreme weather events. Help doing all those annoying but
+              important jobs, like checking your roof or cleaning your gutters.
+              Help navigating the not so simple world of insurance. More help
+              with everything.
+            </div>
+          </Fade>
+        </div>
 
-      <section className="titleMessage" ref={secondSlide}>
-        {/* Slide section */}
-        <Fade duration={2000}>
-          <div className="text">
-            Which is why NRMA Insurance is becoming A Help Company™.
-          </div>
-        </Fade>
-      </section>
+        <section className="titleMessage" ref={secondSlide}>
+          {/* Slide section */}
+          <Fade duration={2000}>
+            <div className="text">
+              Which is why NRMA Insurance is becoming A Help Company™.
+            </div>
+          </Fade>
+        </section>
 
-      <section className="titleMessage" ref={thirdSlide}>
-        {/* Slide section */}
-        <Fade duration={2000}>
-          <div className="text">So what would A Help Company™ do?</div>
-        </Fade>
-      </section>
+        <section className="titleMessage" ref={thirdSlide}>
+          {/* Slide section */}
+          <Fade duration={2000}>
+            <div className="text">So what would A Help Company™ do?</div>
+          </Fade>
+        </section>
 
-      {/* Circles to show positioning */}
-      <div className="circles">
-        <span className="circle filled" id="circle1"></span>
-        <span className="circle" id="circle2"></span>
-        <span className="circle" id="circle3"></span>
+        {/* Circles to show positioning */}
+        <div className="circles">
+          <span className="circle filled" id="circle1"></span>
+          <span className="circle" id="circle2"></span>
+          <span className="circle" id="circle3"></span>
+        </div>
+
+        {/* Show skip navigation button if intro complete */}
+        <button
+          className="skip-content-button"
+          onClick={() => scrollDown(section1Ref)}
+        >
+          <img src={ChevronDown} alt="Skip to content button" />
+        </button>
+
+        {/* Show launch message if intro complete */}
+        <section ref={section1Ref} className="launchMessage">
+          <Fade up duration={2000}>
+            It would launch four helpful tools and services.
+          </Fade>
+        </section>
       </div>
-
-      {/* Show skip navigation button if intro complete */}
-      <button
-        className="skip-content-button"
-        onClick={() => scrollDown(section1Ref)}
-      >
-        <img src={ChevronDown} alt="Skip to content button" />
-      </button>
-
-      {/* Show launch message if intro complete */}
-      <section ref={section1Ref} className="launchMessage">
-        <Fade up duration={2000}>
-          It would launch four helpful tools and services.
-        </Fade>
-      </section>
     </>
   );
 };

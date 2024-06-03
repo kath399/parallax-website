@@ -12,7 +12,18 @@
   background-color: transparent;
   border: 1px solid white;
 } 
+.nrmaBtn--Primary:hover {
+  background-color: white;
+  color: #010C66;
+} 
 
 .nrmaBtn--Secondary {
+  background-color: transparent;
+  color: #010C66;
+  border: 1px solid #010C66;
+}
+
+.nrmaBtn--Secondary:hover {
   background-color: #010C66;
+  color: white;
 }
