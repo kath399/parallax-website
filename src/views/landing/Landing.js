@@ -26,6 +26,9 @@ import Loader from "../../loader/Loader";
 
 const Landing = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [onSecondLanding, setSecondLanding] = useState(false);
+  console.log("Second landing passed ", onSecondLanding);
+
   const navigate = useNavigate();
   const goTo = () => {
     navigate("/form");
@@ -43,10 +46,10 @@ const Landing = () => {
   }
 
   return (
-    <div className="App">
-      <NavBar />
+    <div className="App" id="main">
+      <NavBar onSecondLanding={onSecondLanding} />
 
-      <Intro />
+      <Intro setSecondLanding={setSecondLanding} />
 
       <HeroCard
         Id="droneRoofCheck"
@@ -129,9 +132,17 @@ const Landing = () => {
         ButtonLabel="Register your interest"
       />
 
-      <Slide left duration={2000}>
-        <Carousel />
-      </Slide>
+      <HeroCard
+        Id="helpLab"
+        Number="5"
+        Title="Help Lab"
+        Animations
+        BGColor="#F9AE97"
+        Text="A Help Company™ would want your ideas to define its future.​ Get early access to all the latest Help Products and have a say on what helpful things a Help Company™ develops next."
+        ButtonLabel="Find an event in your area"
+      />
+
+      <Carousel />
 
       {/* <div className="divider2"></div> */}
 
@@ -140,9 +151,6 @@ const Landing = () => {
       <div className="divider"></div>
 
       <HelpfulBreak fading={false} />
-
-      <Contact />
-      <hr />
       <Footer />
     </div>
   );

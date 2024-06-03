@@ -7,7 +7,7 @@ import "../../assets/styles/nrma-scheme.css";
 import "./Intro.css";
 import "../../assets/styles/button.css";
 
-const Intro = () => {
+const Intro = ({ setSecondLanding }) => {
   const [scrollY, setScrollY] = useState(0);
   const [completedIntro, setCompletedIntro] = useState(false);
   const [slideNumber, setSlideNumber] = useState(0);
@@ -26,6 +26,7 @@ const Intro = () => {
   const scrollDown = (sectionRef) => {
     sectionRef.current.scrollIntoView({
       top: sectionRef.current.offsetTop,
+      block: "end",
       behavior: "smooth", // For smooth scrolling
     });
   };
@@ -90,9 +91,17 @@ const Intro = () => {
     );
     observer.observe(thirdSlide.current);
 
-    // function hideEverything() {
-    //   // Hide
-    // }
+    // Final slide observer
+    const observer4 = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setSecondLanding(entry.isIntersecting);
+      },
+      {
+        threshold: 0.9,
+      }
+    );
+    observer4.observe(section1Ref.current);
   }, []);
 
   // Hide cirlces if introduction finished
