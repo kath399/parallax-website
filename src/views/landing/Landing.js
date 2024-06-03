@@ -10,9 +10,9 @@ import HelpfulBreak from "../helpfulBreak/HelpfulBreak";
 import Contact from "../contact/Contact";
 import Footer from "../../components/footer/Footer";
 import { Parallax } from "react-parallax";
-import Fade from "react-reveal/Fade";
-import Bounce from "react-reveal/Bounce";
-import Slide from "react-reveal/Slide";
+import Fade from "react-awesome-reveal";
+import Bounce from "react-awesome-reveal";
+import Slide from "react-awesome-reveal";
 import Container from "react-bootstrap/Container";
 
 import Intro from "../intro/Intro";
@@ -116,7 +116,7 @@ const Landing = () => {
 
       <div className="divider"></div>
 
-      <HelpfulBreak />
+      <HelpfulBreak fading = {false} />
 
       <div>
         <Fade bottom duration={2000}>

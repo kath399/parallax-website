@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import Fade from "react-reveal/Fade";
+import Fade from "react-awesome-reveal";
 
 import ChevronDown from "../../assets/icons/chevron-down-white.svg";
 import NRMAWhiteLogo from "../../assets/icons/NRMALogoWhite.svg";
