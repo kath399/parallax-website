@@ -9,35 +9,10 @@
   text-align: center;
   font-size: 64px;
   color: #010C66;
+  background-color: #F7F1EA;
 }
 
-.leafTopImg {
-  position: absolute;
-  width: 475px;
-  top: 0;
-  z-index: 2;
-}
 
-.leafLeftImg {
-  position: absolute;
-  height: 475px;
-  left: 0;
-  z-index: 2;
-}
-
-.leafRightImg {
-  position: absolute;
-  height: 475px;
-  right: 0;
-  z-index: 2;
-}
-
-.leafBottomImg {
-  position: absolute;
-  width: 475px;
-  bottom: 0;
-  z-index: 2;
-}
 
   @media only screen and (max-width: 786px){
   .font-details{
