@@ -1,11 +1,14 @@
 .heroCard {
   position: relative;
   display: inline-block;
-  height: 100vh;
-  width: 100vw;
+  height: 80vh;
+  width: 80vw;
   color: #010C66;
-  transition: all 2s ease;
   padding-top: 20%;
+}
+
+.heroCard-wrapper {
+  height: 100vh;
 }
 
 .heroCard.scrolled {
@@ -66,7 +69,18 @@
   justify-content: center;
 }
 
-@keyframes shrink {
+@keyframes cardReveal {
+  from { 
+    height: 80vh; 
+    width: 80vw;
+  }
+  to { 
+    height: 100vh;
+    width: 100vw; 
+  }
+}
+
+/*@keyframes shrink {
   from { 
     height: 100vh;
     width: 100vw;
@@ -79,16 +93,10 @@
     margin-bottom: 5vh;
     transform: scaleX(1); 
   }
-}
+} */
 
-@media only screen and (max-width: 786px){
-  .font-details{
-    font-size: 2rem !important;
-  }
-  .my-details{
-    margin-right: 0;
-  }
-  .profile{
-    max-width: 15em;
+@media (prefers-reduced-motion: no-preference) {
+  .heroCard-animation {
+    animation: cardReveal 2s 1;
   }
 }
