@@ -45,14 +45,15 @@
 }
 
 .heroBtn {
-  background-color: #010c66;
+  border: 1px solid #010c66;
+  color: #010c66;
+  background-color: transparent;
   padding: 7px 21px 7px 21px;
   margin-top: 46px;
-  border: none;
   border-radius: 80px;
   font-size: 14px;
   font-weight: 600;
-  color: white;
+  padding: 1em;
 }
 
 .cardNumber {
