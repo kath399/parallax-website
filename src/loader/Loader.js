@@ -1,15 +1,16 @@
-import React from 'react';
-import Loader from 'react-loader-spinner'
+import React from "react";
+import { Fade } from "react-awesome-reveal";
+import "./Loader.css";
+import NRMAWhiteLogo from "../assets/icons/NRMALogoWhite.svg";
 
+const Loader = ({ Label, colour, number, setNumber }) => {
+  return (
+    <div className="nrma-logo-intro">
+      <Fade duration={2000}>
+        <img src={NRMAWhiteLogo} alt="NRMA loading screen" />
+      </Fade>
+    </div>
+  );
+};
 
-
-export default function PreLoader() {
-    return(
-     <Loader
-      type="BallTriangle" color="#00BFFF" height={80} width={80}
-        timeout={3000} //3 secs
-
-     />
-  
-    );
-   }
+export default Loader;

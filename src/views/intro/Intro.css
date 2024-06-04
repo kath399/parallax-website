@@ -27,8 +27,8 @@
   color: var(--primary-white);
   background-color: var(--primary-blue);
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
 .launchMessage {
@@ -97,4 +97,4 @@
     padding: 72px 16px;
     font-size: 2em;
   }
-}/*# sourceMappingURL=Intro.css.map */
+}

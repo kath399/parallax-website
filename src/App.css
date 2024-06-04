@@ -1,12 +1,17 @@
 .App {
   background-color: #f7f1ea;
   text-align: center;
+  overflow-x: hidden;
 }
 
 html,
 body {
   max-width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
+}
+
+html {
+  overflow-y: scroll;
 }
 
 .App-logo {
@@ -33,14 +38,6 @@ body {
 
 .App-link {
   color: #61dafb;
-}
-
-#herocard {
-  scroll-snap-type: y mandatory;
-}
-
-.droneRoofCheckCard {
-  scroll-snap-align: center;
 }
 
 @keyframes App-logo-spin {

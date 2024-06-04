@@ -14,9 +14,7 @@ await app.init({
     resolution: 1,
 });
 const Leaves = (props) => {
-    /*--------------------------
-  Setup the Matter engine.
-  --------------------------*/
+//  Setup the Matter engine.
     //
     const scene = useRef();
     const engine = useRef(
@@ -66,7 +64,10 @@ const Leaves = (props) => {
         // Matter, Setup Walls
         // boundaries
         let wallThickness = 200;
-        World.add(engine.current.world, [
+
+
+        let walls = [
+            // TOP
             Bodies.rectangle(
                 canvasWidth / 2,
                 -wallThickness / 2,
@@ -76,6 +77,7 @@ const Leaves = (props) => {
                     isStatic: true,
                 }
             ),
+            // LEFT
             Bodies.rectangle(
                 -wallThickness / 2,
                 canvasHeight / 2,
@@ -85,6 +87,7 @@ const Leaves = (props) => {
                     isStatic: true,
                 }
             ),
+            // BOTTOM
             Bodies.rectangle(
                 canvasWidth / 2,
                 canvasHeight + wallThickness / 2,
@@ -92,6 +95,7 @@ const Leaves = (props) => {
                 wallThickness,
                 { isStatic: true }
             ),
+            // RIGHT
             Bodies.rectangle(
                 canvasWidth + wallThickness / 2,
                 canvasHeight / 2,
@@ -99,7 +103,10 @@ const Leaves = (props) => {
                 canvasHeight,
                 { isStatic: true }
             ),
-        ]);
+        ];
+
+
+        World.add(engine.current.world, walls);
 
         Engine.run(engine.current);
 
@@ -144,7 +151,6 @@ const Leaves = (props) => {
 
         let leafAssetList = [
             // { alias: "leaf01", src: "/images/circ100.png" },
-
             { alias: "leaf01", src: "/images/Leaf_01.png" },
             { alias: "leaf02", src: "/images/Leaf_02.png" },
             { alias: "leaf03", src: "/images/Leaf_03.png" },
@@ -171,7 +177,6 @@ const Leaves = (props) => {
         // Load the assets and get a resolved promise once both are loaded
         const texturesPromise = PIXI.Assets.loadBundle(["leaves"]);
         texturesPromise.then((resolvedTextures) => {
-            console.log("Texture loaded:", texturesPromise);
             console.log("Texture loaded:", resolvedTextures);
 
             leaves = [...Array(maxLeaves).keys()].map(
@@ -260,6 +265,52 @@ const Leaves = (props) => {
             };
             bg.eventMode = "static";
             bg.on("mousemove", handleCursor);
+
+            //// Resize
+//
+
+
+
+// Resize Listener
+/*
+            window.addEventListener("resize", function (event) {
+                // Save the new canvas width
+                const canvasWidth = canvas.width;
+                const canvasHeight = canvas.height;
+            
+                // Reposition all the walls and scale them so they retain their width/height.
+                Body.setPosition(wallLeft, {
+                  x: -wallThickness / 2,
+                  y: canvasHeight / 2,
+                });
+                Body.scale(wallLeft, 1, canvasHeight / canvasPrevHeight);
+            
+                Body.setPosition(wallRight, {
+                  x: canvasWidth + wallThickness / 2,
+                  y: canvasHeight / 2,
+                });
+                Body.scale(wallRight, 1, canvasHeight / canvasPrevHeight);
+            
+                Body.setPosition(wallTop, {
+                  x: canvasWidth / 2,
+                  y: -wallThickness / 2,
+                });
+                Body.scale(wallTop, canvasWidth / canvasPrevWidth, 1);
+            
+                Body.setPosition(wallBottom, {
+                  x: canvasWidth / 2,
+                  y: canvasHeight + wallThickness / 2,
+                });
+                Body.scale(wallBottom, canvasWidth / canvasPrevWidth, 1);
+            
+                // Set the new canvas dimensions as the previous. We use this so we can properly scale the environment.
+                canvasPrevWidth = canvasWidth;
+                canvasPrevHeight = canvasHeight;
+              });
+*/
+              ////
+
+
         }); //Asset Load promise
 
         app.ticker.add((ticker) => {
