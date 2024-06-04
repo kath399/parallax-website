@@ -8,7 +8,7 @@ import NavBar from "../../components/navBar/NavBar";
 import HeroCard from "../../components/hero-card/HeroCard";
 import Carousel from "../carousel/Carousel";
 import PillSection from "../pillSection/PillSection";
-import HelpfulBreak from "../helpfulBreak/HelpfulBreak";
+import HelpfulTip from "../helpfulTip/HelpfulTip";
 import Contact from "../contact/Contact";
 import Footer from "../../components/footer/Footer";
 import { Parallax } from "react-parallax";
@@ -147,7 +147,7 @@ const Landing = () => {
 
       <div className="divider"></div>
 
-      {!isMobile && <HelpfulBreak fading = {false} />}
+      {!isMobile && <HelpfulTip fading = {false} />}
 
       <Footer />
     </div>

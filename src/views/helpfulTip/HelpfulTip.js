@@ -1,10 +1,10 @@
 import React from "react";
 import Fade from "react-awesome-reveal";
 
-import "./helpfulBreak.css";
+import "./helpfulTip.css";
 import Leaves from "../../components/leaves/Leaves";
 
-const HelpfulBreak = (prop) => {
+const HelpfulTip = (prop) => {
 
   const fading = prop.fading;
   console.log(fading)
@@ -15,7 +15,7 @@ const HelpfulBreak = (prop) => {
   };
 
   return (
-    <div className="helpfulBreak"> 
+    <div className="helpfulTip"> 
 
       <Fade down duration={2000}>
       </Fade>
@@ -33,4 +33,4 @@ const HelpfulBreak = (prop) => {
   );
 };
 
-export default HelpfulBreak;
+export default HelpfulTip;
