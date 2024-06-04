@@ -6,6 +6,7 @@ import "./Landing.css";
 import "../../assets/styles/nrma-scheme.css";
 import NavBar from "../../components/navBar/NavBar";
 import HeroCard from "../../components/hero-card/HeroCard";
+import PNGHeroCard from "../../components/png-hero-card/PNGHeroCard";
 import Carousel from "../carousel/Carousel";
 import PillSection from "../pillSection/PillSection";
 import HelpfulTip from "../helpfulTip/HelpfulTip";
@@ -129,7 +130,7 @@ const Landing = () => {
         ButtonLabel="Register your interest"
       />
 
-      <HeroCard
+      <PNGHeroCard
         Id="helpLab"
         Number="5"
         Title="Help Lab"
