@@ -10,8 +10,27 @@
   scroll-snap-align: start;
   background-color: transparent;
 }
-.blog-card .card-image,
-.card .card-image {
+.blog-card:hover .card-content,
+.card:hover .card-content {
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+.blog-card:hover .card-image,
+.card:hover .card-image {
+  transform: scale(1.1);
+  transition: all 0.5s ease;
+}
+.blog-card-content,
+.card-content {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.blog-card-title,
+.card-title {
+  font-weight: 500;
+}
+.blog-card-image,
+.card-image {
   width: 387px;
   height: 360px;
   right: 0;
@@ -19,9 +38,10 @@
   position: relative;
   vertical-align: middle;
   align-items: center;
+  transition: transform 0.5s ease;
 }
-.blog-card .card-image img,
-.card .card-image img {
+.blog-card-image img,
+.card-image img {
   max-width: 100%;
   max-height: 100%;
   -o-object-fit: contain;
