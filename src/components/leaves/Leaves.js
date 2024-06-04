@@ -124,9 +124,6 @@ const Leaves = (props) => {
         console.log("====================");
         console.log("CANVAS LAUNCHED : ");
         console.log("app.canvas : ", canvas.width, canvas.height);
-        // console.log("window : ", window.innerWidth, window.innerHeight);
-        // console.log("app.screen : ", app.screen.width, app.screen.height);
-        // console.log("scene.offset", scene.offsetWidth, scene.offsetHeight);
         console.log("====================");
 
         let centre = { x: canvas.width * 0.5, y: canvas.height * 0.5 };
@@ -150,7 +147,6 @@ const Leaves = (props) => {
         };
 
         let leafAssetList = [
-            // { alias: "leaf01", src: "/images/circ100.png" },
             { alias: "leaf01", src: "/images/Leaf_01.png" },
             { alias: "leaf02", src: "/images/Leaf_02.png" },
             { alias: "leaf03", src: "/images/Leaf_03.png" },

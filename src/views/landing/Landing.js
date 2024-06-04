@@ -142,7 +142,7 @@ const Landing = () => {
 
       <Carousel />
 
-      <PillSection />
+      {/* <PillSection /> */}
 
       <div className="divider"></div>
 
