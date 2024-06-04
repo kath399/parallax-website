@@ -12,9 +12,7 @@ import HelpfulBreak from "../helpfulBreak/HelpfulBreak";
 import Contact from "../contact/Contact";
 import Footer from "../../components/footer/Footer";
 import { Parallax } from "react-parallax";
-import Fade from "react-awesome-reveal";
-import Bounce from "react-awesome-reveal";
-import Slide from "react-awesome-reveal";
+import { Fade, Bounce, Slide } from "react-awesome-reveal";
 import Container from "react-bootstrap/Container";
 
 import Intro from "../intro/Intro";

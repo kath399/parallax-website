@@ -1,10 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./HeroCard.css";
-import { Slide } from "react-awesome-reveal";
+import { motion, useScroll, useTransform } from "framer-motion";
+//import { Slide } from "react-awesome-reveal";
 
 const HeroCard = ({ Id, Number, Title, Animations, BGColor, Text, ButtonLabel, ButtonOnclick }) => {
 
-  useEffect(() => {
+  const { scrollYProgress } = useScroll();
+
+  const width = useTransform(scrollYProgress, [0, 1], ['100vw', '80vw']);
+  const height = useTransform(scrollYProgress, [0, 1], ['100vh', '80vh']);
+
+  //const [y, setY] = useState(0);
+  
+  /*useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         const card = entry.target.querySelector('.heroCard');
@@ -28,15 +36,23 @@ const HeroCard = ({ Id, Number, Title, Animations, BGColor, Text, ButtonLabel, B
       }
       observer.disconnect();
     };
-  }, []); // Empty dependency array means this effect runs once after the initial render
+  }, []); // Empty dependency array means this effect runs once after the initial render*/
 
   return (
-      <div className='heroCard-wrapper'>
+      <motion.div 
+        className='heroCard-wrapper'
+        whileInView={{scale: [1, 0.85]}}
+        transition={{
+          ease: "linear",
+          duration: 2,
+        }}
+      >
         <div id={Id} className="heroCard" style={{ backgroundColor: BGColor }}>
           {Animations}
           <div className="cardNumber">
             0{Number}/04
           </div>
+        
           <div className="heroTitle">{Title}</div>
           <div className="heroText">
             {Text}
@@ -44,7 +60,7 @@ const HeroCard = ({ Id, Number, Title, Animations, BGColor, Text, ButtonLabel, B
             <button className='heroBtn' onClick={ButtonOnclick}>{ButtonLabel}</button>
           </div>
         </div>
-      </div>
+      </motion.div>
   );
 };
 
