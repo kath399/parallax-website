@@ -63,12 +63,16 @@ const HeroCard = ({
         <div className="heroText">
           {Text}
           <br />
-          <button
-            className="primary-button-transparent"
-            onClick={ButtonOnclick}
-          >
-            {ButtonLabel}
-          </button>
+          {ButtonLabel ? (
+            <button
+              className="primary-button-transparent"
+              onClick={ButtonOnclick}
+            >
+              {ButtonLabel}
+            </button>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </motion.div>

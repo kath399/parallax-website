@@ -88,11 +88,11 @@ const Landing = () => {
       <HeroCard
         Id="policyRecap"
         Number="3"
-        Title="Policy Recap"
+        Title="Claims Tracker"
         Animations
         BGColor="#91BF9E"
-        Text="You shouldn’t need legal training to understand what you are and are not covered for. Which is why we created the Policy Translator. A useful tool that scans your PDS document and turns it into a fast, easy to read experience that makes everything important in your policy obvious and unmissable."
-        ButtonLabel="Find an event in your area"
+        Text="We track keep you up to date with exactly what stage you claim is at. And what steps are remaining before payout. "
+        ButtonLabel="Use the Claims Tracker"
       />
 
       <HeroCard
@@ -111,7 +111,6 @@ const Landing = () => {
         }
         BGColor="#E0DF6B"
         Text="Checking your roof is important, but it’s also a pain, that’s why we’re introducing a service that uses drones to check your roof for you."
-        ButtonLabel="Register your interest"
       />
 
       <HeroCard
@@ -121,7 +120,7 @@ const Landing = () => {
         Animations
         BGColor="#F9AE97"
         Text="A Help Company™ would want your ideas to define its future.​ Get early access to all the latest Help Products and have a say on what helpful things a Help Company™ develops next."
-        ButtonLabel="Find an event in your area"
+        ButtonLabel="Join the Help Lab"
       />
 
       <Carousel />
