@@ -13,22 +13,21 @@ const BlogCard = (props) => {
   const link = props.link;
   const image = props.image;
   const colour = props.colour;
+  const alt = props.alt;
 
   return (
     <div className={showCard ? "card-resize" : "card-normal"}>
       <div className="card blog-card">
         {/* <Tilt > */}
         <div>
-          <a>
-            <p>{props.title}</p>
-            <div className="row">
-              <div
-                className={showCard ? "card-image col-6" : "card-image col-12"}
-              >
-                <img className="" src={image} />
-              </div>
+          <div>
+            <div className="card-image">
+              <img className="" src={image} alt={alt} />
             </div>
-          </a>
+            <p className="card-title">{props.title}</p>
+            <p>{props.content}</p>
+            <button src={link}>Find out more</button>
+          </div>
         </div>
       </div>
       {/* </Tilt> */}

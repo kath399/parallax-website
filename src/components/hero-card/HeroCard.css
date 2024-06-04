@@ -1,11 +1,14 @@
 .heroCard {
   position: relative;
   display: inline-block;
-  height: 100vh;
-  width: 100vw;
-  color: #010C66;
-  transition: all 2s ease;
+  height: 80vh;
+  width: 80vw;
+  color: #010c66;
   padding-top: 20%;
+}
+
+.heroCard-wrapper {
+  height: 100vh;
 }
 
 .heroCard.scrolled {
@@ -42,7 +45,7 @@
 }
 
 .heroBtn {
-  background-color: #010C66;
+  background-color: #010c66;
   padding: 7px 21px 7px 21px;
   margin-top: 46px;
   border: none;
@@ -56,7 +59,7 @@
   position: absolute;
   top: 10vh;
   left: 10vw;
-  border: 1px solid #010C66;
+  border: 1px solid #010c66;
   border-radius: 10px;
   width: 84px;
   height: 38px;
@@ -66,7 +69,18 @@
   justify-content: center;
 }
 
-@keyframes shrink {
+@keyframes cardReveal {
+  from {
+    height: 80vh;
+    width: 80vw;
+  }
+  to {
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+/*@keyframes shrink {
   from { 
     height: 100vh;
     width: 100vw;
@@ -79,16 +93,60 @@
     margin-bottom: 5vh;
     transform: scaleX(1); 
   }
+} */
+
+@media (prefers-reduced-motion: no-preference) {
+  .heroCard-animation {
+    animation: cardReveal 2s 1;
+  }
 }
 
-@media only screen and (max-width: 786px){
-  .font-details{
+@media only screen and (max-width: 786px) {
+  .font-details {
     font-size: 2rem !important;
   }
-  .my-details{
+  .my-details {
     margin-right: 0;
   }
-  .profile{
+  .profile {
     max-width: 15em;
+  }
+
+  .heroTitle {
+    font-size: 3.875em;
+  }
+
+  .heroText {
+    width: 294px;
+    line-height: 1.5em;
+    font-size: 0.875em;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .heroCard {
+    text-align: center;
+    height: calc(100vh - 80px);
+    padding: 40px;
+    width: 90%;
+    border-radius: 20px;
+  }
+
+  .heroTitle {
+    font-size: var(--type-large);
+  }
+
+  .heroText {
+    text-align: center;
+    font-style: normal;
+    font-size: var(--type-small);
+    width: auto;
+    left: 0px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .cardNumber {
+    display: none;
   }
 }

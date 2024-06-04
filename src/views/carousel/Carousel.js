@@ -1,7 +1,7 @@
 import React from "react";
 import { useRef } from "react";
 import Container from "react-bootstrap/Container";
-import BlogCard from "../blog-card/BlogCard";
+import BlogCard from "../../components/blog-card/BlogCard";
 import "./Carousel.css";
 import ExampleCardImage from "./../../assets/img/carousal/example-carousel.png";
 import ExampleCardImage2 from "./../../assets/img/carousal/moneypig.png";
@@ -32,32 +32,32 @@ const Carousel = () => {
   return (
     <div className="blogs">
       <h2 className="text-center">
-        It would also make its insurance products more helpful
+        A Help Company™ would also make its insurance products more helpful.​
       </h2>
       <div className="card-group d-flex flex-nowrap">
         <BlogCard
           title="Forgot To Lock Up"
           content="You’re covered even if you forgot to lock up."
           image={ExampleCardImage}
-          colour="#E0DF6B"
+          alt="Door picture"
         />
         <BlogCard
           title="Flexible Payments"
           content="Now you can choose to pay monthly at no extra cost."
           image={ExampleCardImage2}
-          colour="#F9AE97"
+          alt="Money bank pig"
         />
         <BlogCard
           title="Anyone Can Drive It Cover"
           content="With us your covered even if it's not you driving your car."
           image={ExampleCardImage3}
-          colour="#91BF9E"
+          alt="Keys"
         />
         <BlogCard
           title="Lifetime Repair Guarantee"
           content="We cover all the repair work done for a lifetime."
           image={ExampleCardImage4}
-          colour="#91BF9E"
+          alt="Judges wig"
         />
       </div>
 

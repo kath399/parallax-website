@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { isMobile} from 'react-device-detect';
+import { isMobile } from "react-device-detect";
 
 import "./Landing.css";
 import "../../assets/styles/nrma-scheme.css";
@@ -140,8 +140,6 @@ const Landing = () => {
       />
 
       <Carousel />
-
-      <div className="divider2"></div>
 
       <PillSection />
 

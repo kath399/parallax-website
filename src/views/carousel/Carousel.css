@@ -1,31 +1,9 @@
-/* @keyframes example {
-  from {width:240px;}
-  to {width: 400px;}
-} */
-
-@media only screen and (max-width: 786px) {
-  .card-deck {
-    flex-direction: row;
-    flex-flow: wrap;
-  }
-  .card-deck .card-resize {
-    margin-bottom: 10px;
-  }
-  .container-box {
-    display: contents;
-  }
-}
-
-.style {
-  font-size: 16px;
-  color: black;
-}
-.card-title {
-  font-size: 1em;
+.blogs {
+  height: 100vh;
+  overflow: hidden;
 }
 
 /* Styling for card carousel */
-
 /* Buttons for control styling */
 .blogs .card-group {
   overflow: auto;
@@ -74,4 +52,17 @@
 
 .chevron-right {
   transform: rotate(180deg);
+}
+
+@media only screen and (max-width: 786px) {
+  .card-deck {
+    flex-direction: row;
+    flex-flow: wrap;
+  }
+  .card-deck .card-resize {
+    margin-bottom: 10px;
+  }
+  .container-box {
+    display: contents;
+  }
 }
