@@ -10,7 +10,10 @@ import Carousel from "../carousel/Carousel";
 import PillSection from "../pillSection/PillSection";
 import HelpfulTip from "../helpfulTip/HelpfulTip";
 import Footer from "../../components/footer/Footer";
-import Fade from "react-awesome-reveal";
+
+import { Parallax } from "react-parallax";
+import { Fade, Bounce, Slide } from "react-awesome-reveal";
+import Container from "react-bootstrap/Container";
 import Intro from "../intro/Intro";
 
 import Drone from "../../assets/img/Drone.svg";
