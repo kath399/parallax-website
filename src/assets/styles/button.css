@@ -7,19 +7,24 @@
   --circle-button: 46px;
 }
 
-.primary-button-white {
+button:focus {
+  outline: none;
+}
+
+.primary-button-transparent {
+  border: 1px solid #010c66;
+  color: #010c66;
   background-color: transparent;
-  color: var(--primary-white);
-  border: 1px solid var(--primary-white);
   padding: 7px 21px 7px 21px;
   border-radius: 80px;
   font-size: 14px;
   font-weight: 600;
+  padding: 1em;
 }
 
-.primary-button-white:hover {
-  background-color: white;
-  color: var(--primary-blue);
+.primary-button-transparent:hover {
+  background-color: #010c66;
+  color: var(--primary-white);
 }
 
 .close-button {

@@ -3,7 +3,7 @@
   display: inline-block;
   height: 100vh;
   width: 100vw;
-  color: #010C66;
+  color: #010c66;
   padding-top: 20%;
   border-radius: 20px;
 }
@@ -45,16 +45,8 @@
   z-index: 1;
 }
 
-.heroBtn {
-  border: 1px solid #010c66;
-  color: #010c66;
-  background-color: transparent;
-  padding: 7px 21px 7px 21px;
+.heroText > .primary-button-transparent {
   margin-top: 46px;
-  border-radius: 80px;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 1em;
 }
 
 .cardNumber {

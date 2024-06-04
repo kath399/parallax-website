@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { isMobile } from "react-device-detect";
 
@@ -11,8 +11,7 @@ import PillSection from "../pillSection/PillSection";
 import HelpfulTip from "../helpfulTip/HelpfulTip";
 import Footer from "../../components/footer/Footer";
 
-import { Parallax } from "react-parallax";
-import { Fade, Bounce, Slide } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
 import Container from "react-bootstrap/Container";
 import Intro from "../intro/Intro";
 
