@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Fade } from "react-awesome-reveal";
-import { keyframes } from "@emotion/react";
 
 import ChevronDown from "../../assets/icons/chevron-down-white.svg";
 
