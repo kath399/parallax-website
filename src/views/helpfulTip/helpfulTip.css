@@ -1,4 +1,4 @@
-.helpfulBreak {
+.helpfulTip {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,7 +7,7 @@
   height: 100vh;
   margin: auto;
   text-align: center;
-  font-size: 64px;
+  font-size: 40px;
   color: #010C66;
   background-color: #F7F1EA;
 }

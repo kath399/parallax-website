@@ -1,8 +1,26 @@
 :root {
-    --primary-white: #ffffff;
-    --primary-warm-white: #F7F1EA;
-    --primary-blue: #010C66;
-    --primary-spinifex: #D7D667;
-    --primary-sunset: #F9AE97;
-    --primary-river-gum: #91BF9E;
+  --primary-white: #ffffff;
+  --primary-warm-white: #f7f1ea;
+  --primary-blue: #010c66;
+  --primary-spinifex: #d7d667;
+  --primary-sunset: #f9ae97;
+  --primary-river-gum: #91bf9e;
+
+  /* Typography - standard is 16px*/
+  --type-small: 1.25em; /* 20px */
+  --type-large: 7.5em;
+}
+
+@media only screen and (max-width: 600px) {
+  :root {
+    --type-small: 1em;
+    --type-large: 3em;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  :root {
+    --type-small: 1em;
+    --type-large: 1.625em;
+  }
 }

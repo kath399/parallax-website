@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { isMobile} from 'react-device-detect';
+import { isMobile } from "react-device-detect";
 
 import "./Landing.css";
 import "../../assets/styles/nrma-scheme.css";
@@ -8,13 +8,12 @@ import NavBar from "../../components/navBar/NavBar";
 import HeroCard from "../../components/hero-card/HeroCard";
 import Carousel from "../carousel/Carousel";
 import PillSection from "../pillSection/PillSection";
-import HelpfulBreak from "../helpfulBreak/HelpfulBreak";
-import Contact from "../contact/Contact";
+import HelpfulTip from "../helpfulTip/HelpfulTip";
 import Footer from "../../components/footer/Footer";
+
 import { Parallax } from "react-parallax";
 import { Fade, Bounce, Slide } from "react-awesome-reveal";
 import Container from "react-bootstrap/Container";
-
 import Intro from "../intro/Intro";
 
 import Drone from "../../assets/img/Drone.svg";
@@ -23,18 +22,7 @@ import CloudTL from "../../assets/img/CloudTL.svg";
 import CloudTR from "../../assets/img/CloudTR.svg";
 import TeacupSpoon from "../../assets/img/TeacupSpoon.svg";
 
-import ChevronDown from "../../assets/icons/chevron-down-white.svg";
-
 const Landing = () => {
-  const [slideComplete, setSlideComplete] = useState(false);
-  const section1Ref = useRef(null);
-  const scrollDown = (sectionRef) => {
-    window.scrollTo({
-      top: sectionRef.current.offsetTop,
-      behavior: "smooth", // For smooth scrolling
-    });
-  };
-
   const navigate = useNavigate();
   const goTo = () => {
     navigate("/form");
@@ -139,13 +127,9 @@ const Landing = () => {
 
       <Carousel />
 
-      <div className="divider2"></div>
-
       <PillSection />
 
-      <div className="divider"></div>
-
-      {!isMobile && <HelpfulBreak fading = {false} />}
+      {!isMobile && <HelpfulTip fading={false} />}
 
       <Footer />
     </div>

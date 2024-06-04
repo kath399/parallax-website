@@ -272,42 +272,47 @@ const Leaves = (props) => {
 
 
 // Resize Listener
-/*
+
+
+
+//
+
+
             window.addEventListener("resize", function (event) {
                 // Save the new canvas width
                 const canvasWidth = canvas.width;
                 const canvasHeight = canvas.height;
             
                 // Reposition all the walls and scale them so they retain their width/height.
-                Body.setPosition(wallLeft, {
-                  x: -wallThickness / 2,
-                  y: canvasHeight / 2,
-                });
-                Body.scale(wallLeft, 1, canvasHeight / canvasPrevHeight);
-            
-                Body.setPosition(wallRight, {
-                  x: canvasWidth + wallThickness / 2,
-                  y: canvasHeight / 2,
-                });
-                Body.scale(wallRight, 1, canvasHeight / canvasPrevHeight);
-            
-                Body.setPosition(wallTop, {
+                // TOP
+                Body.setPosition(walls[0], {
                   x: canvasWidth / 2,
                   y: -wallThickness / 2,
                 });
-                Body.scale(wallTop, canvasWidth / canvasPrevWidth, 1);
-            
-                Body.setPosition(wallBottom, {
+                Body.scale(walls[0], canvasWidth / canvasPrevWidth, 1);
+                // LEFT
+                Body.setPosition(walls[1], {
+                  x: -wallThickness / 2,
+                  y: canvasHeight / 2,
+                });
+                Body.scale(walls[1], 1, canvasHeight / canvasPrevHeight);
+                // BOTTOM
+                Body.setPosition(walls[2], {
                   x: canvasWidth / 2,
                   y: canvasHeight + wallThickness / 2,
                 });
-                Body.scale(wallBottom, canvasWidth / canvasPrevWidth, 1);
+                Body.scale(walls[2], canvasWidth / canvasPrevWidth, 1);
+                // RIGHT
+                Body.setPosition(walls[3], {
+                  x: canvasWidth + wallThickness / 2,
+                  y: canvasHeight / 2,
+                });
+                Body.scale(walls[3], 1, canvasHeight / canvasPrevHeight);
             
                 // Set the new canvas dimensions as the previous. We use this so we can properly scale the environment.
                 canvasPrevWidth = canvasWidth;
                 canvasPrevHeight = canvasHeight;
               });
-*/
               ////
 
 
