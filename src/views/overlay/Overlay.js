@@ -11,10 +11,12 @@ const Overlay = ({isVisible, onClose}) => {
     <div className="overlay">
       <div className="overlayNav">
         <img src={Logo} alt="Logo" className="logoOverlay"/>
-        <NrmaButton Type='Primary' Label='Visit NRMA Insurance' />
-        <button className="closeButton" onClick={onClose}>
-          <img src={Cross} alt='Close' />
-        </button>
+        <div style={{display: 'flex'}}>
+          <NrmaButton Type='Primary' Label='Visit NRMA Insurance' />
+          <button className="closeButton" onClick={onClose}>
+            <img src={Cross} alt='Close' />
+          </button>
+        </div>
       </div>
       <div className="menuOverlay">
         <a href='#A_Help_Company' onClick={onClose}>A Help Company™</a>
