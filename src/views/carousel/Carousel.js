@@ -9,7 +9,7 @@ const cardval = [
   {
     title: "Forgot To Lock Up",
     content: "You’re covered even if you forgot to lock up.",
-    image: "example-carousel.png",
+    image: "door.png",
     alt: "Door picture",
   },
   {

@@ -15,11 +15,10 @@ button:focus {
   border: 1px solid #010c66;
   color: #010c66;
   background-color: transparent;
-  padding: 7px 21px 7px 21px;
+  padding: 16px 20px;
   border-radius: 80px;
   font-size: 14px;
   font-weight: 600;
-  padding: 1em;
 }
 
 .primary-button-transparent:hover {

@@ -47,12 +47,4 @@
   -o-object-fit: contain;
   object-fit: contain;
 }
-.blog-card button,
-.card button {
-  color: #010c66;
-  border: 1px solid #010c66;
-  background-color: transparent;
-  padding: 7px 21px 7px 21px;
-  border-radius: 80px;
-  font-size: 14px;
-}/*# sourceMappingURL=BlogCard.css.map */
+/*# sourceMappingURL=BlogCard.css.map */
