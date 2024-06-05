@@ -1,9 +1,10 @@
 .heroCard {
   position: relative;
-  display: inline-flex;
+  display: inline-block;
   height: 100vh;
   width: 100vw;
-  color: #010c66;
+  color: #010C66;
+  padding-top: 20%;
   border-radius: 20px;
 }
 
@@ -32,8 +33,6 @@
   font-size: 7.5em;
   z-index: 1;
   width: fill;
-  margin: auto;
-  vertical-align: middle;
 }
 
 .heroText {
@@ -46,23 +45,30 @@
   z-index: 1;
 }
 
-.heroText > .primary-button-transparent {
-  margin-top: 20px;
+.heroBtn {
+  border: 1px solid #010c66;
+  color: #010c66;
+  background-color: transparent;
+  padding: 7px 21px 7px 21px;
+  margin-top: 46px;
+  border-radius: 80px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 1em;
 }
 
 .cardNumber {
+  position: absolute;
+  top: 10vh;
+  left: 10vw;
+  border: 1px solid #010c66;
+  border-radius: 10px;
+  width: 84px;
+  height: 38px;
+  font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  max-height: 36px;
-  padding: 12px;
-  gap: 10px;
-  top: 10vh;
-  left: 10vw;
-  border-radius: 8px;
-  border: 1px solid var(--primary-blue);
-  font-size: 20px;
 }
 
 @keyframes cardReveal {

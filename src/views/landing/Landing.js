@@ -110,7 +110,7 @@ const Landing = () => {
           </Fade>
         }
         BGColor="#E0DF6B"
-        Text="Checking your roof is important, but it’s also a pain, that’s why we’re introducing a service that uses drones to check your roof for you."
+        Text="We have had all our staff trained by Lifeline so they’re able to deal with any situation."
       />
 
       <HeroCard

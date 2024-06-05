@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import NavBar from "../../components/navBar/NavBar";
 import Footer from "../../components/footer/Footer";
 import NrmaButton from "../../components/button/NrmaButton";
@@ -28,13 +25,13 @@ const Form = ({Title, ButtonLabel}) => {
   };
 
   return (
-    <div id="form" className="form">
+    <>
       <NavBar />
-        <Row>
-          <Col>
+      <div id="form" className="form">
+          <div className="formColumn">
             <h1 className="formTitle">{Title}</h1>
-          </Col>
-          <Col>
+          </div>
+          <div className="formColumn">
             <div className="formInputColumn">
               <p className="">Register your interest</p>
               <input
@@ -69,15 +66,14 @@ const Form = ({Title, ButtonLabel}) => {
                 Yes! I agree to the Terms and Conditions*
               </label>
               
-              <NrmaButton Label={'Submit'} />
+              <NrmaButton Type='Secondary' Label={'Submit'} />
               <br/>
             </div>
-          </Col>
-        </Row>
-        <div style={{position: 'absolute', bottom: 0}}>
-          <Footer/>
-        </div>
-    </div>
+          </div>
+
+      </div>
+      <Footer/>
+    </>
   );
 };
 

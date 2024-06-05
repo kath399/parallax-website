@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./HeroCard.css";
 import { motion, useScroll, useTransform } from "framer-motion";
 //import { Slide } from "react-awesome-reveal";
@@ -13,10 +13,12 @@ const HeroCard = ({
   ButtonLabel,
   ButtonOnclick,
 }) => {
-  const { scrollYProgress } = useScroll();
-
-  const width = useTransform(scrollYProgress, [0, 1], ["100vw", "80vw"]);
-  const height = useTransform(scrollYProgress, [0, 1], ["100vh", "80vh"]);
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['center center', 'end 0.95']
+  });
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85])
 
   //const [y, setY] = useState(0);
 
@@ -49,13 +51,12 @@ const HeroCard = ({
   return (
     <motion.div
       className="heroCard-wrapper"
-      whileInView={{ scale: [1, 0.85] }}
-      transition={{
-        ease: "linear",
-        duration: 2,
+      ref={ref}
+      style={{
+        scale: scale,
       }}
     >
-      <div id={Id} className="heroCard" style={{ backgroundColor: BGColor }}>
+      <div id={Id} ref={ref} className="heroCard" style={{ backgroundColor: BGColor }}>
         {Animations}
         <div className="cardNumber">0{Number}/05</div>
 
