@@ -10,6 +10,7 @@
   scroll-snap-align: start;
   background-color: transparent;
 }
+
 .blog-card:hover .card-content,
 .card:hover .card-content {
   opacity: 1;

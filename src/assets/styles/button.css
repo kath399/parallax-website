@@ -103,3 +103,31 @@ button:focus {
   width: 24px;
   height: 24px;
 }
+
+.chevron-right,
+.chevron-left {
+  height: 36px;
+  width: 36px;
+  border-radius: 80px;
+  border: 1px solid var(--primary-blue);
+  background-color: transparent;
+  margin-left: 10px;
+
+  > img {
+    height: 24px;
+    width: 24px;
+  }
+}
+.chevron-right:hover,
+.chevron-left:hover {
+  background-color: var(--primary-blue);
+}
+
+.chevron-right:hover img,
+.chevron-left:hover img {
+  content: url("../icons/chevron-left-white.svg");
+}
+
+.chevron-right {
+  transform: rotate(180deg);
+}

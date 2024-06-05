@@ -9,6 +9,7 @@
   overflow: auto;
   scroll-snap-type: x mandatory;
   width: 100%;
+  height: 539px;
   margin: auto;
   align-items: center;
   justify-content: center;
@@ -37,27 +38,10 @@
   margin-right: 120px;
 }
 
-.controls button {
-  height: 36px;
-  width: 36px;
-  border-radius: 80px;
-  border: 1px solid var(--primary-blue);
-  background-color: transparent;
-  margin-left: 20px;
-}
-
-.controls button img {
-  height: 24px;
-  width: 24px;
-}
-
-.chevron-right {
-  transform: rotate(180deg);
-}
-
 @media only screen and (min-width: 786px) {
   .blogs .text-center {
     padding: 150px;
+    padding-bottom: 125px;
   }
 }
 
