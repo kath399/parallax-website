@@ -5,7 +5,7 @@
 
 .navBar {
   position: fixed;
-  height: 80px;
+  height: var(--nav-height);
   width: fill;
   display: flex;
   align-items: center;
@@ -58,7 +58,7 @@
 
 @media only screen and (min-width: 1440px) {
   .navBar {
-    height: 120px;
+    height: var(--nav-height);
     padding-left: 10vw;
     padding-right: 10vw;
     justify-content: start;

@@ -72,3 +72,9 @@
     width: 90vw;
   }
 }
+
+@media only screen and (min-width: 1440px) {
+  .launchMessage {
+    scroll-margin-top: 80px;
+  }
+}
