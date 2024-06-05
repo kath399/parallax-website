@@ -50,17 +50,18 @@
 }
 
 .cardNumber {
-  position: absolute;
-  top: 10vh;
-  left: 10vw;
-  border: 1px solid #010c66;
-  border-radius: 10px;
-  width: 84px;
-  height: 38px;
-  font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  max-height: 36px;
+  padding: 12px;
+  gap: 10px;
+  top: 10vh;
+  left: 10vw;
+  border-radius: 8px;
+  border: 1px solid var(--primary-blue);
+  font-size: 20px;
 }
 
 @keyframes cardReveal {
