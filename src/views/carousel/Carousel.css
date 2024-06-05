@@ -29,7 +29,6 @@
 .blogs .text-center {
   font-weight: 400;
   color: #010c66;
-  padding: 150px;
 }
 
 .controls {
@@ -56,6 +55,12 @@
   transform: rotate(180deg);
 }
 
+@media only screen and (min-width: 786px) {
+  .blogs .text-center {
+    padding: 150px;
+  }
+}
+
 @media only screen and (max-width: 786px) {
   .card-deck {
     flex-direction: row;
@@ -67,4 +72,15 @@
   .container-box {
     display: contents;
   }
+  .blogs .text-center {
+    width: 378px;
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: 55px;
+    line-height: 130%;
+    font-size: 1.5em;
+  }
 }
+
+/* @media screen and (max-width: 450px) {
+} */

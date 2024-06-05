@@ -18,7 +18,9 @@ const BlogCard = (props) => {
             <p className="card-title">{props.title}</p>
             <div className="card-content">
               <p>{props.content}</p>
-              <button src={props.link}>Find out more</button>
+              <button className="primary-button-transparent" src={props.link}>
+                Find out more
+              </button>
             </div>
           </div>
         </div>
