@@ -30,6 +30,7 @@ export const drone = [
     "/images/pngs/test/0036.png",
     "/images/pngs/test/0035.png",
     "/images/pngs/test/0034.png",
+    
     "/images/pngs/test/0033.png",
     "/images/pngs/test/0032.png",
     "/images/pngs/test/0031.png",

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import "./PNGHeroCard.css";
+import "./AnimatedHeroCard.css";
 import {
     useInView,
     motion,
@@ -9,12 +9,13 @@ import {
 } from "framer-motion";
 import { Stage, AnimatedSprite } from "@pixi/react";
 
-const PNGHeroCard = ({
+const AnimatedHeroCard = ({
     Id,
     Number,
     Title,
     Animations,
     ImageList,
+    StickyScrollLength,
     BGColor,
     Text,
     ButtonLabel,
@@ -27,14 +28,12 @@ const PNGHeroCard = ({
     const [images, setImages] = useState(ImageList);
 
     let isInView = useInView(
-        sectionRef
-        // , {margin: "0px 100px -50px 0px",}
+        sectionRef, // {margin: "0px 100px -50px 0px",} //keeping for further animation tweak
     );
     const { scrollYProgress } = useScroll({
-        target: sectionRef,
-        // , offset: ["start center", "end end"], // target container, target container
+        target: sectionRef, // , offset: ["start center", "end end"], // target container, target container
     });
-    const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+    const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]); //keeping for further animation tweak
 
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
         setFrame(Math.floor(scrollYProgress.current * (images.length-1)));
@@ -45,8 +44,8 @@ const PNGHeroCard = ({
             className="heroCard-wrapper"
             ref={sectionRef}
             style={{
-                border: "solid 2px black",
-                height: "300vh",
+                // border: "solid 2px black", //debug for scroll
+                height: StickyScrollLength,
             }}
         >
             <div className="sticky">
@@ -58,7 +57,7 @@ const PNGHeroCard = ({
                       width: "90vw",
                       height: "90vh",
                       top: "5vh",
-                      borderRadius: "10px",
+                      borderRadius: "20px",
                     }}
                     whileInView={{
                         width: "100vw",
@@ -82,16 +81,7 @@ const PNGHeroCard = ({
                     <div
                         className={"canvasWrapper"}
                         ref={canvasRef}
-                        style={{
-                            width: "100vw",
-                            height: "100vh",
-                            position: "absolute",
-                            pointerEvents: "none",
-                            overflow: "hidden",
-                            top: "50%",
-                            left: "50%",
-                            transform: "translate(-50%, -50%)",
-                        }}
+
                     >
                         <Stage width={window.innerWidth} height={window.innerHeight} 
                         options={{ 
@@ -118,4 +108,4 @@ const PNGHeroCard = ({
     );
 };
 
-export default PNGHeroCard;
+export default AnimatedHeroCard;

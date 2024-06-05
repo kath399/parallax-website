@@ -9,14 +9,15 @@
 .heroCard-wrapper {
   height: 100vh;
 }
-
-.heroCard.scrolled {
-  width: 90vw;
-  height: 90vh;
-  padding: 15% 10%;
-  border-radius: 20px;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+.canvasWrapper {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  pointer-events: none;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 /*
 Sticky Scroll
