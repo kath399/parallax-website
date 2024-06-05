@@ -11,6 +11,8 @@
   --type-large: 7.5em;
 
   --icon-button: 46px; /* should be 46px, though Nav*/
+
+  --nav-height: 80px;
 }
 
 @media only screen and (max-width: 768px) {

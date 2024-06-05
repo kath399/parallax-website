@@ -27,6 +27,7 @@
   line-height: 130%;
   margin: auto;
   height: 475px;
+  scroll-margin-top: var(--nav-height);
 }
 
 /* Large screen */
