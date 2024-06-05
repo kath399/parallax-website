@@ -7,7 +7,7 @@ import "../../assets/styles/nrma-scheme.css";
 import NavBar from "../../components/navBar/NavBar";
 import HeroCard from "../../components/hero-card/HeroCard";
 import PNGHeroCard from "../../components/png-hero-card/PNGHeroCard";
-import PNGHeroCard2 from "../../components/png-hero-card/PNGHeroCard2";
+import {assetList, airpods} from "../../assets/PNGSequenceList.js";
 import Carousel from "../carousel/Carousel";
 import PillSection from "../pillSection/PillSection";
 import HelpfulTip from "../helpfulTip/HelpfulTip";
@@ -38,7 +38,6 @@ const Landing = () => {
       behavior: "smooth", // For smooth scrolling
     });
   };
-
   const navigate = useNavigate();
   const goTo = () => {
     navigate("/form");
@@ -134,18 +133,20 @@ const Landing = () => {
         Id="helpLab1"
         key={"helpLab1"}
         Number="5"
-        Title="Help Lab"
+        Title="Test Card 5"
         Animations
+        ImageList={airpods}
         BGColor="#F9AE97"
         Text="A Help Company™ would want your ideas to define its future.​ Get early access to all the latest Help Products and have a say on what helpful things a Help Company™ develops next."
         ButtonLabel="Find an event in your area"
       />
-      <PNGHeroCard2
+      <PNGHeroCard
         Id="helpLab2"
-        key="helpLab2"
-        Number="5"
-        Title="Test Card 2"
+        key={"helpLab2"}
+        Number="6"
+        Title="Test Card 6"
         Animations
+        ImageList={airpods}
         BGColor="#91BF9E"
         Text="A Help Company™ would want your ideas to define its future.​ Get early access to all the latest Help Products and have a say on what helpful things a Help Company™ develops next."
         ButtonLabel="Find an event in your area"
