@@ -57,7 +57,7 @@ const PillSection = () => {
   const newList = changeOrder(ogList);
 
   return (
-    <div id='Ways_We_Help' className="pill-container">
+    <div id="Ways_We_Help" className="pill-container">
       <div className="pill-card" id="pill-container">
         {/* Overlay Section */}
         {pillNumber >= 0 && (

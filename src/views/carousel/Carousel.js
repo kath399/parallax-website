@@ -62,15 +62,11 @@ const Carousel = () => {
       </div>
 
       <div className="controls">
-        <button onClick={() => goLeft()}>
+        <button onClick={() => goLeft()} className="chevron-left">
           <img src={ChevronArrow} alt="Left Chevron control" />
         </button>
-        <button onClick={() => goRight()}>
-          <img
-            className="chevron-right"
-            src={ChevronArrow}
-            alt="Right Chevron control"
-          />
+        <button className="chevron-right" onClick={() => goRight()}>
+          <img src={ChevronArrow} alt="Right Chevron control" />
         </button>
       </div>
     </div>
