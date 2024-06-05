@@ -30,8 +30,8 @@
   align-items: center;
   justify-content: center;
   background-color: #010c66;
-  width: var(--icon-button);
-  height: var(--icon-button);
+  width: 32px;
+  height: 32px;
   border: 1px solid white;
   border-radius: 100%;
 }

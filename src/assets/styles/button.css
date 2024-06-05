@@ -62,7 +62,7 @@ button:focus {
   }
 }
 
-.skip-content-button {
+.chevron-down-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,16 +90,16 @@ button:focus {
   outline: none;
 } */
 
-.skip-content-button:hover {
+.chevron-down-button:hover {
   background-color: white;
   transition: background-color 0.2s ease;
 }
 
-.skip-content-button:hover img {
+.chevron-down-button:hover img {
   content: url("../icons/chevron-down-blue.svg");
 }
 
-.skip-content-button img {
+.chevron-down-button img {
   width: 24px;
   height: 24px;
 }

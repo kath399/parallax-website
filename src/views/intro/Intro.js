@@ -32,7 +32,7 @@ const Intro = (params) => {
         </Fade>
 
         <button
-          className="skip-content-button"
+          className="chevron-down-button"
           onClick={() => scrollDown(section1Ref)}
         >
           <img src={ChevronDown} alt="Skip to content button" />
