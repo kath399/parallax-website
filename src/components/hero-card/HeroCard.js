@@ -57,7 +57,7 @@ const HeroCard = ({
     >
       <div id={Id} className="heroCard" style={{ backgroundColor: BGColor }}>
         {Animations}
-        <div className="cardNumber">0{Number}/04</div>
+        <div className="cardNumber">0{Number}/05</div>
 
         <div className="heroTitle">{Title}</div>
         <div className="heroText">
