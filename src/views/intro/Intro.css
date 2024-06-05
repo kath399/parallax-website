@@ -7,7 +7,7 @@
   justify-content: center;
   margin: auto;
   text-align: center;
-  font-size: 24px;
+  font-size: 40px;
   line-height: normal;
   letter-spacing: -0.96px;
   color: var(--primary-white);
@@ -58,9 +58,10 @@
 /* Mobile Device */
 @media screen and (max-width: 450px) {
   .titleMessage {
-    font-size: 24px;
+    font-size: 1em;
     letter-spacing: -0.48px;
-    padding: 1em;
+    line-height: normal;
+    padding: 3.25em;
   }
   .launchMessage {
     font-size: 1.625em;
