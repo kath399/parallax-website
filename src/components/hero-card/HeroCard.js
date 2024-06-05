@@ -16,7 +16,7 @@ const HeroCard = ({
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['center center', 'end start']
+    offset: ['center center', 'end 0.95']
   });
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85])
 
