@@ -42,13 +42,11 @@ const Intro = (params) => {
       <section
         id="Helpful_Tools_And_Services"
         ref={section1Ref}
-        className="launchMessage"
+        className="launchMessage sectionHeader"
       >
         <Fade duration={2000} triggerOnce="true">
           <div>
-            It would launch four helpful
-            <br />
-            tools and services.
+            A Help Company™ would launch four helpful tools and services.​
           </div>
         </Fade>
       </section>

@@ -47,4 +47,9 @@
   -o-object-fit: contain;
   object-fit: contain;
 }
-/*# sourceMappingURL=BlogCard.css.map */
+
+@media only screen and (max-width: 786px) {
+  .blog-card .card-content {
+    opacity: 1;
+  }
+}

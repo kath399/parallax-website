@@ -8,6 +8,7 @@ html,
 body {
   max-width: 100%;
   overflow: hidden;
+  line-height: normal;
 }
 
 html {

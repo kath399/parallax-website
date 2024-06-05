@@ -43,9 +43,11 @@ const Carousel = () => {
 
   return (
     <div className="blogs">
-      <h2 className="text-center">
-        A Help Company™ would also make its insurance products more helpful.​
-      </h2>
+      <section>
+        <h2 className="text-center section-header">
+          A Help Company™ would also make its insurance products more helpful.​
+        </h2>
+      </section>
       <div className="card-group d-flex flex-nowrap">
         {cardval.map(function (data) {
           return (
