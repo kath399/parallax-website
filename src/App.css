@@ -1,13 +1,13 @@
 .App {
   background-color: #f7f1ea;
   text-align: center;
-  overflow-x: hidden;
+  /* overflow-x: hidden; // disabled for sticky scroll */
 }
 
 html,
 body {
   max-width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; // disabled for sticky scroll */
 }
 
 html {

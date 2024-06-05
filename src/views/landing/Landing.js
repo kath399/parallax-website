@@ -7,6 +7,7 @@ import "../../assets/styles/nrma-scheme.css";
 import NavBar from "../../components/navBar/NavBar";
 import HeroCard from "../../components/hero-card/HeroCard";
 import PNGHeroCard from "../../components/png-hero-card/PNGHeroCard";
+import PNGHeroCard2 from "../../components/png-hero-card/PNGHeroCard2";
 import Carousel from "../carousel/Carousel";
 import PillSection from "../pillSection/PillSection";
 import HelpfulTip from "../helpfulTip/HelpfulTip";
@@ -129,13 +130,23 @@ const Landing = () => {
         Text="Checking your roof is important, but it’s also a pain, that’s why we’re introducing a service that uses drones to check your roof for you."
         ButtonLabel="Register your interest"
       />
-
       <PNGHeroCard
-        Id="helpLab"
+        Id="helpLab1"
+        key={"helpLab1"}
         Number="5"
         Title="Help Lab"
         Animations
         BGColor="#F9AE97"
+        Text="A Help Company™ would want your ideas to define its future.​ Get early access to all the latest Help Products and have a say on what helpful things a Help Company™ develops next."
+        ButtonLabel="Find an event in your area"
+      />
+      <PNGHeroCard2
+        Id="helpLab2"
+        key="helpLab2"
+        Number="5"
+        Title="Test Card 2"
+        Animations
+        BGColor="#91BF9E"
         Text="A Help Company™ would want your ideas to define its future.​ Get early access to all the latest Help Products and have a say on what helpful things a Help Company™ develops next."
         ButtonLabel="Find an event in your area"
       />

@@ -7,7 +7,7 @@ const app = new PIXI.Application();
 
 await app.init({
     resizeTo: window,
-    sharedTicker: true,
+    sharedTicker: false,
     backgroundAlpha: 0,
     // backgroundColor: "#1099bb",
     antialias: true,

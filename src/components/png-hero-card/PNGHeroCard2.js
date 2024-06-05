@@ -20,7 +20,7 @@ await app.init({
     resolution: 1,
 });
 
-const PNGHeroCard = ({
+const PNGHeroCard2 = ({
     Id,
     Number,
     Title,
@@ -110,7 +110,7 @@ const PNGHeroCard = ({
             className="heroCard-wrapper"
             ref={sectionRef}
             style={{
-                border: "solid 2px black",
+                // border: "solid 2px black",
                 height: "300vh",
             }}
         >
@@ -166,4 +166,4 @@ const PNGHeroCard = ({
     );
 };
 
-export default PNGHeroCard;
+export default PNGHeroCard2;
