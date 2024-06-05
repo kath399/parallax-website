@@ -62,18 +62,18 @@ const NavBar = () => {
           Type={scrolled ? "Secondary" : "Primary"}
           Label={"Visit NRMA Insurance"}
         />
+        <button
+          className="menubutton"
+          style={{
+            backgroundColor: scrolled && "white",
+            color: scrolled && "#010C66",
+            border: scrolled && "1px solid #010C66",
+          }}
+          onClick={toggleOverlay}
+        >
+          <img src={scrolled ? Menu3 : Menu} alt="Menu" />
+        </button>
       </div>
-      <button
-        className="menubutton"
-        style={{
-          backgroundColor: scrolled && "white",
-          color: scrolled && "#010C66",
-          border: scrolled && "1px solid #010C66",
-        }}
-        onClick={toggleOverlay}
-      >
-        <img src={scrolled ? Menu3 : Menu} alt="Menu" />
-      </button>
       <Overlay isVisible={isOverlayVisible} onClose={toggleOverlay} />
     </div>
   );
