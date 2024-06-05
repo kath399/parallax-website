@@ -61,12 +61,12 @@ const HeroCard = ({
 
         <div className="heroTitle">{Title}</div>
         <div className="heroText">
-          {Text}
-          <br />
+          <p>{Text}</p>
           {ButtonLabel ? (
             <button
               className="primary-button-transparent"
               onClick={ButtonOnclick}
+              type="button"
             >
               {ButtonLabel}
             </button>

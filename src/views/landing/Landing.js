@@ -82,7 +82,7 @@ const Landing = () => {
         }
         BGColor="#F9AE97"
         Text="In response to the rise in extreme weather events, we’ve teamed up with The Australian Red Cross to run community preparedness events in at risk areas."
-        ButtonLabel="Find an event in your area"
+        ButtonLabel="See if we’re running an event in your area"
       />
 
       <HeroCard
