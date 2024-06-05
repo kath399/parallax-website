@@ -15,7 +15,8 @@
     position: absolute;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 0 10vw;
     top: 0;
     height: 80px !important;
     width: fill;
@@ -44,4 +45,5 @@
     border: 1px solid white;
     border-radius: 100%;
     background-color: transparent;
+    margin-left: 10px;
 }
