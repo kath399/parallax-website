@@ -69,8 +69,8 @@ button:focus {
   position: absolute;
   bottom: 48px;
   margin: auto;
-  width: 46px;
-  height: 46px;
+  width: var(--icon-button);
+  height: var(--icon-button);
   border: 1px solid white;
   border-radius: 100px;
   transition: display 2s linear;
