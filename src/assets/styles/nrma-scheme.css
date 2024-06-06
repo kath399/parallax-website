@@ -9,12 +9,18 @@
   /* Typography - standard is 16px*/
   --type-small: 1.25em; /* 20px */
   --type-large: 7.5em;
+
+  --icon-button: 46px; /* should be 46px, though Nav*/
+
+  --nav-height: 80px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   :root {
     --type-small: 1em;
     --type-large: 3em;
+
+    --icon-button: 36px;
   }
 }
 
@@ -22,5 +28,13 @@
   :root {
     --type-small: 1em;
     --type-large: 1.625em;
+
+    --icon-button: 32px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  :root {
+    --nav-height: 120px;
   }
 }

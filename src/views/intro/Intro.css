@@ -1,13 +1,13 @@
 .titleMessage {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   padding: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
   text-align: center;
-  font-size: 24px;
+  font-size: 40px;
   line-height: normal;
   letter-spacing: -0.96px;
   color: var(--primary-white);
@@ -15,21 +15,27 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
+
+  > p {
+    width: 71.25rem;
+  }
 }
 
 .launchMessage {
-  width: 100%;
+  width: 40vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 64px;
+  font-size: 2.5em;
   color: #010c66;
-  font-size: 2em;
+  line-height: 130%;
   margin: auto;
+  height: 475px;
+  scroll-margin-top: var(--nav-height);
 }
 
 /* Large screen */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 768px) {
   .launchMessage {
     height: 635px;
     padding: 0px;
@@ -46,6 +52,10 @@
     font-size: 1.625em;
     letter-spacing: -0.72px;
     line-height: 28px;
+
+    > p {
+      width: 36.25rem;
+    }
   }
   .launchMessage {
     height: 384px;
@@ -58,14 +68,24 @@
 /* Mobile Device */
 @media screen and (max-width: 450px) {
   .titleMessage {
-    font-size: 24px;
+    font-size: 1em;
     letter-spacing: -0.48px;
-    padding: 1em;
+    line-height: normal;
+
+    > p {
+      width: 18.125rem;
+    }
   }
   .launchMessage {
     font-size: 1.625em;
     letter-spacing: -0.78px;
     height: 250px;
     width: 90vw;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .launchMessage {
+    scroll-margin-top: 80px;
   }
 }

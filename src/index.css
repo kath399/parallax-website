@@ -1,5 +1,5 @@
 body {
-  font-family: Graphik, sans-serif;
+  font-family: "NRMA Graphik Regular", Graphik, sans-serif;
 }
 
 h3 {
@@ -12,16 +12,10 @@ h3 {
 #section1 {
   color: #fff;
 }
-.section{
+.section {
   height: 100vh;
-  
 }
 
 .fp-section {
   text-align: center;
-}
-
-@font-face {
-  font-family: 'Graphik';
-  src: local('Graphik-Regular'), url(./assets/fonts/Graphik-Regular.otf)
 }

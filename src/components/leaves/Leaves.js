@@ -7,14 +7,13 @@ const app = new PIXI.Application();
 
 await app.init({
     resizeTo: window,
-    sharedTicker: true,
+    sharedTicker: false,
     backgroundAlpha: 0,
-    // backgroundColor: "#1099bb",
     antialias: true,
     resolution: 1,
 });
 const Leaves = (props) => {
-//  Setup the Matter engine.
+    //  Setup the Matter engine.
     //
     const scene = useRef();
     const engine = useRef(
@@ -47,6 +46,7 @@ const Leaves = (props) => {
     const initialState = { count: 0 };
     const INCREMENT = "increment";
 
+    // leave reducer for further interaction tweak.
     const increment = () => {
         dispatch({ type: INCREMENT });
     };
@@ -61,10 +61,9 @@ const Leaves = (props) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     useEffect(() => {
-        // Matter, Setup Walls
-        // boundaries
-        let wallThickness = 200;
+        // Matter, Setup physical walls (boundaries)
 
+        const wallThickness = 200;
 
         let walls = [
             // TOP
@@ -105,7 +104,6 @@ const Leaves = (props) => {
             ),
         ];
 
-
         World.add(engine.current.world, walls);
 
         Engine.run(engine.current);
@@ -113,20 +111,10 @@ const Leaves = (props) => {
         // Pixi
         scene.current.appendChild(app.canvas);
 
-        /*
-    // On first render add app to DOM
-        pixiref.current.appendChild(app.canvas);
-*/
         // app.start();
-
-        // app.stage.interactive = true;
         let canvas = app.canvas;
         console.log("====================");
-        console.log("CANVAS LAUNCHED : ");
-        console.log("app.canvas : ", canvas.width, canvas.height);
-        // console.log("window : ", window.innerWidth, window.innerHeight);
-        // console.log("app.screen : ", app.screen.width, app.screen.height);
-        // console.log("scene.offset", scene.offsetWidth, scene.offsetHeight);
+        console.log("LEAVES CANVAS LAUNCHED : ", canvas.width, canvas.height);
         console.log("====================");
 
         let centre = { x: canvas.width * 0.5, y: canvas.height * 0.5 };
@@ -136,7 +124,7 @@ const Leaves = (props) => {
         let _container = new PIXI.Container();
         app.stage.addChild(_container);
 
-        // Transparent background that works as a hitbox
+        // Transparent background graphic object that works as a hitbox
         let bg = new PIXI.Graphics();
         bg.rect(0, 0, app.canvas.width, app.canvas.height);
         bg.fill(0x1099bb);
@@ -150,7 +138,6 @@ const Leaves = (props) => {
         };
 
         let leafAssetList = [
-            // { alias: "leaf01", src: "/images/circ100.png" },
             { alias: "leaf01", src: "/images/Leaf_01.png" },
             { alias: "leaf02", src: "/images/Leaf_02.png" },
             { alias: "leaf03", src: "/images/Leaf_03.png" },
@@ -177,7 +164,7 @@ const Leaves = (props) => {
         // Load the assets and get a resolved promise once both are loaded
         const texturesPromise = PIXI.Assets.loadBundle(["leaves"]);
         texturesPromise.then((resolvedTextures) => {
-            console.log("Texture loaded:", resolvedTextures);
+            console.log("Leaves Texture loaded:", resolvedTextures);
 
             leaves = [...Array(maxLeaves).keys()].map(
                 (x) =>
@@ -258,7 +245,6 @@ const Leaves = (props) => {
             World.add(engine.current.world, cursorMatter);
 
             const handleCursor = (e) => {
-                // console.log(e.clientX);
                 cursorPixi.position.copyFrom(e.global);
                 cursorMatter.position.x = cursorPixi.position.x;
                 cursorMatter.position.y = cursorPixi.position.y;
@@ -266,56 +252,42 @@ const Leaves = (props) => {
             bg.eventMode = "static";
             bg.on("mousemove", handleCursor);
 
-            //// Resize
-//
-
-
-
-// Resize Listener
-
-
-
-//
-
-
+            // Resize Listener
             window.addEventListener("resize", function (event) {
                 // Save the new canvas width
                 const canvasWidth = canvas.width;
                 const canvasHeight = canvas.height;
-            
-                // Reposition all the walls and scale them so they retain their width/height.
+
+                // Reposition and scale all the walls.
                 // TOP
                 Body.setPosition(walls[0], {
-                  x: canvasWidth / 2,
-                  y: -wallThickness / 2,
+                    x: canvasWidth / 2,
+                    y: -wallThickness / 2,
                 });
                 Body.scale(walls[0], canvasWidth / canvasPrevWidth, 1);
                 // LEFT
                 Body.setPosition(walls[1], {
-                  x: -wallThickness / 2,
-                  y: canvasHeight / 2,
+                    x: -wallThickness / 2,
+                    y: canvasHeight / 2,
                 });
                 Body.scale(walls[1], 1, canvasHeight / canvasPrevHeight);
                 // BOTTOM
                 Body.setPosition(walls[2], {
-                  x: canvasWidth / 2,
-                  y: canvasHeight + wallThickness / 2,
+                    x: canvasWidth / 2,
+                    y: canvasHeight + wallThickness / 2,
                 });
                 Body.scale(walls[2], canvasWidth / canvasPrevWidth, 1);
                 // RIGHT
                 Body.setPosition(walls[3], {
-                  x: canvasWidth + wallThickness / 2,
-                  y: canvasHeight / 2,
+                    x: canvasWidth + wallThickness / 2,
+                    y: canvasHeight / 2,
                 });
                 Body.scale(walls[3], 1, canvasHeight / canvasPrevHeight);
-            
-                // Set the new canvas dimensions as the previous. We use this so we can properly scale the environment.
+
+                // Set the new canvas dimensions as the previous.
                 canvasPrevWidth = canvasWidth;
                 canvasPrevHeight = canvasHeight;
-              });
-              ////
-
-
+            });
         }); //Asset Load promise
 
         app.ticker.add((ticker) => {
@@ -323,7 +295,6 @@ const Leaves = (props) => {
                 let leafBody = leafBodies[leaf.i];
                 leaf.position = leafBody.position;
                 leaf.rotation = leafBody.angle;
-                // console.log(cursorMatter.position.x - cursorPixi.x)
             });
         });
 
@@ -345,6 +316,7 @@ const Leaves = (props) => {
                 width: "100%",
                 height: "100vw",
                 top: 0,
+
                 right: 0,
                 pointerEvents: "none",
             }}

@@ -17,18 +17,19 @@
 }
 
 .pill-section {
-  width: 150vw;
+  width: 70vw;
   height: 62vh;
+  margin: auto;
   margin-top: 5vh;
   left: -50px;
   display: flex;
-  position: absolute;
-  -ms-overflow-x: auto;
+  flex-direction: column;
+  /* -ms-overflow-x: auto;
   -ms-overflow-y: hidden;
   overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-  flex-wrap: wrap;
+  overflow-y: hidden; */
+  /* white-space: nowrap;
+  flex-wrap: wrap; */
   align-content: flex-start;
   flex-direction: horizontal;
   -moz-column-gap: 15px;

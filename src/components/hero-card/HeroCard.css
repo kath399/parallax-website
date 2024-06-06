@@ -30,7 +30,7 @@
 }
 
 .heroTitle {
-  font-size: 120px;
+  font-size: 7.5em;
   z-index: 1;
   width: fill;
 }
@@ -136,6 +136,7 @@
 
   .heroTitle {
     font-size: var(--type-large);
+    margin: 0;
   }
 
   .heroText {

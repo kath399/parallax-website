@@ -1,13 +1,23 @@
+@font-face {
+  font-family: "NRMA Graphik Medium";
+  src: url("./assets/fonts/Graphik-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "NRMA Graphik Regular";
+  src: url("./assets/fonts/Graphik-Regular.otf") format("opentype");
+}
+
 .App {
   background-color: #f7f1ea;
   text-align: center;
-  overflow: hidden;
+  /* overflow-x: hidden; // disabled for sticky scroll */
 }
 
 html,
 body {
   max-width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; // disabled for sticky scroll */
   line-height: normal;
 }
 
