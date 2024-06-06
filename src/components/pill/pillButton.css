@@ -12,17 +12,15 @@
   margin: 0;
   border-radius: 50px;
   font-size: 30px;
-  display: inline-flex;
-  text-wrap: nowrap;
   transition: background-color 0.3s ease-in-out;
 }
 .pillBtn:hover {
   background-color: var(--hoverColor) !important;
-  color: #010C66;
+  color: #010c66;
   transition: background-color 0.3s ease-in-out;
 }
 
 .font-details-b {
   margin-top: 100px;
   font-size: 40px;
-}/*# sourceMappingURL=pillButton.css.map */
+} /*# sourceMappingURL=pillButton.css.map */

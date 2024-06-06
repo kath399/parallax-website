@@ -1,10 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./HeroCard.css";
-import { Slide } from "react-awesome-reveal";
+import { motion, useScroll, useTransform } from "framer-motion";
+//import { Slide } from "react-awesome-reveal";
 
-const HeroCard = ({ Id, Number, Title, Animations, BGColor, Text, ButtonLabel, ButtonOnclick }) => {
+const HeroCard = ({
+  Id,
+  Number,
+  Title,
+  Animations,
+  BGColor,
+  Text,
+  ButtonLabel,
+  ButtonOnclick,
+}) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['center center', 'end 0.95']
+  });
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85])
 
-  useEffect(() => {
+  //const [y, setY] = useState(0);
+
+  /*useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         const card = entry.target.querySelector('.heroCard');
@@ -28,23 +46,37 @@ const HeroCard = ({ Id, Number, Title, Animations, BGColor, Text, ButtonLabel, B
       }
       observer.disconnect();
     };
-  }, []); // Empty dependency array means this effect runs once after the initial render
+  }, []); // Empty dependency array means this effect runs once after the initial render*/
 
   return (
-      <div className='heroCard-wrapper'>
-        <div id={Id} className="heroCard" style={{ backgroundColor: BGColor }}>
-          {Animations}
-          <div className="cardNumber">
-            0{Number}/04
-          </div>
-          <div className="heroTitle">{Title}</div>
-          <div className="heroText">
-            {Text}
-            <br />
-            <button className='heroBtn' onClick={ButtonOnclick}>{ButtonLabel}</button>
-          </div>
+    <motion.div
+      className="heroCard-wrapper"
+      ref={ref}
+      style={{
+        scale: scale,
+      }}
+    >
+      <div id={Id} ref={ref} className="heroCard" style={{ backgroundColor: BGColor }}>
+        {Animations}
+        <div className="cardNumber">0{Number}/05</div>
+
+        <div className="heroTitle">{Title}</div>
+        <div className="heroText">
+          <p>{Text}</p>
+          {ButtonLabel ? (
+            <button
+              className="primary-button-transparent"
+              onClick={ButtonOnclick}
+              type="button"
+            >
+              {ButtonLabel}
+            </button>
+          ) : (
+            ""
+          )}
         </div>
       </div>
+    </motion.div>
   );
 };
 

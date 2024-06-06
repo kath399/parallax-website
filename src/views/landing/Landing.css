@@ -70,3 +70,9 @@ hr {
   position: absolute;
   z-index: 2;
 }
+
+@media only screen and (max-width: 450px) {
+  .sectionHeader {
+    height: 260px;
+  }
+}

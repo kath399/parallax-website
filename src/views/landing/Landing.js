@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { isMobile } from "react-device-detect";
 
@@ -11,14 +11,10 @@ import {drone, airpods} from "../../assets/AnimatedImageList.js";
 import Carousel from "../carousel/Carousel";
 import PillSection from "../pillSection/PillSection";
 import HelpfulTip from "../helpfulTip/HelpfulTip";
-import Contact from "../contact/Contact";
 import Footer from "../../components/footer/Footer";
-import { Parallax } from "react-parallax";
-import Fade from "react-awesome-reveal";
-import Bounce from "react-awesome-reveal";
-import Slide from "react-awesome-reveal";
-import Container from "react-bootstrap/Container";
 
+import { Fade } from "react-awesome-reveal";
+import Container from "react-bootstrap/Container";
 import Intro from "../intro/Intro";
 
 import Drone from "../../assets/img/Drone.svg";
@@ -27,17 +23,7 @@ import CloudTL from "../../assets/img/CloudTL.svg";
 import CloudTR from "../../assets/img/CloudTR.svg";
 import TeacupSpoon from "../../assets/img/TeacupSpoon.svg";
 
-import ChevronDown from "../../assets/icons/chevron-down-white.svg";
-
 const Landing = () => {
-  const [slideComplete, setSlideComplete] = useState(false);
-  const section1Ref = useRef(null);
-  const scrollDown = (sectionRef) => {
-    window.scrollTo({
-      top: sectionRef.current.offsetTop,
-      behavior: "smooth", // For smooth scrolling
-    });
-  };
   const navigate = useNavigate();
   const goTo = () => {
     navigate("/form");
@@ -101,17 +87,17 @@ const Landing = () => {
         }
         BGColor="#F9AE97"
         Text="In response to the rise in extreme weather events, we’ve teamed up with The Australian Red Cross to run community preparedness events in at risk areas."
-        ButtonLabel="Find an event in your area"
+        ButtonLabel="See if we’re running an event in your area"
       />
 
       <HeroCard
         Id="policyRecap"
         Number="3"
-        Title="Policy Recap"
+        Title="Claims Tracker"
         Animations
         BGColor="#91BF9E"
-        Text="You shouldn’t need legal training to understand what you are and are not covered for. Which is why we created the Policy Translator. A useful tool that scans your PDS document and turns it into a fast, easy to read experience that makes everything important in your policy obvious and unmissable."
-        ButtonLabel="Find an event in your area"
+        Text="We track keep you up to date with exactly what stage you claim is at. And what steps are remaining before payout. "
+        ButtonLabel="Use the Claims Tracker"
       />
 
       <HeroCard
@@ -142,7 +128,7 @@ const Landing = () => {
         StickyScrollLength={"200vh"}
         BGColor="#F9AE97"
         Text="A Help Company™ would want your ideas to define its future.​ Get early access to all the latest Help Products and have a say on what helpful things a Help Company™ develops next."
-        ButtonLabel="Find an event in your area"
+        ButtonLabel="Join the Help Lab"
       />
       <AnimatedHeroCard
         Id="helpLab2"
@@ -174,9 +160,7 @@ const Landing = () => {
       {/* Disabled for testing.
       <PillSection /> */}
 
-      <div className="divider"></div>
-
-      {!isMobile && <HelpfulTip fading = {false} />}
+      {!isMobile && <HelpfulTip fading={false} />}
 
       <Footer />
     </div>

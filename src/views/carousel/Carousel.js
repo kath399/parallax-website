@@ -3,74 +3,70 @@ import { useRef } from "react";
 import Container from "react-bootstrap/Container";
 import BlogCard from "../../components/blog-card/BlogCard";
 import "./Carousel.css";
-import ExampleCardImage from "./../../assets/img/carousal/example-carousel.png";
-import ExampleCardImage2 from "./../../assets/img/carousal/moneypig.png";
-import ExampleCardImage3 from "./../../assets/img/carousal/keychain.png";
-import ExampleCardImage4 from "./../../assets/img/carousal/judge.png";
-import ChevronArrow from "./../../assets/icons/chevron-left.svg";
+import ChevronArrow from "./../../assets/icons/chevron-left-blue.svg";
 
 const cardval = [
   {
-    title: "Open door policy",
-    content: "You’re covered even if you forgot to lock your front door.",
+    title: "Forgot To Lock Up",
+    content: "You’re covered even if you forgot to lock up.",
+    image: "door.png",
+    alt: "Door picture",
   },
   {
-    title: "Flexible Payment",
-    subtitle: "You're covered evn if you forgot to lock your front door.",
+    title: "Flexible Payments",
+    content: "Now you can choose to pay monthly at no extra cost.",
+    image: "moneypig.png",
+    alt: "Money bank pig",
   },
   {
-    title: "Car share cover",
-    subtitle: "You're covered evn if you forgot to lock your front door.",
+    title: "Anyone Can Drive It Cover",
+    content: "With us your covered even if it's not you driving your car.",
+    image: "keychain.png",
+    alt: "Keys",
   },
   {
-    title: "Testing 123",
-    subtitle: "You're covered evn if you forgot to lock your front door.",
+    title: "Lifetime Repair Guarantee",
+    content: "We cover all the repair work done for a lifetime.",
+    image: "judge.png",
+    alt: "Judges wig",
   },
 ];
 
 const Carousel = () => {
+  function goLeft() {
+    console.log("Left");
+  }
+
+  function goRight() {
+    console.log("Right");
+  }
+
   return (
     <div className="blogs">
-      <h2 className="text-center">
-        A Help Company™ would also make its insurance products more helpful.​
-      </h2>
+      <section>
+        <h2 className="text-center section-header">
+          A Help Company™ would also make its insurance products more helpful.​
+        </h2>
+      </section>
       <div className="card-group d-flex flex-nowrap">
-        <BlogCard
-          title="Forgot To Lock Up"
-          content="You’re covered even if you forgot to lock up."
-          image={ExampleCardImage}
-          alt="Door picture"
-        />
-        <BlogCard
-          title="Flexible Payments"
-          content="Now you can choose to pay monthly at no extra cost."
-          image={ExampleCardImage2}
-          alt="Money bank pig"
-        />
-        <BlogCard
-          title="Anyone Can Drive It Cover"
-          content="With us your covered even if it's not you driving your car."
-          image={ExampleCardImage3}
-          alt="Keys"
-        />
-        <BlogCard
-          title="Lifetime Repair Guarantee"
-          content="We cover all the repair work done for a lifetime."
-          image={ExampleCardImage4}
-          alt="Judges wig"
-        />
+        {cardval.map(function (data) {
+          return (
+            <BlogCard
+              title={data.title}
+              content={data.content}
+              image={data.image}
+              alt={data.alt}
+            />
+          );
+        })}
       </div>
 
       <div className="controls">
-        <button>
+        <button onClick={() => goLeft()} className="chevron-left">
           <img src={ChevronArrow} alt="Left Chevron control" />
         </button>
-        <button>
-          <img
-            className="chevron-right"
-            src={ChevronArrow}
-            alt="Right Chevron control"
-          />
+        <button className="chevron-right" onClick={() => goRight()}>
+          <img src={ChevronArrow} alt="Right Chevron control" />
         </button>
       </div>
     </div>

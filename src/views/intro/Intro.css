@@ -1,27 +1,13 @@
-.nrma-logo-intro {
-  width: 100vw;
-  height: 100vh;
-  z-index: 10;
-  background-color: var(--primary-blue);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.nrma-logo-intro > img {
-  width: 419px;
-}
-
 .titleMessage {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   padding: 120px;
-  /* padding: 2em; */
   display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
   text-align: center;
-  font-size: 24px;
+  font-size: 40px;
   line-height: normal;
   letter-spacing: -0.96px;
   color: var(--primary-white);
@@ -32,69 +18,56 @@
 }
 
 .launchMessage {
-  width: 100%;
+  width: 40vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 64px;
+  font-size: 2.5em;
   color: #010c66;
+  line-height: 130%;
+  margin: auto;
+  height: 475px;
 }
 
-.circles {
-  width: 12px;
-  position: absolute;
-  right: 50px;
-}
-.circles > * {
-  width: 12px;
-  height: 12px;
-  display: block;
-  margin: 8px 0;
-  border-radius: 50px;
-  border: 2px solid white;
-}
-
-.circle {
-  background-color: transparent;
-  transition: background-color 0.3s ease;
-}
-
-.circle-filled {
-  background-color: rgba(255, 255, 255, 0.5);
-  transition: background-color 0.3s ease;
-}
-
-/* Reponsive Section */
-@media screen and (min-width: 800px) {
+/* Large screen */
+@media screen and (min-width: 768px) and (max-width: 768px) {
   .launchMessage {
     height: 635px;
     padding: 0px;
-    font-size: 4em;
     flex-shrink: 0;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
   }
 }
-@media screen and (min-width: 768px) {
+
+/* Tablet Size */
+@media screen and (max-width: 768px) {
+  .titleMessage {
+    font-size: 1.625em;
+    letter-spacing: -0.72px;
+    line-height: 28px;
+  }
   .launchMessage {
     height: 384px;
-    font-size: 32px;
-  }
-  .titleMessage {
-    font-size: 40px;
+    font-size: 1.5em;
+    width: 378px;
+    line-height: 130%;
   }
 }
+
+/* Mobile Device */
 @media screen and (max-width: 450px) {
   .titleMessage {
-    font-size: 24px;
-    padding: 1em;
-  }
-  .circles {
-    display: none;
+    font-size: 1em;
+    letter-spacing: -0.48px;
+    line-height: normal;
+    padding: 3.25em;
   }
   .launchMessage {
-    padding: 72px 16px;
-    font-size: 2em;
+    font-size: 1.625em;
+    letter-spacing: -0.78px;
+    height: 250px;
+    width: 90vw;
   }
 }

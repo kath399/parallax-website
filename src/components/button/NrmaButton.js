@@ -1,14 +1,16 @@
 import React from "react";
 import "./nrmaButton.css";
 
-const NrmaButton = ({ Type, Style, Label, OnClick }) => {
+const NrmaButton = ({ Type, Size, Label, OnClick }) => {
     return (
         <button 
             className={[
                 `nrmaBtn`,
                 `nrmaBtn--${Type}`,
             ].join(' ')} 
-            style={Style}
+            style={{
+                height: (Size==='Small') ? '32px' : (Size==='Medium') ? '36px' : '46px'
+            }}
             onClick={OnClick}
         >
             {Label}
