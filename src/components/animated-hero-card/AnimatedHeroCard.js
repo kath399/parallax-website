@@ -72,15 +72,13 @@ const AnimatedHeroCard = ({
           <div className="heroText">
             {Text}
             <br />
-            {ButtonLabel ? (
+            {ButtonLabel && (
               <button
                 className="primary-button-transparent"
                 onClick={ButtonOnclick}
               >
                 {ButtonLabel}
               </button>
-            ) : (
-              ""
             )}
           </div>
 
