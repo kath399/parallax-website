@@ -1,0 +1,131 @@
+.heroCard {
+  display: inline-block;
+  height: 100vh;
+  width: 100vw;
+  color: #010c66;
+  
+  /* padding-top: 20%; */
+}
+
+.heroCard-wrapper {
+  height: 100vh;
+}
+.canvasWrapper {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  pointer-events: none;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/*
+Sticky Scroll
+*/
+.sticky {
+  overflow: hidden;
+  height: 100vh;
+  position: sticky;
+  top: 0; /* required */
+  
+}
+
+.droneImg {
+  position: absolute;
+  top: -296px;
+  left: 296px;
+  z-index: 2;
+  transition: all 2s ease;
+}
+
+.heroTitle {
+  font-size: 120px;
+  z-index: 1;
+  width: fill;
+}
+
+.heroText {
+  position: absolute;
+  left: 10vw;
+  bottom: 48px;
+  text-align: left;
+  width: 488px;
+  font-size: 20px;
+  z-index: 1;
+}
+
+.heroBtn {
+  background-color: #010c66;
+  padding: 7px 21px 7px 21px;
+  margin-top: 46px;
+  border: none;
+  border-radius: 80px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+.cardNumber {
+  position: absolute;
+  top: 10vh;
+  left: 10vw;
+  border: 1px solid #010c66;
+  border-radius: 10px;
+  width: 84px;
+  height: 38px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 786px) {
+  .font-details {
+    font-size: 2rem !important;
+  }
+  .my-details {
+    margin-right: 0;
+  }
+  .profile {
+    max-width: 15em;
+  }
+
+  .heroTitle {
+    font-size: 3.875em;
+  }
+
+  .heroText {
+    width: 294px;
+    line-height: 1.5em;
+    font-size: 0.875em;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .heroCard {
+    text-align: center;
+    height: calc(100vh - 80px);
+    padding: 40px;
+    width: 90%;
+    border-radius: 20px;
+  }
+
+  .heroTitle {
+    font-size: var(--type-large);
+  }
+
+  .heroText {
+    text-align: center;
+    font-style: normal;
+    font-size: var(--type-small);
+    width: auto;
+    left: 0px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .cardNumber {
+    display: none;
+  }
+}
