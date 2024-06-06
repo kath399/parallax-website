@@ -10,7 +10,8 @@
   --type-small: 1.25em; /* 20px */
   --type-large: 7.5em;
 
-  --icon-button: 46px; /* should be 46px, though Nav*/
+  --icon-button-medium: 2.875rem;
+  --icon-button-small: 2.25rem;
 
   --nav-height: 80px;
 }
@@ -20,7 +21,8 @@
     --type-small: 1em;
     --type-large: 3em;
 
-    --icon-button: 36px;
+    --icon-button-medium: 2.25rem;
+    --icon-button-small: 2rem;
   }
 }
 
@@ -29,7 +31,7 @@
     --type-small: 1em;
     --type-large: 1.625em;
 
-    --icon-button: 32px;
+    --icon-button-medium: 2rem;
   }
 }
 

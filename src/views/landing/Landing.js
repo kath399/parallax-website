@@ -180,7 +180,7 @@ const Landing = () => {
       </div>
       <Carousel />
       {/* Disabled for testing. */}
-      {/* <PillSection /> */}
+      <PillSection />
       {!isMobile && <HelpfulTip fading={false} />}
       <Footer />
     </div>
