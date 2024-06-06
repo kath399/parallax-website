@@ -183,8 +183,8 @@ const Landing = () => {
 
       <Carousel />
 
-      {/* Disabled for testing.
-      <PillSection /> */}
+      {/* Disabled for testing.*/}
+      {/* <PillSection /> */}
 
       {!isMobile && <HelpfulTip fading={false} />}
 

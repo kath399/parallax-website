@@ -30,6 +30,26 @@ const AnimatedHeroCard = ({
   let isInView = useInView(
     sectionRef // {margin: "0px 100px -50px 0px",} //keeping for further animation tweak
   );
+  const animateChildren = {
+    visible: { left: "10vw" },
+    hidden: { left: "5vw" },
+  }
+  const animateParent = {
+    visible: { 
+        width: "100vw",
+        height: "100vh",
+        top: "0vh",
+        borderRadius: "0px",
+    },    
+    
+    hidden: { 
+        width: "80vw",
+        height: "80vh",
+        top: "10vh",
+        borderRadius: "20px"
+    },
+  }
+
   const { scrollYProgress } = useScroll({
     target: sectionRef, // , offset: ["start center", "end end"], // target container, target container
   });
@@ -52,24 +72,15 @@ const AnimatedHeroCard = ({
         <motion.div
           className="heroCard"
           style={{ backgroundColor: BGColor }}
-          initial={{
-            width: "80vw",
-            height: "80vh",
-            top: "10vh",
-            borderRadius: "20px",
-          }}
-          whileInView={{
-            width: "100vw",
-            height: "100vh",
-            top: "0vh",
-            borderRadius: "0px",
-          }}
+          variants={animateParent}
+          initial={"hidden"}
+          whileInView={"visible"}
           viewport={{ amount: 0.5 }} // bottom ? top ?
         >
           {Animations}
-          <div className="cardNumber">0{Number}/05</div>
+          <motion.div className="cardNumber" variants={animateChildren}>0{Number}/05</motion.div>
           <div className="heroTitle">{Title}</div>
-          <div className="heroText">
+          <motion.div className="heroText" variants={animateChildren}>
             {Text}
             <br />
             {ButtonLabel ? (
@@ -82,7 +93,7 @@ const AnimatedHeroCard = ({
             ) : (
               ""
             )}
-          </div>
+          </motion.div>
 
           <div className={"canvasWrapper"} ref={canvasRef}>
             <Stage
