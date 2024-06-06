@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "NRMA Graphik Medium";
+  src: url("./assets/fonts/Graphik-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "NRMA Graphik Regular";
+  src: url("./assets/fonts/Graphik-Regular.otf") format("opentype");
+}
+
 .App {
   background-color: #f7f1ea;
   text-align: center;
