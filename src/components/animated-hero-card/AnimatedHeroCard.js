@@ -53,9 +53,9 @@ const AnimatedHeroCard = ({
           className="heroCard"
           style={{ backgroundColor: BGColor }}
           initial={{
-            width: "70vw",
-            height: "70vh",
-            top: "15vh",
+            width: "80vw",
+            height: "80vh",
+            top: "10vh",
             borderRadius: "20px",
           }}
           whileInView={{
