@@ -17,24 +17,21 @@
 }
 
 .pill-section {
-  width: 70vw;
-  height: 62vh;
   margin: auto;
   margin-top: 5vh;
-  left: -50px;
-  display: flex;
-  flex-direction: column;
-  /* -ms-overflow-x: auto;
+  -ms-overflow-x: auto;
   -ms-overflow-y: hidden;
   overflow-x: auto;
-  overflow-y: hidden; */
-  /* white-space: nowrap;
-  flex-wrap: wrap; */
-  align-content: flex-start;
-  flex-direction: horizontal;
-  -moz-column-gap: 15px;
-  column-gap: 15px;
-  row-gap: 31px;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  display: flex;
+  width: 80%;
+  height: 36.25rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  flex-shrink: 0;
 }
 
 .section-pill-blurred {
@@ -75,28 +72,7 @@
     width: 200% !important;
   }
 }
-.pill-section {
-  animation: auto linear reveal both;
-  animation-timeline: view();
-  animation-range: entry 25% cover 50%;
-}
 
-@keyframes card-animation {
-  from {
-    width: 100vw;
-    align-self: center;
-    justify-content: center;
-  }
-  to {
-    width: 90vw;
-    align-self: center;
-    justify-content: center;
-    border-radius: 50px;
-    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
-      rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-  }
-}
 .pill-card {
   animation: card-animation ease-out;
   animation-timeline: view();

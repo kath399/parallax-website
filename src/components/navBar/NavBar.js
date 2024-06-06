@@ -16,7 +16,7 @@ const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 100;
+      const isScrolled = window.scrollY > window.innerHeight - 80;
       if (isScrolled !== scrolled) {
         setScrolled(isScrolled);
       }
@@ -50,17 +50,17 @@ const NavBar = () => {
         >
           Helpful tools and services
         </a>
-        <a href="#contact" className={scrolled ? "navs-link" : "nav-link"}>
+        <a href="#Ways_We_Help" className={scrolled ? "navs-link" : "nav-link"}>
           Ways we help
         </a>
-        <a href="" className={scrolled ? "navs-link" : "nav-link"}>
+        <a href="#Help_Lab" className={scrolled ? "navs-link" : "nav-link"}>
           Help Lab
         </a>
       </div>
       <div className="navBtn">
         <NrmaButton
           Type={scrolled ? "Secondary" : "Primary"}
-          Size={(window.innerWidth < 769) ? "Small": "Large"}
+          Size={window.innerWidth < 769 ? "Small" : "Large"}
           Label={"Visit NRMA Insurance"}
         />
         <button

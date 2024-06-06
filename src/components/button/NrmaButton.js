@@ -7,9 +7,10 @@ const NrmaButton = ({ Type, Size, Label, OnClick }) => {
             className={[
                 `nrmaBtn`,
                 `nrmaBtn--${Type}`,
+                `nrmaBtn--${Size}`
             ].join(' ')} 
             style={{
-                height: (Size==='Small') ? '32px' : (Size==='Medium') ? '36px' : '46px'
+                height: (window.innerWidth < 1440) ? "32px": "46px",
             }}
             onClick={OnClick}
         >
@@ -19,3 +20,5 @@ const NrmaButton = ({ Type, Size, Label, OnClick }) => {
 };
 
 export default NrmaButton;
+
+

@@ -83,15 +83,13 @@ const AnimatedHeroCard = ({
           <motion.div className="heroText" variants={animateChildren}>
             {Text}
             <br />
-            {ButtonLabel ? (
+            {ButtonLabel && (
               <button
                 className="primary-button-transparent"
                 onClick={ButtonOnclick}
               >
                 {ButtonLabel}
               </button>
-            ) : (
-              ""
             )}
           </motion.div>
 

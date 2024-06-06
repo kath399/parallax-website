@@ -70,8 +70,8 @@ button:focus {
   position: absolute;
   bottom: 48px;
   margin: auto;
-  width: var(--icon-button);
-  height: var(--icon-button);
+  width: var(--icon-button-medium);
+  height: var(--icon-button-medium);
   border: 1px solid white;
   border-radius: 100px;
   transition: display 2s linear;
@@ -85,11 +85,6 @@ button:focus {
   opacity: 0;
   transition: opacity 1s ease;
 }
-
-/* check if accessibility */
-/* .skip-content-button:focus {
-  outline: none;
-} */
 
 .chevron-down-button:hover {
   background-color: var(--primary-warm-white);
@@ -107,8 +102,8 @@ button:focus {
 
 .chevron-right,
 .chevron-left {
-  height: 36px;
-  width: 36px;
+  height: var(--icon-button-small);
+  width: var(--icon-button-small);
   border-radius: 80px;
   border: 1px solid var(--primary-blue);
   background-color: transparent;

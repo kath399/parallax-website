@@ -13,6 +13,7 @@
   border-radius: 50px;
   font-size: 30px;
   transition: background-color 0.3s ease-in-out;
+  scroll-snap-align: start;
 }
 .pillBtn:hover {
   background-color: var(--hoverColor) !important;
