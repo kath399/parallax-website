@@ -60,6 +60,7 @@ const NavBar = () => {
       <div className="navBtn">
         <NrmaButton
           Type={scrolled ? "Secondary" : "Primary"}
+          Size={(window.innerWidth < 769) ? "Small": "Large"}
           Label={"Visit NRMA Insurance"}
         />
         <button

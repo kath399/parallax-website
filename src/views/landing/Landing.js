@@ -6,6 +6,8 @@ import "./Landing.css";
 import "../../assets/styles/nrma-scheme.css";
 import NavBar from "../../components/navBar/NavBar";
 import HeroCard from "../../components/hero-card/HeroCard";
+import AnimatedHeroCard from "../../components/animated-hero-card/AnimatedHeroCard.js";
+import {drone, airpods} from "../../assets/AnimatedImageList.js";
 import Carousel from "../carousel/Carousel";
 import PillSection from "../pillSection/PillSection";
 import HelpfulTip from "../helpfulTip/HelpfulTip";
@@ -33,6 +35,9 @@ const Landing = () => {
 
       <Intro />
 
+      {/* Disabled for testing.
+      
+      
       <HeroCard
         Id="droneRoofCheck"
         Number="1"
@@ -111,21 +116,49 @@ const Landing = () => {
         }
         BGColor="#E0DF6B"
         Text="Checking your roof is important, but it’s also a pain, that’s why we’re introducing a service that uses drones to check your roof for you."
-      />
-
-      <HeroCard
-        Id="helpLab"
+        ButtonLabel="Register your interest"
+      /> */}
+      <AnimatedHeroCard
+        Id="helpLab1"
+        key={"helpLab1"}
         Number="5"
-        Title="Help Lab"
+        Title="Test Card 5"
         Animations
+        ImageList={airpods}
+        StickyScrollLength={"200vh"}
         BGColor="#F9AE97"
         Text="A Help Company™ would want your ideas to define its future.​ Get early access to all the latest Help Products and have a say on what helpful things a Help Company™ develops next."
         ButtonLabel="Join the Help Lab"
       />
+      <AnimatedHeroCard
+        Id="helpLab2"
+        key={"helpLab2"}
+        Number="6"
+        Title="Test Card 6"
+        Animations
+        ImageList={airpods}
+        StickyScrollLength={"300vh"}
+        BGColor="#91BF9E"
+        Text="A Help Company™ would want your ideas to define its future.​ Get early access to all the latest Help Products and have a say on what helpful things a Help Company™ develops next."
+        ButtonLabel="Find an event in your area"
+      />
+      <AnimatedHeroCard
+        Id="helpLab1"
+        key={"helpLab1"}
+        Number="7"
+        Title="Test Card 7"
+        Animations
+        ImageList={airpods}
+        StickyScrollLength={"400vh"}
+        BGColor="#E0DF6B "
+        Text="A Help Company™ would want your ideas to define its future.​ Get early access to all the latest Help Products and have a say on what helpful things a Help Company™ develops next."
+        ButtonLabel="Find an event in your area"
+      />
 
       <Carousel />
 
-      <PillSection />
+      {/* Disabled for testing.
+      <PillSection /> */}
 
       {!isMobile && <HelpfulTip fading={false} />}
 

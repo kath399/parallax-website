@@ -1,17 +1,23 @@
 .form {
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #E0DF6B;
+    background-color: #F7F1EA;
     color: #010C66;
     height: 100vh;
+    width: 100vw;
+}
+
+.formColumn {
+    display: flex;
+    padding-top: 280px;
+    width: 50%;
 }
 
 .formTitle {
     font-size: 40px;
     font-weight: normal;
     text-align: left;
+    padding-left: 10vw;
 }
 
 .formInputColumn {
