@@ -54,9 +54,9 @@ const AnimatedHeroCard = ({
                     style={{ backgroundColor: BGColor 
                     }}
                     initial={{
-                      width: "90vw",
-                      height: "90vh",
-                      top: "5vh",
+                      width: "70vw",
+                      height: "70vh",
+                      top: "15vh",
                       borderRadius: "20px",
                     }}
                     whileInView={{
@@ -81,7 +81,6 @@ const AnimatedHeroCard = ({
                     <div
                         className={"canvasWrapper"}
                         ref={canvasRef}
-
                     >
                         <Stage width={window.innerWidth} height={window.innerHeight} 
                         options={{ 
@@ -98,7 +97,6 @@ const AnimatedHeroCard = ({
                             images={images}
                             isPlaying={false}
                             currentFrame={frame}
-
                             />
                         </Stage>
                     </div>
