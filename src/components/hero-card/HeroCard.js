@@ -53,7 +53,7 @@ const HeroCard = ({
       className="heroCard-wrapper"
       ref={ref}
       style={{
-        scale: scale,
+        scale: scale
       }}
     >
       <div id={Id} ref={ref} className="heroCard" style={{ backgroundColor: BGColor }}>

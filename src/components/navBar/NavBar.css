@@ -6,7 +6,7 @@
 .navBar {
   position: fixed;
   height: 80px;
-  width: fill;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
