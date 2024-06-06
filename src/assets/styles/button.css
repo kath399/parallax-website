@@ -12,6 +12,7 @@ button:focus {
 }
 
 .primary-button-transparent {
+  font-family: "NRMA Graphik Medium", Graphik, sans-serif;
   border: 1px solid #010c66;
   color: #010c66;
   background-color: transparent;

@@ -67,17 +67,21 @@ const AnimatedHeroCard = ({
           viewport={{ amount: 0.5 }} // bottom ? top ?
         >
           {Animations}
-          <div className="cardNumber">0{Number}/04</div>
+          <div className="cardNumber">0{Number}/05</div>
           <div className="heroTitle">{Title}</div>
           <div className="heroText">
             {Text}
             <br />
-            <button
-              className="primary-button-transparent"
-              onClick={ButtonOnclick}
-            >
-              {ButtonLabel}
-            </button>
+            {ButtonLabel ? (
+              <button
+                className="primary-button-transparent"
+                onClick={ButtonOnclick}
+              >
+                {ButtonLabel}
+              </button>
+            ) : (
+              ""
+            )}
           </div>
 
           <div className={"canvasWrapper"} ref={canvasRef}>

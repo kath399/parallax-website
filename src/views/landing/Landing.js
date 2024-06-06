@@ -7,7 +7,7 @@ import "../../assets/styles/nrma-scheme.css";
 import NavBar from "../../components/navBar/NavBar";
 import HeroCard from "../../components/hero-card/HeroCard";
 import AnimatedHeroCard from "../../components/animated-hero-card/AnimatedHeroCard.js";
-import {drone, airpods} from "../../assets/AnimatedImageList.js";
+import { drone, airpods } from "../../assets/AnimatedImageList.js";
 import Carousel from "../carousel/Carousel";
 import PillSection from "../pillSection/PillSection";
 import HelpfulTip from "../helpfulTip/HelpfulTip";
@@ -121,38 +121,64 @@ const Landing = () => {
       <AnimatedHeroCard
         Id="helpLab1"
         key={"helpLab1"}
-        Number="5"
-        Title="Test Card 5"
+        Number="1"
+        Title="Drone Roof Check"
         Animations
         ImageList={airpods}
         StickyScrollLength={"200vh"}
-        BGColor="#F9AE97"
-        Text="A Help Company™ would want your ideas to define its future.​ Get early access to all the latest Help Products and have a say on what helpful things a Help Company™ develops next."
-        ButtonLabel="Join the Help Lab"
+        BGColor="#D7D667"
+        Text="Checking your roof is important, but it’s also a pain, that’s why we’re introducing a service that uses drones to check your roof for you."
+        ButtonLabel="Register your interest"
       />
       <AnimatedHeroCard
         Id="helpLab2"
         key={"helpLab2"}
-        Number="6"
-        Title="Test Card 6"
+        Number="2"
+        Title="Help Nation"
         Animations
         ImageList={airpods}
         StickyScrollLength={"300vh"}
-        BGColor="#91BF9E"
-        Text="A Help Company™ would want your ideas to define its future.​ Get early access to all the latest Help Products and have a say on what helpful things a Help Company™ develops next."
-        ButtonLabel="Find an event in your area"
+        BGColor="#F9AE97"
+        Text="In response to the rise in extreme weather events, we’ve teamed up with The Australian Red Cross to run community preparedness events in at risk areas."
+        ButtonLabel="See if we’re running an event in your area"
       />
       <AnimatedHeroCard
-        Id="helpLab1"
-        key={"helpLab1"}
-        Number="7"
-        Title="Test Card 7"
+        Id="helpLab3"
+        key={"helpLab3"}
+        Number="3"
+        Title="Claims Tracker"
         Animations
         ImageList={airpods}
         StickyScrollLength={"400vh"}
-        BGColor="#E0DF6B "
-        Text="A Help Company™ would want your ideas to define its future.​ Get early access to all the latest Help Products and have a say on what helpful things a Help Company™ develops next."
-        ButtonLabel="Find an event in your area"
+        BGColor="#91BF9E"
+        Text="We track keep you up to date with exactly what stage you claim is at. And what steps are remaining before payout. "
+        ButtonLabel="Use the Claims Tracker"
+      />
+
+      <AnimatedHeroCard
+        Id="helpLab4"
+        key={"helpLab4"}
+        Number="5"
+        Title="Lifeline Certified"
+        Animations
+        ImageList={airpods}
+        StickyScrollLength={"500vh"}
+        BGColor="#D7D667"
+        Text="We have had all our staff trained by Lifeline so they’re able to deal with any situation."
+        ButtonLabel=""
+      />
+
+      <AnimatedHeroCard
+        Id="helpLab4"
+        key={"helpLab4"}
+        Number="5"
+        Title="Help Lab"
+        Animations
+        ImageList={airpods}
+        StickyScrollLength={"600vh"}
+        BGColor="#F9AE97"
+        Text="A Help Company™ would want your ideas to define its future.​ Get early access to all the latest Help Products and have a say on what helpful things a Help Company™ develops next. "
+        ButtonLabel="Join the Help Lab"
       />
 
       <Carousel />
