@@ -3,7 +3,7 @@
   height: 100vh;
   width: 100vw;
   color: #010c66;
-  
+
   /* padding-top: 20%; */
 }
 
@@ -28,7 +28,6 @@ Sticky Scroll
   height: 100vh;
   position: sticky;
   top: 0; /* required */
-  
 }
 
 .droneImg {
@@ -55,15 +54,8 @@ Sticky Scroll
   z-index: 1;
 }
 
-.heroBtn {
-  background-color: #010c66;
-  padding: 7px 21px 7px 21px;
-  margin-top: 46px;
-  border: none;
-  border-radius: 80px;
-  font-size: 14px;
-  font-weight: 600;
-  color: white;
+.heroText > .primary-button-transparent {
+  margin-top: 1.25rem;
 }
 
 .cardNumber {
