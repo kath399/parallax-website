@@ -63,7 +63,8 @@ const HeroCard = ({
         <div className="heroTitle">{Title}</div>
         <div className="heroText">
           <p>{Text}</p>
-          {ButtonLabel ? (
+          <br />
+          {ButtonLabel && (
             <button
               className="primary-button-transparent"
               onClick={ButtonOnclick}
@@ -71,8 +72,6 @@ const HeroCard = ({
             >
               {ButtonLabel}
             </button>
-          ) : (
-            ""
           )}
         </div>
       </div>

@@ -20,3 +20,8 @@ h3 {
 .fp-section {
   text-align: center;
 }
+
+@font-face {
+  font-family: 'Graphik';
+  src: local('Graphik-Regular'), url(./assets/fonts/Graphik-Regular.otf)
+}

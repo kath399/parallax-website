@@ -9,7 +9,7 @@ const NrmaButton = ({ Type, Size, Label, OnClick }) => {
                 `nrmaBtn--${Type}`,
             ].join(' ')} 
             style={{
-                height: (Size==='Small') ? '32px' : (Size==='Medium') ? '36px' : '46px'
+                height: (window.innerWidth < 769) ? "32px": "46px"
             }}
             onClick={OnClick}
         >
@@ -19,3 +19,5 @@ const NrmaButton = ({ Type, Size, Label, OnClick }) => {
 };
 
 export default NrmaButton;
+
+
