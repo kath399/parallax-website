@@ -51,6 +51,8 @@ Sticky Scroll
   text-align: left;
   width: 488px;
   font-size: 20px;
+  font-weight: 400;
+  line-height: 22px;
   z-index: 1;
 }
 
@@ -60,8 +62,8 @@ Sticky Scroll
 
 .cardNumber {
   position: absolute;
-  top: 10vh;
-  left: 10vw;
+  top: 122px;
+  left: 160px;
   border: 1px solid #010c66;
   border-radius: 10px;
   width: 84px;
