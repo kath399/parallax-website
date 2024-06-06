@@ -7,9 +7,10 @@ const NrmaButton = ({ Type, Size, Label, OnClick }) => {
             className={[
                 `nrmaBtn`,
                 `nrmaBtn--${Type}`,
+                `nrmaBtn--${Size}`
             ].join(' ')} 
             style={{
-                height: (window.innerWidth < 769) ? "32px": "46px"
+                height: (window.innerWidth < 1440) ? "32px": "46px",
             }}
             onClick={OnClick}
         >
