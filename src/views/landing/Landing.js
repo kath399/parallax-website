@@ -32,9 +32,7 @@ const Landing = () => {
   return (
     <div className="App">
       <NavBar />
-
       <Intro />
-
       {/* Disabled for testing.
       
       
@@ -154,7 +152,6 @@ const Landing = () => {
         Text="We track keep you up to date with exactly what stage you claim is at. And what steps are remaining before payout. "
         ButtonLabel="Use the Claims Tracker"
       />
-
       <AnimatedHeroCard
         Id="helpLab4"
         key={"helpLab4"}
@@ -167,27 +164,24 @@ const Landing = () => {
         Text="We have had all our staff trained by Lifeline so they’re able to deal with any situation."
         ButtonLabel=""
       />
-
-      <AnimatedHeroCard
-        Id="helpLab4"
-        key={"helpLab4"}
-        Number="5"
-        Title="Help Lab"
-        Animations
-        ImageList={airpods}
-        StickyScrollLength={"600vh"}
-        BGColor="#F9AE97"
-        Text="A Help Company™ would want your ideas to define its future.​ Get early access to all the latest Help Products and have a say on what helpful things a Help Company™ develops next. "
-        ButtonLabel="Join the Help Lab"
-      />
-
+      <div id="Help_Lab">
+        <AnimatedHeroCard
+          Id="Help_Lab"
+          key={"helpLab4"}
+          Number="5"
+          Title="Help Lab"
+          Animations
+          ImageList={airpods}
+          StickyScrollLength={"600vh"}
+          BGColor="#F9AE97"
+          Text="A Help Company™ would want your ideas to define its future.​ Get early access to all the latest Help Products and have a say on what helpful things a Help Company™ develops next. "
+          ButtonLabel="Join the Help Lab"
+        />
+      </div>
       <Carousel />
-
-      {/* Disabled for testing.
-      <PillSection /> */}
-
+      {/* Disabled for testing. */}
+      {/* <PillSection /> */}
       {!isMobile && <HelpfulTip fading={false} />}
-
       <Footer />
     </div>
   );
