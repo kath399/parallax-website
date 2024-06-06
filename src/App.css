@@ -16,7 +16,7 @@
 
 html,
 body {
-  max-width: 100%;
+  max-width: 100% !important;
   /* overflow: hidden; // disabled for sticky scroll */
   line-height: normal;
 }
