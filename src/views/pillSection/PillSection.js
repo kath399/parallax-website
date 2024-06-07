@@ -1,6 +1,6 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Cross from "../../assets/icons/Cross.svg";
+import { motion, useTransform, useScroll } from "framer-motion";
 
 import "./pillSection.css";
 import "../../assets/styles/button.css";
@@ -56,6 +56,15 @@ const PillSection = () => {
   ];
   const newList = changeOrder(ogList);
 
+  const containerRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    container: containerRef
+  });
+
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
+
+
   return (
     <div id="Ways_We_Help" className="pill-container">
       <div className="pill-card" id="pill-container">
@@ -95,13 +104,17 @@ const PillSection = () => {
             What else would a Help Company™ do?
           </h1>
 
-          <div className="pill-section">
+          <div className="pill-section" ref={containerRef}>
             {newList.map((item, index) => (
-              <PillButton
-                Label={item.label}
-                number={index}
-                setNumber={() => setPillNumber(index)}
-              />
+              <motion.div
+                style={{scale: scale}}
+              >
+                <PillButton
+                  Label={item.label}
+                  number={index}
+                  setNumber={() => setPillNumber(index)}
+                />
+              </motion.div>
             ))}
           </div>
         </div>
