@@ -5,7 +5,7 @@ import { isMobile } from "react-device-detect";
 import "./Landing.css";
 import "../../assets/styles/nrma-scheme.css";
 import NavBar from "../../components/navBar/NavBar";
-import HeroCard from "../../components/hero-card/HeroCard";
+// import HeroCard from "../../components/hero-card/HeroCard";
 import AnimatedHeroCard from "../../components/animated-hero-card/AnimatedHeroCard.js";
 import { drone, airpods } from "../../assets/AnimatedImageList.js";
 import Carousel from "../carousel/Carousel";
@@ -118,7 +118,7 @@ const Landing = () => {
       /> */}
       <AnimatedHeroCard
         Id="helpLab1"
-        key={"helpLab1"}
+        key={"1"}
         Number="1"
         Title="Drone Roof Check"
         Animations
@@ -130,7 +130,7 @@ const Landing = () => {
       />
       <AnimatedHeroCard
         Id="helpLab2"
-        key={"helpLab2"}
+        key={"2"}
         Number="2"
         Title="Help Nation"
         Animations
@@ -142,7 +142,7 @@ const Landing = () => {
       />
       <AnimatedHeroCard
         Id="helpLab3"
-        key={"helpLab3"}
+        key={"3"}
         Number="3"
         Title="Claims Tracker"
         Animations
@@ -154,8 +154,8 @@ const Landing = () => {
       />
       <AnimatedHeroCard
         Id="helpLab4"
-        key={"helpLab4"}
-        Number="5"
+        key={"4"}
+        Number="4"
         Title="Lifeline Certified"
         Animations
         ImageList={airpods}
@@ -167,7 +167,7 @@ const Landing = () => {
       <div id="Help_Lab">
         <AnimatedHeroCard
           Id="Help_Lab"
-          key={"helpLab4"}
+          key={"5"}
           Number="5"
           Title="Help Lab"
           Animations

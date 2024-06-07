@@ -10,6 +10,11 @@
   --type-small: 1.25em; /* 20px */
   --type-large: 7.5em;
 
+  --type-large-hero-card: 7.5em; /* 120px */
+  --type-paragraph-hero-card: 1.25em; /* 20px */
+  --type-button-hero-card: 0.875em; /* 20px */
+
+
   --icon-button-medium: 2.875rem;
   --icon-button-small: 2.25rem;
 
@@ -21,6 +26,11 @@
     --type-small: 1em;
     --type-large: 3em;
 
+    --type-large-hero-card: 3.875em;
+    --type-paragraph-hero-card: 0.875em; /* 14px */
+    --type-button-hero-card: 0.75em; /* 20px */
+
+
     --icon-button-medium: 2.25rem;
     --icon-button-small: 2rem;
   }
@@ -30,6 +40,10 @@
   :root {
     --type-small: 1em;
     --type-large: 1.625em;
+
+    --type-large-hero-card: 1.625em;
+    --type-paragraph-hero-card: 1em; /* 16px */
+    --type-button-hero-card: 0.875em; /* 20px */
 
     --icon-button-medium: 2rem;
   }

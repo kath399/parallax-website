@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./AnimatedHeroCard.css";
 import {
   useInView,
@@ -8,6 +8,7 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import { Stage, AnimatedSprite } from "@pixi/react";
+// import { isMobile } from "react-device-detect";
 
 const AnimatedHeroCard = ({
   Id,
@@ -27,13 +28,38 @@ const AnimatedHeroCard = ({
   const [frame, setFrame] = useState(0);
   const [images, setImages] = useState(ImageList);
 
+//
+const [mobileWidth, setMobileWidth] = useState(window.innerWidth <= 500);
+
+const handleWindowSizeChange = () => {
+  setMobileWidth(window.innerWidth <= 500);
+}
+
+useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+        window.removeEventListener("resize", handleWindowSizeChange);
+    };
+}, []);
+
+//
   let isInView = useInView(
     sectionRef // {margin: "0px 100px -50px 0px",} //keeping for further animation tweak
   );
-  const animateChildren = {
-    visible: { left: "10vw" },
-    hidden: { left: "5vw" },
+  const animateHeroNumber = {
+    visible: { left: mobileWidth?"0px":"10vw" },
+    hidden: { left: mobileWidth?"0px":"5vw" },
   }
+  const animateHeroText = {
+      visible: {
+          left: mobileWidth ? "50%" : "10vw",
+          bottom: mobileWidth ? "50px" : "0vh",
+      },
+      hidden: {
+          left: mobileWidth ? "50%" : "5vw",
+          bottom: mobileWidth ? "60px" : "0vh",
+      },
+  };
   const animateParent = {
     visible: { 
         width: "100vw",
@@ -78,9 +104,9 @@ const AnimatedHeroCard = ({
           viewport={{ amount: 0.5 }} // bottom ? top ?
         >
           {Animations}
-          <motion.div className="cardNumber" variants={animateChildren}>0{Number}/05</motion.div>
-          <div className="heroTitle">{Title}</div>
-          <motion.div className="heroText" variants={animateChildren}>
+          <motion.span className="cardNumber" variants={animateHeroNumber}>0{Number}/05</motion.span>
+          <h2 className="heroTitle">{Title}</h2>
+          <motion.p className="heroText" variants={animateHeroText}>
             {Text}
             <br />
             {ButtonLabel && (
@@ -91,7 +117,7 @@ const AnimatedHeroCard = ({
                 {ButtonLabel}
               </button>
             )}
-          </motion.div>
+          </motion.p>
 
           <div className={"canvasWrapper"} ref={canvasRef}>
             <Stage

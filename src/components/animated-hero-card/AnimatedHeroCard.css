@@ -3,8 +3,8 @@
   height: 100vh;
   width: 100vw;
   color: #010c66;
-
-  /* padding-top: 20%; */
+  position: relative;
+  padding-top: 20%;
 }
 
 .heroCard-wrapper {
@@ -30,51 +30,66 @@ Sticky Scroll
   top: 0; /* required */
 }
 
-.droneImg {
+/* .droneImg {
   position: absolute;
   top: -296px;
   left: 296px;
   z-index: 2;
   transition: all 2s ease;
-}
+} */
 
-.heroTitle {
-  font-size: 120px;
+h2.heroTitle {
   z-index: 1;
   width: fill;
-}
 
-.heroText {
+  font-size: var(--type-large-hero-card);
+  /* 7.5, 3.875, 1.625 */
+
+}
+p.heroText {
   position: absolute;
   left: 10vw;
-  bottom: 48px;
+  bottom: 0;
+  /* bottom: 48px; */
   text-align: left;
-  width: 488px;
-  font-size: 20px;
+  width: 30vw;
+  min-width: 480px;
   z-index: 1;
+  display: block;
+  font-size: var(--type-paragraph-hero-card);
+  /* 1.25, 0.875, 1 */
+  padding-bottom: 50px;
+
+
 }
 
 .heroText > .primary-button-transparent {
   margin-top: 1.25rem;
 }
 
-.cardNumber {
+span.cardNumber {
   position: absolute;
-  top: 10vh;
+  top: calc(5vh + 80px);
   left: 10vw;
   border: 1px solid #010c66;
   border-radius: 10px;
   width: 84px;
   height: 38px;
-  font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  font-size: var(--type-paragraph-hero-card);
+
 }
 
 @media only screen and (max-width: 786px) {
   .font-details {
     font-size: 2rem !important;
+  }
+  p.heroText {
+    width: 30vw;
+    min-width: 220px;
   }
   .my-details {
     margin-right: 0;
@@ -83,14 +98,9 @@ Sticky Scroll
     max-width: 15em;
   }
 
-  .heroTitle {
-    font-size: 3.875em;
-  }
-
   .heroText {
     width: 294px;
     line-height: 1.5em;
-    font-size: 0.875em;
   }
 }
 
@@ -103,18 +113,18 @@ Sticky Scroll
     border-radius: 20px;
   }
 
-  .heroTitle {
-    font-size: var(--type-large);
-  }
-
-  .heroText {
+  p.heroText {
     text-align: center;
     font-style: normal;
-    font-size: var(--type-small);
-    width: auto;
-    left: 0px;
-    padding-left: 40px;
-    padding-right: 40px;
+    width: 80vw;
+
+    /* padding: 0 60px; */
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  
+
   }
 
   .cardNumber {
