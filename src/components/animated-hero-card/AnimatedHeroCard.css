@@ -52,15 +52,8 @@ p.heroText {
   bottom: 0;
   /* bottom: 48px; */
   text-align: left;
-<<<<<<< HEAD
   width: 30vw;
   min-width: 480px;
-=======
-  width: 488px;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 22px;
->>>>>>> main
   z-index: 1;
   display: block;
   font-size: var(--type-paragraph-hero-card);
@@ -76,23 +69,12 @@ p.heroText {
 
 span.cardNumber {
   position: absolute;
-<<<<<<< HEAD
   top: calc(5vh + 80px);
   left: 10vw;
-=======
-  top: 122px;
-  left: 160px;
->>>>>>> main
   border: 1px solid #010c66;
   border-radius: 10px;
   width: 84px;
   height: 38px;
-<<<<<<< HEAD
-=======
-  font-size: 20px;
-  line-height: 22px;
-  text-align: left;
->>>>>>> main
   display: flex;
   align-items: center;
   justify-content: center;
