@@ -56,7 +56,7 @@ Sticky Scroll
   z-index: 1;
 }
 
-.heroText > .primary-button-transparent {
+.heroText > a > .primary-button-transparent {
   margin-top: 1.25rem;
 }
 

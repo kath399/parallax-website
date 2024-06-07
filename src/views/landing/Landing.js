@@ -139,6 +139,7 @@ const Landing = () => {
         BGColor="#F9AE97"
         Text="In response to the rise in extreme weather events, we’ve teamed up with The Australian Red Cross to run community preparedness events in at risk areas."
         ButtonLabel="See if we’re running an event in your area"
+        Link="https://articles.nrma.com.au/helpnation/"
       />
       <AnimatedHeroCard
         Id="helpLab3"
@@ -151,6 +152,7 @@ const Landing = () => {
         BGColor="#91BF9E"
         Text="We track keep you up to date with exactly what stage you claim is at. And what steps are remaining before payout. "
         ButtonLabel="Use the Claims Tracker"
+        Link="https://www.nrma.com.au/claims"
       />
       <AnimatedHeroCard
         Id="helpLab4"
@@ -175,7 +177,8 @@ const Landing = () => {
           StickyScrollLength={"600vh"}
           BGColor="#F9AE97"
           Text="A Help Company™ would want your ideas to define its future.​ Get early access to all the latest Help Products and have a say on what helpful things a Help Company™ develops next. "
-          ButtonLabel="Join the Help Lab"
+          ButtonLabel="Register for interest"
+          Link="https://aus-fapp02.azurewebsites.net/api/survey-renderer?phash=3d27e773-ef46-4d10-82c9-b70793857b2d_19&P=22576=1"
         />
       </div>
       <Carousel />
