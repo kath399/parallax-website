@@ -22,15 +22,16 @@
 }
 
 .launchMessage {
-  width: 40vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5em;
-  color: #010c66;
-  line-height: 130%;
+  width: 39rem;
+  height: 32rem;
   margin: auto;
-  height: 475px;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--primary-blue);
+  line-height: 130%;
   scroll-margin-top: var(--nav-height);
 }
 
