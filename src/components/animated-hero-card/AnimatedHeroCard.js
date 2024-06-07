@@ -21,6 +21,7 @@ const AnimatedHeroCard = ({
   Text,
   ButtonLabel,
   ButtonOnclick,
+  Link,
 }) => {
   const sectionRef = useRef(null);
   const canvasRef = useRef(null);
@@ -110,12 +111,14 @@ useEffect(() => {
             {Text}
             <br />
             {ButtonLabel && (
-              <button
-                className="primary-button-transparent"
-                onClick={ButtonOnclick}
-              >
-                {ButtonLabel}
-              </button>
+              <a href={Link} target="_blank" rel="noreferrer">
+                <button
+                  className="primary-button-transparent"
+                  onClick={ButtonOnclick}
+                >
+                  {ButtonLabel}
+                </button>
+              </a>
             )}
           </motion.p>
 
