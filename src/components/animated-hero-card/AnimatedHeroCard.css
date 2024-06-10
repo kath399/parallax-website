@@ -46,6 +46,9 @@ h2.heroTitle {
   top: 45vh; */
 
   font-size: var(--type-large-hero-card);
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.225rem;
   /* 7.5, 3.875, 1.625 */
 }
 
