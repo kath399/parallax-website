@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { isMobile } from "react-device-detect";
 
@@ -13,8 +13,6 @@ import PillSection from "../pillSection/PillSection";
 import HelpfulTip from "../helpfulTip/HelpfulTip";
 import Footer from "../../components/footer/Footer";
 
-import { Fade } from "react-awesome-reveal";
-import Container from "react-bootstrap/Container";
 import Intro from "../intro/Intro";
 
 import Drone from "../../assets/img/Drone.svg";
@@ -24,10 +22,26 @@ import CloudTR from "../../assets/img/CloudTR.svg";
 import TeacupSpoon from "../../assets/img/TeacupSpoon.svg";
 
 const Landing = () => {
+  const [windowSize, setWindowSize] = useState(undefined);
   const navigate = useNavigate();
   const goTo = () => {
     navigate("/form");
   };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      function handleResize() {
+        console.log(window.innerWidth);
+        setWindowSize({
+          width: window.innerWidth,
+        });
+      }
+
+      window.addEventListener("resize", handleResize);
+      handleResize();
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
 
   return (
     <div className="App">
@@ -116,6 +130,7 @@ const Landing = () => {
         Text="Checking your roof is important, but it’s also a pain, that’s why we’re introducing a service that uses drones to check your roof for you."
         ButtonLabel="Register your interest"
       /> */}
+
       <AnimatedHeroCard
         Id="helpLab1"
         key={"1"}
@@ -138,7 +153,11 @@ const Landing = () => {
         StickyScrollLength={"300vh"}
         BGColor="#F9AE97"
         Text="In response to the rise in extreme weather events, we’ve teamed up with The Australian Red Cross to run community preparedness events in at risk areas."
-        ButtonLabel="See if we’re running an event in your area"
+        ButtonLabel={
+          windowSize
+            ? "See an event in your area"
+            : "See if we’re running an event in your area"
+        }
         Link="https://articles.nrma.com.au/helpnation/"
       />
       <AnimatedHeroCard

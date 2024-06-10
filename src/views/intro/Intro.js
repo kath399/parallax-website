@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Fade } from "react-awesome-reveal";
 
 import ChevronDown from "../../assets/icons/chevron-down-white.svg";
@@ -13,36 +13,42 @@ const Intro = (params) => {
     sectionRef.current.scrollIntoView({
       top: sectionRef.current.offsetTop,
       block: "start",
-      behavior: "smooth", // For smooth scrolling
+      behavior: "smooth",
     });
   };
 
   return (
     <div id="A_Help_Company" className="intro">
-      <section className="titleMessage">
+      <section className="introMessage">
         <Fade direction="up" duration={2000} triggerOnce="true">
           <p className="text">
             We could all use a bit more help these days. Help dealing with the
             rise in extreme weather events. Help doing all those annoying but
             important jobs, like checking your roof or cleaning your gutters.
             Help navigating the not so simple world of insurance. More help with
-            everything.<br></br>
-            <br></br>So what would A Help Company™ do?
+            everything. Which is why NRMA Insurance is becoming A Help Company™.
+            <br></br>
+            <br></br>
+            So what would A Help Company™ do?
           </p>
         </Fade>
 
         <button
           className="chevron-down-button"
           onClick={() => scrollDown(section1Ref)}
+          type="button"
         >
-          <img src={ChevronDown} alt="Skip to content button" />
+          <img
+            src={ChevronDown}
+            alt="Go to Helpful Tools and Services button"
+          />
         </button>
       </section>
 
       <section
         id="Helpful_Tools_And_Services"
         ref={section1Ref}
-        className="launchMessage sectionHeader"
+        className="mainSectionHeader"
       >
         <Fade duration={2000} triggerOnce="true">
           <div>

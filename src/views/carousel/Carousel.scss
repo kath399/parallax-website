@@ -1,24 +1,33 @@
 .blogs {
   min-height: 100vh;
   overflow: hidden;
-}
-.blogs .card-group {
-  overflow: auto;
-  scroll-snap-type: x mandatory;
-  width: 100vw;
-  height: 780px;
-  margin: auto;
-  align-items: center;
-  scroll-snap-align: center;
-}
-.blogs .text-center {
-  font-weight: 400;
-  color: #010c66;
-}
-.blogs .controls {
-  text-align: right;
-  margin-top: 31.5px;
-  margin-right: 120px;
+
+  .card-group {
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    width: 100vw;
+    height: 780px;
+    margin: auto;
+    align-items: center;
+    scroll-snap-align: center;
+    // -ms-overflow-style: none; /* Internet Explorer 10+ */
+    // scrollbar-width: none; /* Firefox */
+
+    // &::-webkit-scrollbar {
+    //   display: none; /* Safari and Chrome */
+    // }
+  }
+
+  .text-center {
+    font-weight: 400;
+    color: #010c66;
+  }
+
+  .controls {
+    text-align: right;
+    margin-top: 31.5px;
+    margin-right: 120px;
+  }
 }
 
 @media only screen and (min-width: 1440px) {
@@ -26,12 +35,14 @@
     display: none;
   }
 }
+
 @media only screen and (min-width: 786px) {
   .blogs .text-center {
     padding: 150px;
     padding-bottom: 0px;
   }
 }
+
 @media only screen and (max-width: 786px) {
   .card-deck {
     flex-direction: row;
@@ -52,17 +63,20 @@
     font-size: 1.5em;
   }
 }
+
 @media screen and (max-width: 450px) {
   .blogs {
     height: 100vh;
     overflow: hidden;
+
+    .card-group {
+      height: 28.5rem;
+    }
+
+    .controls {
+      width: 100vw;
+      margin-right: 0;
+      text-align: center;
+    }
   }
-  .blogs .card-group {
-    height: 28.5rem;
-  }
-  .blogs .controls {
-    width: 100vw;
-    margin-right: 0;
-    text-align: center;
-  }
-}/*# sourceMappingURL=Carousel.css.map */
+}

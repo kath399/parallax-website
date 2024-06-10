@@ -19,7 +19,7 @@
   letter-spacing: 0.01em;
   text-align: center;
   z-index: 1001;
-  transition: 1s ease;
+  transition: all 1s ease;
 }
 
 .navBtn {

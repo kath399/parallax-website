@@ -1,27 +1,24 @@
-.titleMessage {
-  width: 100%;
+.introMessage {
+  width: 100vw;
   min-height: 100vh;
-  padding: 120px;
+  padding: 9.37rem;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
   text-align: center;
-  font-size: 40px;
+  font-size: 2.5rem;
   line-height: normal;
-  letter-spacing: -0.96px;
+  letter-spacing: -0.075rem;
   color: var(--primary-white);
   background-color: var(--primary-blue);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
 
   > p {
     width: 71.25rem;
   }
 }
 
-.launchMessage {
+.mainSectionHeader {
   width: 39rem;
   height: 32rem;
   margin: auto;
@@ -37,7 +34,7 @@
 
 /* Large screen */
 @media screen and (min-width: 768px) and (max-width: 768px) {
-  .launchMessage {
+  .mainContentSectionHeader {
     height: 635px;
     padding: 0px;
     flex-shrink: 0;
@@ -49,7 +46,7 @@
 
 /* Tablet Size */
 @media screen and (max-width: 768px) {
-  .titleMessage {
+  .introMessage {
     font-size: 1.625em;
     letter-spacing: -0.72px;
     line-height: 28px;
@@ -58,7 +55,7 @@
       width: 36.25rem;
     }
   }
-  .launchMessage {
+  .mainSectionHeader {
     height: 384px;
     font-size: 1.5em;
     width: 378px;
@@ -66,27 +63,23 @@
   }
 }
 
-/* Mobile Device */
 @media screen and (max-width: 450px) {
-  .titleMessage {
-    font-size: 1em;
-    letter-spacing: -0.48px;
-    line-height: normal;
-
-    > p {
-      width: 18.125rem;
-    }
+  .introMessage {
+    font-size: 1rem;
+    letter-spacing: -0.03rem;
+    line-height: 120%;
+    padding: 3.25rem;
   }
-  .launchMessage {
+  .mainSectionHeader {
     font-size: 1.625em;
     letter-spacing: -0.78px;
-    height: 250px;
-    width: 90vw;
+    height: 15.625rem;
+    padding: 1rem;
   }
 }
 
 @media only screen and (min-width: 1440px) {
-  .launchMessage {
+  .mainSectionHeader {
     scroll-margin-top: 80px;
   }
 }

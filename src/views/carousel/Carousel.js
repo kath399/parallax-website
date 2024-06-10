@@ -1,5 +1,5 @@
-import React from "react";
-import { useRef } from "react";
+import React, { useState } from "react";
+import { useRef, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import BlogCard from "../../components/blog-card/BlogCard";
 import "./Carousel.css";
@@ -33,6 +33,7 @@ const cardval = [
 ];
 
 const Carousel = () => {
+  const [carouselContainer, setCarousel] = useState();
   function goLeft() {
     console.log("Left");
   }
@@ -41,6 +42,15 @@ const Carousel = () => {
     console.log("Right");
   }
 
+  useEffect(() => {
+    setCarousel(document.getElementById("cards"));
+    const button = document.getElementById("carousel-left");
+
+    button.onclick = () => {
+      document.getElementById("cards").scrollRight += 200;
+    };
+  }, []);
+
   return (
     <div className="blogs">
       <section>
@@ -48,7 +58,7 @@ const Carousel = () => {
           A Help Company™ would also make its insurance products more helpful.​
         </h2>
       </section>
-      <div className="card-group d-flex flex-nowrap">
+      <div className="card-group d-flex flex-nowrap" id="cards">
         {cardval.map(function (data) {
           return (
             <BlogCard
@@ -62,10 +72,21 @@ const Carousel = () => {
       </div>
 
       <div className="controls">
-        <button onClick={() => goLeft()} className="chevron-left">
+        <button
+          // onClick={() => goLeft()}
+          id="carousel-left"
+          className="chevron-left"
+          onclick={() => (carouselContainer.scrollLeft -= 900)}
+        >
           <img src={ChevronArrow} alt="Left Chevron control" />
         </button>
-        <button className="chevron-right" onClick={() => goRight()}>
+        <button
+          className="chevron-right"
+          id="carousel-right"
+          // onClick={() => goRight()}
+
+          onclick={() => (carouselContainer.scrollLeft += 900)}
+        >
           <img src={ChevronArrow} alt="Right Chevron control" />
         </button>
       </div>

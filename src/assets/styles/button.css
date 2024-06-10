@@ -22,21 +22,22 @@ button:focus {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  font-weight: 600;
+  line-height: 100%;
 }
 
 @media only screen and (max-width: 768px) {
   .primary-button-transparent {
-    height: 46px;
-    line-height: 14px;
+    padding: 0.88rem 1rem;
+    height: 2rem;
+    line-height: 0.24rem;
   }
 }
 
 @media only screen and (max-width: 450px) {
   .primary-button-transparent {
-    padding: 14px 16px;
-    line-height: 4px;
-    height: 36px;
+    padding: 1rem 1.25rem;
+    line-height: 0.25rem;
+    height: 2.25rem;
   }
 }
 
@@ -108,10 +109,12 @@ button:focus {
   border: 1px solid var(--primary-blue);
   background-color: transparent;
   margin-left: 10px;
+  align-items: center;
 
   > img {
     height: 24px;
     width: 24px;
+    margin-left: -3px;
   }
 }
 .chevron-right:hover,

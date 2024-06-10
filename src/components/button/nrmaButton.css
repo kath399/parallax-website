@@ -1,5 +1,5 @@
 .nrmaBtn {
-  background-color: #010C66;
+  background-color: #010c66;
   padding: 0 20px;
   border: none;
   border-radius: 80px;
@@ -17,19 +17,19 @@
 .nrmaBtn--Primary {
   background-color: transparent;
   border: 1px solid white;
-} 
+}
 .nrmaBtn--Primary:hover {
   background-color: white;
-  color: #010C66;
-} 
+  color: #010c66;
+}
 
 .nrmaBtn--Secondary {
   background-color: transparent;
-  color: #010C66;
-  border: 1px solid #010C66;
+  color: #010c66;
+  border: 1px solid #010c66;
 }
 
 .nrmaBtn--Secondary:hover {
-  background-color: #010C66;
+  background-color: #010c66;
   color: white;
 }
