@@ -104,8 +104,9 @@ span.cardNumber {
     max-width: 15em;
   }
 
-  .heroTitle {
+  h2.heroTitle {
     margin-top: 50%;
+    letter-spacing: -0.11625rem;
   }
 
   .heroCard {
@@ -114,8 +115,9 @@ span.cardNumber {
 }
 
 @media only screen and (max-width: 450px) {
-  .heroTitle {
+  h2.heroTitle {
     margin-top: 5rem;
+    letter-spacing: -0.04875rem;
     /* font-size: 1.625rem; */
   }
 
