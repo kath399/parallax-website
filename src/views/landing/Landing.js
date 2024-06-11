@@ -12,6 +12,7 @@ import Carousel from "../carousel/Carousel";
 import PillSection from "../pillSection/PillSection";
 import HelpfulTip from "../helpfulTip/HelpfulTip";
 import Footer from "../../components/footer/Footer";
+import PillSectionTest from "../pillSectionTest/pillSectionTest.js";
 
 import { Fade } from "react-awesome-reveal";
 import Container from "react-bootstrap/Container";
@@ -181,6 +182,7 @@ const Landing = () => {
       <Carousel />
       {/* Disabled for testing. */}
       <PillSection />
+      <PillSectionTest />
       {!isMobile && <HelpfulTip fading={false} />}
       <Footer />
     </div>

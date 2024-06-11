@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import Cross from "../../assets/icons/Cross.svg";
-import { motion, useTransform, useScroll } from "framer-motion";
+import { motion, useTransform, useScroll, useAnimation } from "framer-motion";
 
-import "./pillSection.css";
+import "./pillSectionTest.css";
 import "../../assets/styles/button.css";
 import PillButton from "../../components/pill/pillButton";
 
-const PillSection = () => {
+const PillSectionTest = () => {
   const [pillNumber, setPillNumber] = useState(-1);
 
   const changeOrder = (arr) => [...arr].sort(() => Math.random() - 0.5);
@@ -56,13 +56,61 @@ const PillSection = () => {
   ];
   const newList = changeOrder(ogList);
 
+  /* MOVING PILL.JS HERE */
+  const pillColour = randColour();
+
+    function randColour() {
+        let colourNRMA = ["#E0DF6B", "#91BF9E", "#F9AE97", "#FFFFFF"];
+        return colourNRMA[Math.floor(Math.random() * colourNRMA.length)];
+    }
+
+    // Changing background for the button
+    function hoverState(){
+        document.documentElement.style.setProperty(`--hoverColor`, `${pillColour}`);
+
+        const style = document.createElement('style');
+        document.head.appendChild(style);
+        style.sheet.insertRule(".pillBtn a:hover { color:var(--hoverColor);}");
+    }
+
+  /* ANIMATE MIDDLE PILL */
   const containerRef = useRef(null);
+  const targetRef = useRef(null);
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  const controls = useAnimation();
+
+  const handleScroll = () => {
+    const container = containerRef.current;
+    const scrollLeft = container.scrollLeft;
+    const buttonWidth = container.children[0].offsetHeight;
+    const newActiveIndex = Math.round(scrollLeft / buttonWidth);
+
+    setActiveIndex(newActiveIndex);
+  };
+
+  useEffect(() => {
+    const container = containerRef.current;
+    container.addEventListener('scroll', handleScroll);
+
+    return () => {
+      container.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const { scrollYProgress } = useScroll({
-    container: containerRef
+    container: containerRef,
+    offset: ["start center", "end center"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.5, 1]);
+
+  // Compute the target scaling value when the target is scrolled into the center
+  const scaling = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    [1, 0.5, 1]
+  );
 
 
   return (
@@ -104,20 +152,25 @@ const PillSection = () => {
             What else would a Help Company™ do?
           </h1>
 
-          <div className="pill-wrapper">
-            <div className="pill-section" ref={containerRef}>
-              {newList.map((item, index) => (
-                <motion.div
-                  style={{scale: scale}}
-                >
-                  <PillButton
-                    Label={item.label}
-                    number={index}
-                    setNumber={() => setPillNumber(index)}
-                  />
-                </motion.div>
-              ))}
-            </div>
+          <div className="pill-section" ref={containerRef}>
+            {newList.map((item, index) => (              
+              <motion.button 
+                key={index}
+                ref={targetRef} 
+                className="pillBtn" 
+                onClick={() => setPillNumber(index)} 
+                style={{
+                  borderColor:pillColour, 
+                  backgroundColor: "transparent", 
+                  scale: scale
+                }}
+                disabled={index !== activeIndex}
+                animate={controls}
+                onMouseEnter={() => hoverState()}
+              >
+                {item.label}
+              </motion.button>
+            ))}
           </div>
         </div>
       </div>
@@ -125,4 +178,4 @@ const PillSection = () => {
   );
 };
 
-export default PillSection;
+export default PillSectionTest;

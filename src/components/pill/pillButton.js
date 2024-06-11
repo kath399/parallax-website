@@ -1,7 +1,8 @@
 import React from "react";
 import "./pillButton.css";
+import { motion, useTransform, useScroll } from "framer-motion";
 
-const PillButton = ({Label, colour, number, setNumber}) => {
+const PillButton = ({Label, colour, number, setNumber, ref, animate}) => {
 
     const pillColour = randColour();
 
@@ -20,10 +21,15 @@ const PillButton = ({Label, colour, number, setNumber}) => {
     }
 
     return (
-        <button className="pillBtn" onClick={() => setNumber()} style={{borderColor:pillColour, backgroundColor: "transparent"}}
-        onMouseEnter={() => hoverState()}>
+        <motion.button 
+            ref={ref} 
+            className="pillBtn" 
+            onClick={() => setNumber()} 
+            style={{borderColor:pillColour, backgroundColor: "transparent", scale: animate}}
+            onMouseEnter={() => hoverState()}
+        >
             {Label}
-        </button>
+        </motion.button>
     );
   };
   

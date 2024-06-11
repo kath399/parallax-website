@@ -1,0 +1,98 @@
+.pill-container {
+    display: flex;
+    margin: auto;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .pill-card {
+    background-color: #010c66;
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    overflow: hidden !important;
+    color: white;
+    margin-top: 50px;
+  }
+  
+  .pill-section {
+    margin: auto;
+    margin-top: 5vh;
+    -ms-overflow-x: auto;
+    -ms-overflow-y: hidden;
+    overflow-x: auto;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    display: flex;
+    width: 80%;
+    height: 36.25rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    flex-shrink: 0;
+  }
+  
+  .section-pill-blurred {
+    filter: blur(3px);
+  }
+  
+  .pill-overlay {
+    height: 100vh;
+    width: 100vw;
+    padding-top: 100px;
+    display: flex;
+    margin: auto;
+    background-color: rgba(0, 12, 102, 0.9);
+    flex-direction: column;
+    position: absolute;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+  }
+  .pill-overlay > .overlay-content {
+    height: 100vh;
+  }
+  .pill-overlay-text {
+    margin: 50px;
+  }
+  
+  /* --------------------------------------------------- */
+  /* Draft Animations - work in Chrome and Edge BUT NOT SAFARI OR FIREFOX */
+  /* Animation tests - previous code for the pill resizing */
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      width: 100% !important;
+    }
+    to {
+      opacity: 1;
+      width: 200% !important;
+    }
+  }
+  
+  .pill-card {
+    animation: card-animation ease-out;
+    animation-timeline: view();
+    animation-range: exit;
+    --animation-range-start: 0%;
+    --animation-range-end: 100%;
+  }
+  
+  /*  End animation testing */ /*# sourceMappingURL=pillSection.css.map */
+  
+  @keyframes scale-a-lil {
+    from {
+      scale: .5;
+    }
+  }
+    
+  @media (prefers-reduced-motion: no-preference) {
+    figure img {
+      animation: scale-a-lil linear both;
+      animation-timeline: view();
+      animation-range: 25vh 75vh;
+    }
+  }
