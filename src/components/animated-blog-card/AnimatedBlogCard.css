@@ -56,18 +56,14 @@ img {
   margin-right: auto;
 }
 img.image-still {
-  background: purple;
 }
 img.image-animated {
-  background: green;
   display: none;
 }
 .blog-card:hover img.image-still {
-  background: blue;
   display: none;
 }
 .blog-card:hover img.image-animated {
-  background: pink;
   display: block;
 }
 

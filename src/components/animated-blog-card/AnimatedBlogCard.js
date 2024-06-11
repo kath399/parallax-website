@@ -3,9 +3,24 @@ import { useState } from "react";
 import "./AnimatedBlogCard.css";
 
 const AnimatedBlogCard = (props) => {
+  const [GIF, setGIF] = useState('');
+
+  const onMouseOverHandler = () => {
+    console.log("onMouseOverHandler");
+    setGIF(require("../../assets/img/carousal/" + props.animated));
+  };
+  const onMouseOutHandler = () => {
+    console.log("onMouseOutHandler");
+    setGIF('');
+
+  };
+
   return (
     <div className="card-normal">
-      <div className="card blog-card">
+      <div className="card blog-card"
+      onMouseOver={onMouseOverHandler}
+      onMouseOut={onMouseOutHandler}
+      >
         <div>
           <div>
             <div className="card-image">
@@ -16,7 +31,7 @@ const AnimatedBlogCard = (props) => {
               />
               <img
                 className="image-animated"
-                src={require("../../assets/img/carousal/" + props.animated)}
+                src={GIF}
                 alt={props.alt}
               />
             </div>
