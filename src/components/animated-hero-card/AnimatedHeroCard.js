@@ -28,7 +28,10 @@ const AnimatedHeroCard = ({
 
   const [frame, setFrame] = useState(0);
   const [images, setImages] = useState(ImageList);
+  const [imageSize, setImageSize] = useState({width: window.innerWidth, height: window.innerHeight});
 
+  const maxImageSize = {width:1920, height: 1080};
+  const imageRatio = 9/16;
 //
 const [mobileWidth, setMobileWidth] = useState(window.innerWidth <= 500);
 
@@ -139,6 +142,8 @@ useEffect(() => {
                 x={window.innerWidth / 2}
                 y={window.innerHeight / 2}
                 images={images}
+                width={window.innerWidth}
+                height={window.innerWidth*imageRatio}
                 isPlaying={false}
                 currentFrame={frame}
               />

@@ -137,7 +137,7 @@ const Landing = () => {
         Number="1"
         Title="Drone Roof Check"
         Animations
-        ImageList={airpods}
+        ImageList={drone}
         StickyScrollLength={"200vh"}
         BGColor="#D7D667"
         Text="Checking your roof is important, but it’s also a pain, that’s why we’re introducing a service that uses drones to check your roof for you."
