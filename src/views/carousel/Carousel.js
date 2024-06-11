@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useRef, useEffect } from "react";
 import Container from "react-bootstrap/Container";
-import BlogCard from "../../components/blog-card/BlogCard";
+// import BlogCard from "../../components/blog-card/BlogCard";
+import AnimatedBlogCard from "../../components/animated-blog-card/AnimatedBlogCard";
 import "./Carousel.css";
 import ChevronArrow from "./../../assets/icons/chevron-left-blue.svg";
 
@@ -10,24 +11,29 @@ const cardval = [
     title: "Forgot To Lock Up",
     content: "You’re covered even if you forgot to lock up.",
     image: "door.png",
+    animated: "keychain_once.gif",
     alt: "Door picture",
   },
   {
     title: "Flexible Payments",
     content: "Now you can choose to pay monthly at no extra cost.",
     image: "moneypig.png",
+    animated: "keychain_once.gif",
     alt: "Money bank pig",
   },
   {
     title: "Anyone Can Drive It Cover",
     content: "With us your covered even if it's not you driving your car.",
     image: "keychain.png",
+    animated: "keychain_once.gif",
     alt: "Keys",
   },
   {
     title: "Lifetime Repair Guarantee",
     content: "We cover all the repair work done for a lifetime.",
     image: "judge.png",
+    animated: "keychain_once.gif",
+    imageAnimated: "keychain_once.gif",
     alt: "Judges wig",
   },
 ];
@@ -61,10 +67,11 @@ const Carousel = () => {
       <div className="card-group d-flex flex-nowrap" id="cards">
         {cardval.map(function (data) {
           return (
-            <BlogCard
+            <AnimatedBlogCard
               title={data.title}
               content={data.content}
               image={data.image}
+              animated={data.animated}
               alt={data.alt}
             />
           );
