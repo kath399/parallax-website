@@ -30,7 +30,7 @@ const AnimatedHeroCard = ({
   const [images, setImages] = useState(ImageList);
   const [imageSize, setImageSize] = useState({width: window.innerWidth, height: window.innerHeight});
 
-  const maxImageSize = {width:1920, height: 1080};
+  const maxImageSize = {width:800, height: 450};
   const imageRatio = 9/16;
 //
 const [mobileWidth, setMobileWidth] = useState(window.innerWidth <= 500);
@@ -66,14 +66,14 @@ useEffect(() => {
   };
   const animateParent = {
     visible: { 
-        width: "100vw",
+        width: "100%",
         height: "100vh",
         top: "0vh",
         borderRadius: "0px",
     },    
     
     hidden: { 
-        width: "80vw",
+        width: "80%",
         height: "80vh",
         top: "10vh",
         borderRadius: "20px"
@@ -142,8 +142,8 @@ useEffect(() => {
                 x={window.innerWidth / 2}
                 y={window.innerHeight / 2}
                 images={images}
-                width={window.innerWidth}
-                height={window.innerWidth*imageRatio}
+                width={window.innerWidth>maxImageSize.width?maxImageSize.width:window.innerWidth}
+                height={window.innerWidth>maxImageSize.width?maxImageSize.width*imageRatio:window.innerWidth*imageRatio}
                 isPlaying={false}
                 currentFrame={frame}
               />
