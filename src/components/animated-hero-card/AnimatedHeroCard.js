@@ -30,7 +30,7 @@ const AnimatedHeroCard = ({
   const [images, setImages] = useState(ImageList);
   const [imageSize, setImageSize] = useState({width: window.innerWidth, height: window.innerHeight});
 
-  const maxImageSize = {width:800, height: 450};
+  const maxImageSize = {width:1200};
   const imageRatio = 9/16;
 //
 const [mobileWidth, setMobileWidth] = useState(window.innerWidth <= 500);
