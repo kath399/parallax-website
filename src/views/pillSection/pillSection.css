@@ -89,6 +89,10 @@
   margin: 50px;
 }
 
+.chevronUp {
+  transform: rotate(180deg);
+}
+
 /* --------------------------------------------------- */
 /* Draft Animations - work in Chrome and Edge BUT NOT SAFARI OR FIREFOX */
 /* Animation tests - previous code for the pill resizing */

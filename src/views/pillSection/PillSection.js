@@ -3,8 +3,11 @@ import Cross from "../../assets/icons/Cross.svg";
 import { motion, useTransform, useScroll } from "framer-motion";
 
 import "./pillSection.css";
+import "../../components/pill/pillButton.css"
 import "../../assets/styles/button.css";
 import PillButton from "../../components/pill/pillButton";
+
+import ChevronDown from "../../assets/icons/chevron-down-white.svg";
 
 const PillSection = () => {
   const [pillNumber, setPillNumber] = useState(-1);
@@ -57,13 +60,69 @@ const PillSection = () => {
   const newList = changeOrder(ogList);
 
   const containerRef = useRef(null);
+  const targetRefs = useRef([]);
 
   const { scrollYProgress } = useScroll({
-    container: containerRef
+    container: containerRef,
+    
   });
 
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
 
+  /* FIND MIDDLE PILL */
+  const [middlePill, setMiddlePill] = useState(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const container = containerRef.current;
+      const containerMiddle = container.clientHeight / 2;
+      const containerTop = container.scrollTop;
+
+      const pills = container.getElementsByClassName('pillBtn');
+
+      let closestPill = null;
+      let closestDistance = Infinity;
+
+      Array.from(pills).forEach(pill => {
+        const pillRect = pill.getBoundingClientRect();
+        const pillTop = pillRect.top + containerTop - container.offsetTop;
+        const pillMiddle = pillTop + pillRect.height / 2;
+
+        const distance = Math.abs(pillMiddle - (containerTop + containerMiddle));
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestPill = pill;
+        }
+      });
+
+      setMiddlePill(closestPill);
+    };
+
+    const container = containerRef.current;
+    container.addEventListener('scroll', handleScroll);
+
+    // Cleanup
+    return () => {
+      container.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  /* PILL BUTTON */
+  const pillColour = randColour();
+
+  function randColour() {
+      let colourNRMA = ["#E0DF6B", "#91BF9E", "#F9AE97", "#FFFFFF"];
+      return colourNRMA[Math.floor(Math.random() * colourNRMA.length)];
+  }
+
+  // Changing background for the button
+  function hoverState(){
+      document.documentElement.style.setProperty(`--hoverColor`, `${pillColour}`);
+
+      const style = document.createElement('style');
+      document.head.appendChild(style);
+      style.sheet.insertRule(".pillBtn a:hover { color:var(--hoverColor);}");
+  }
 
   return (
     <div id="Ways_We_Help" className="pill-container">
@@ -105,18 +164,48 @@ const PillSection = () => {
           </h1>
 
           <div className="pill-wrapper">
-            <div className="pill-section" ref={containerRef}>
+            <div id='pill-scroll' className="pill-section" ref={containerRef}>
               {newList.map((item, index) => (
-                <motion.div
-                  style={{scale: scale}}
+                <motion.button 
+                  ref={targetRefs[index]} 
+                  className="pillBtn" 
+                  onClick={() => setPillNumber(index)} 
+                  style={{borderColor:pillColour, backgroundColor: "transparent", scale: scale}}
+                  onMouseEnter={() => hoverState()}
                 >
-                  <PillButton
-                    Label={item.label}
-                    number={index}
-                    setNumber={() => setPillNumber(index)}
-                  />
-                </motion.div>
+                  {item.label}
+                </motion.button>
               ))}
+              <div>
+                {middlePill && (middlePill)}
+              </div>
+            </div>
+            
+            <div>
+              <button 
+                className='chevron-down-button'
+                style={{
+                  position: 'absolute',
+                  right: '0',
+                  bottom: '55%',
+                }}
+              >
+                <img 
+                  src={ChevronDown} 
+                  alt='Up Chevron Control'
+                  className="chevronUp"
+                />
+              </button>
+              <button 
+                className='chevron-down-button'
+                style={{
+                  position: 'absolute',
+                  right: '0',
+                  bottom: '45%'
+                }}
+              >
+                <img src={ChevronDown} alt='Down Chevron Control'/>
+              </button>
             </div>
           </div>
         </div>
