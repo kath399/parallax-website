@@ -33,7 +33,7 @@ const NavBar = () => {
       style={{
         backgroundColor: scrolled && "white",
         color: scrolled && "#010C66",
-        height: scrolled && "80px",
+
       }}
     >
       <img className="logo" src={scrolled ? Logo : LogoWhite} alt="Logo" />

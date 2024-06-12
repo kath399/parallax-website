@@ -12,7 +12,11 @@ const Overlay = ({isVisible, onClose}) => {
       <div className="overlayNav">
         <img src={Logo} alt="Logo" className="logoOverlay"/>
         <div style={{display: 'flex'}}>
-          <NrmaButton Type='Primary' Label='Visit NRMA Insurance' />
+          <NrmaButton 
+            Type='Primary' 
+            Label='Visit NRMA Insurance' 
+            Size={window.innerWidth < 769 ? "Small" : "Large"}
+          />
           <button className="closeButton" onClick={onClose}>
             <img src={Cross} alt='Close' />
           </button>

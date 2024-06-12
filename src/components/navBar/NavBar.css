@@ -1,4 +1,5 @@
 .logo {
+  margin-left: 40px;
   width: 121px;
   height: 40px;
 }
@@ -9,20 +10,19 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   background-color: #010c66;
-  padding: 0 20px;
   font-family: "NRMA Graphik Medium", Graphik, sans-serif;
   color: white;
   font-size: 14px;
   line-height: 14px;
-  letter-spacing: 0.01em;
   text-align: center;
   z-index: 1001;
   transition: 1s ease;
 }
 
 .navBtn {
+  position: absolute;
+  right: 40px;
   display: flex;
 }
 
@@ -59,16 +59,16 @@
 }
 
 @media only screen and (min-width: 1440px) {
+  .logo {
+    margin-left: 120px;
+  }
+
   .navBar {
     height: var(--nav-height);
-    padding-left: 10vw;
-    padding-right: 10vw;
-    justify-content: start;
   }
 
   .navBtn {
-    position: absolute;
-    right: 10vw;
+    right: 120px;
   }
 
   .menubutton {
