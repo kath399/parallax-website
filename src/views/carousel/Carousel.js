@@ -1,13 +1,14 @@
-import React, { useState, useEffect, useRef } from "react";
-import BlogCard from "../../components/blog-card/BlogCard";
+import React, { useState } from "react";
+import { useRef, useEffect } from "react";
+import Container from "react-bootstrap/Container";
+// import BlogCard from "../../components/blog-card/BlogCard";
+import AnimatedBlogCard from "../../components/animated-blog-card/AnimatedBlogCard";
 import "./Carousel.css";
 import ChevronArrow from "./../../assets/icons/chevron-left-blue.svg";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-import vid from "../../assets/img/carousal/keymovie.mov";
 
 import {
   useInView,
@@ -22,31 +23,30 @@ const cardval = [
   {
     title: "Forgot To Lock Up",
     content: "You’re covered even if you forgot to lock up.",
-    image: "door-model.jpg",
+    image: "door.png",
+    animated: "keychain_once.gif",
     alt: "Door picture",
   },
   {
     title: "Flexible Payments",
     content: "Now you can choose to pay monthly at no extra cost.",
-    image: "calendar-model.jpg",
+    image: "moneypig.png",
+    animated: "keychain_once.gif",
     alt: "Money bank pig",
   },
   {
     title: "Anyone Can Drive It Cover",
     content: "With us your covered even if it's not you driving your car.",
-    image: "key-model.jpeg",
+    image: "keychain.png",
+    animated: "keychain_once.gif",
     alt: "Keys",
   },
   {
     title: "Lifetime Repair Guarantee",
     content: "We cover all the repair work done for a lifetime.",
-    image: "air-fresh-model.jpg",
-    alt: "Judges wig",
-  },
-  {
-    title: "Lifetime Repair Guarantee",
-    content: "We cover all the repair work done for a lifetime.",
-    image: "keymovie.mov",
+    image: "judge.png",
+    animated: "keychain_once.gif",
+    imageAnimated: "keychain_once.gif",
     alt: "Judges wig",
   },
 ];
@@ -202,10 +202,11 @@ const Carousel = () => {
       <Slider ref={slider} {...settings}>
         {cardval.map(function (data) {
           return (
-            <BlogCard
+            <AnimatedBlogCard
               title={data.title}
               content={data.content}
               image={data.image}
+              animated={data.animated}
               alt={data.alt}
             />
           );
@@ -214,7 +215,6 @@ const Carousel = () => {
 
       <div className="controls">
         <button
-          // onClick={() => goLeft()}
           onClick={() => slider?.current?.slickPrev()}
           id="carousel-left"
           className="chevron-left"
@@ -224,7 +224,6 @@ const Carousel = () => {
         <button
           className="chevron-right"
           id="carousel-right"
-          // onClick={() => goRight()}
           onClick={() => slider?.current?.slickNext()}
         >
           <img src={ChevronArrow} alt="Right Chevron control" />
