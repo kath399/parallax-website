@@ -4,12 +4,21 @@
 }
 .blogs .card-group {
   overflow: auto;
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   width: 100vw;
-  height: 780px;
+  height: 33.7rem;
   margin: auto;
+  gap: 40px;
+  margin-top: 5rem;
   align-items: center;
+  scroll-behavior: smooth;
   scroll-snap-align: center;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.blogs .card-group::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 .blogs .text-center {
   font-weight: 400;

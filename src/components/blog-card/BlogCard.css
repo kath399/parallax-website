@@ -1,10 +1,9 @@
-.blog-card,
 .card {
   color: var(--primary-blue);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
+  gap: 1.25rem;
   text-align: center;
   font-weight: normal;
   padding: 20px;
@@ -13,37 +12,37 @@
   margin-right: 20px;
   scroll-snap-align: center;
   background-color: transparent;
+  width: 100%;
+  align-items: center;
 }
-.blog-card:hover .card-content,
 .card:hover .card-content {
   opacity: 1;
   transition: all 0.5s ease;
 }
-.blog-card:hover .card-image,
 .card:hover .card-image {
-  transform: scale(1.1);
+  transform: scale(1.4);
   transition: all 0.5s ease;
 }
-.blog-card-content,
 .card-content {
   opacity: 0;
   transition: all 0.5s ease;
+  width: 100%;
 }
-.blog-card-title,
 .card-title {
   font-family: "NRMA Graphik Medium", Graphik, sans-serif;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 0;
 }
-.blog-card-image,
 .card-image {
-  width: 387px;
-  height: 380px;
+  width: 24.1875rem;
+  height: 23.75rem;
   right: 0;
   position: relative;
   vertical-align: middle;
   transition: transform 0.5s ease;
   overflow: hidden;
 }
-.blog-card-image img,
 .card-image img {
   padding: 36px;
   max-width: 100%;
@@ -52,29 +51,29 @@
   object-fit: contain;
 }
 
+.slick-center .card-image {
+  transform: scale(1.4);
+  transition: all 0.5s ease;
+}
+.slick-center .card-content {
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+
 @media only screen and (max-width: 786px) {
-  .blog-card .card-content {
+  .card.card-content {
     opacity: 1;
   }
 }
 @media only screen and (max-width: 450px) {
-  .blog-card,
   .card {
     padding: 0.3125rem;
   }
-  .blog-card .card-image,
   .card .card-image {
     width: 16.25rem;
     height: 16.25rem;
   }
-  .blog-card .card-image img,
   .card .card-image img {
     padding: 1.75rem;
-  }
-  .blog-card {
-    background-color: blue;
-  }
-  .blog-card:hover {
-    background-color: pink;
   }
 }/*# sourceMappingURL=BlogCard.css.map */

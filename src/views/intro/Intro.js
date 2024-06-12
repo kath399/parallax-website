@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { Fade } from "react-awesome-reveal";
 
 import ChevronDown from "../../assets/icons/chevron-down-white.svg";
@@ -52,7 +52,7 @@ const Intro = (params) => {
       >
         <Fade duration={2000} triggerOnce="true">
           <div>
-            A Help Company™ would launch four helpful tools and services.​
+            A Help Company™ would launch four helpful tools and services.
           </div>
         </Fade>
       </section>
